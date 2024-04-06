@@ -2,14 +2,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SendingText from "./sendingText";
+import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const SendingTexts = () => {
-  const playerData = {
-    currentRoom: "entrance",
-    entrance: {
-      eventIndex: 0,
-    }
-  };
+  // dbに書き換える 
+  const { playerData, setPlayerData } = usePlayerDataStore(); 
 
   const [textIndex, setTextIndex] = useState<number>(0);
   const [renderTrigger, setRenderTrigger] = useState<number>(0); // レンダリングのトリガー
@@ -17,10 +14,10 @@ const SendingTexts = () => {
   // Enter キーが押された時のイベントハンドラ
   const handleKeyPress = (event: KeyboardEvent) => {
     if (event.key === "Enter") {
-      setTextIndex(prevIndex => prevIndex + 1);
+      setTextIndex((prev) => prev + 1);
     }
   };
-
+  
   // キーボードイベントのリスナーを設定
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
@@ -28,10 +25,13 @@ const SendingTexts = () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
-
+  
   // textIndex が変更されたらレンダリングのトリガーを更新
   useEffect(() => {
     setRenderTrigger(prev => prev + 1);
+    if(textIndex+1 ==  entranceTexts[eventIndex as keyof typeof entranceTexts].length){
+      setPlayerData({ entrance: { eventIndex: 0, event0Finished: true } });
+    }
   }, [textIndex]);
 
   const eventIndex = playerData.entrance.eventIndex;
@@ -62,6 +62,7 @@ const SendingTexts = () => {
                   textList={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex]}
                   textIndex={textIndex}
                 />
+                <div className="text-white">{textIndex}</div>
                 {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
                   // テキストの背景
                   <motion.div

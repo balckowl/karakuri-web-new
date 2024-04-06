@@ -35,7 +35,7 @@ const IntroAnimation = ({ isPullString, setIsPullString }: { isPullString: boole
       <div className="flex size-full items-center justify-center">
         {/* text */}
         <motion.p
-          animate={{ letterSpacing: [0, "20px"] }}
+          animate={{ letterSpacing: ["2px", "20px"] }}
           transition={{ duration: 1, delay: 0.3 }}
           className="translate-y-[-20px] text-xl tracking-normal text-white"
         >

@@ -2,16 +2,12 @@
 import Image from "next/image"
 import Prob1_1 from "~/features/floor1/prob1_1";
 import { motion } from "framer-motion";
+import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const ProbBase = () => {
-  const playerData = {
-    currentRoom: "entrance",
-    entrance: {
-      eventIndex: 0,
-      event0Finished: true
-    }
-  };
-
+  // dbに書き換える 
+  const { playerData, setPlayerData } = usePlayerDataStore(); 
+  
   return (
     <div>
       {playerData.currentRoom === "entrance" ?

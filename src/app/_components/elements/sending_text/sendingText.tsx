@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const SendingText = ({ textList, textIndex }: { textList: string[] | undefined, textIndex: number }) => {
   return (
-    <div className="w-full h-full absolute p-[16px] z-[1500] text-xl text-white">
+    <div className="absolute z-[1500] size-full p-[16px] text-xl text-white">
       {/* 話し手のテキスト */}
-      {textList && textList[0] && textList[1] &&
+      {textList?.[0] && textList[1] &&
         <div className="flex justify-between gap-4">
           <div>
             <motion.div
@@ -15,7 +15,7 @@ const SendingText = ({ textList, textIndex }: { textList: string[] | undefined, 
             </motion.div>
 
             <div className="flex flex-wrap">
-              {textList[1].split("").map((word: any, index: number) => (
+              {textList[1].split("").map((word: string, index: number) => (
                 <motion.div
                   animate={{ opacity: [0, 1] }}
                   transition={textIndex !== 0 ? { duration: 0.2, delay: 1 + index * 0.05 } : { duration: 0.5, delay: 1.5 + index * 0.05 }}
@@ -46,7 +46,7 @@ const SendingText = ({ textList, textIndex }: { textList: string[] | undefined, 
             style={{ flexShrink: 0 }}
           >
             {textList[0] === "k-15" &&
-              <Image src="/images/login/karakuri-web_login_1.png" alt="main" className="w-[168px] h-[168px] object-fill" width="2000" height="2000" />
+              <Image src="/images/login/karakuri-web_login_1.png" alt="main" className="size-[168px] object-fill" width="2000" height="2000" />
             }
           </motion.div>
         </div>

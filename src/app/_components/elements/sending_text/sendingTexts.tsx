@@ -56,7 +56,7 @@ const SendingTexts = () => {
         <div>
           <div className="absolute bottom-[30px] left-0 w-full">
             {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
-              <div className="relative w-[80%] h-[200px] mx-auto z-[1000]">
+              <div className="relative z-[1000] mx-auto h-[200px] w-4/5">
                 <SendingText
                   key={renderTrigger} // レンダリングのトリガーとして使用
                   textList={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex]}
@@ -73,7 +73,7 @@ const SendingTexts = () => {
                       { duration: 1, delay: 0.5 } :
                       { duration: 0.3 }
                     }
-                    className="absolute size-full mx-auto bg-black outline outline-[10px] outline-gray-500 rounded-md z-[900]"
+                    className="absolute z-[900] mx-auto size-full rounded-md bg-black outline outline-[10px] outline-gray-500"
                   ></motion.div>
                 }
               </div>
@@ -81,7 +81,7 @@ const SendingTexts = () => {
           </div>
           { textIndex < entranceTexts[eventIndex as keyof typeof entranceTexts].length &&
             // テキスト送り中に操作を不能にする
-            <div className="absolute w-full h-full bg-black z-[800] top-0 left-0 opacity-10"></div>
+            <div className="absolute left-0 top-0 z-[800] size-full bg-black opacity-10"></div>
           }
         </div>
       )}

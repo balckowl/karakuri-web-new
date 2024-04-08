@@ -5,7 +5,7 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
   // dbに書き換える 
-  const { playerData } = usePlayerDataStore();
+  const { playerData }= usePlayerDataStore();
 
   const currentRoom = playerData.currentRoom
   const movableRoomList = playerData.movableRoomList

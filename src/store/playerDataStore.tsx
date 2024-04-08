@@ -4,12 +4,21 @@ import { immer } from "zustand/middleware/immer";
 
 type PlayerData = {
   currentRoom: string;
-  [key: string]: any;
   movableRoomList: string[];
+  belonging: string;
+  belongingList: string[];
+  isGetItems: {
+    scrollBar: boolean;
+  };
   entrance: {
     eventIndex: number;
     event0Finished: boolean;
   };
+  bathroom: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  [key: string]: any
 };
 
 type PlayerDataStoreType = {
@@ -20,9 +29,18 @@ type PlayerDataStoreType = {
 const defaultPlayerData: PlayerData = {
   currentRoom: "entrance",
   movableRoomList: ["entrance", "bathroom"],
+  belonging: "",
+  belongingList: [],
+  isGetItems: {
+    scrollBar: true
+  },
   entrance: {
     eventIndex: 0,
     event0Finished: false,
+  },
+  bathroom: {
+    eventIndex: 0,
+    event0Finished: true,
   },
 };
 
@@ -40,7 +58,7 @@ export const usePlayerDataStore = create<PlayerDataStoreType>()(
       },
     })),
     {
-      name: "happysStorage",
+      name: "PlayersStorage",
     }
   )
 );

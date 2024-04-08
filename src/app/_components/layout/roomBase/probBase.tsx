@@ -4,13 +4,13 @@ import Prob1_1 from "~/features/floor1/prob1_1";
 import { motion } from "framer-motion";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
-const ProbBase = () => {
+const ProbBase = ({currentRoom}: {currentRoom: string}) => {
   // dbに書き換える 
   const { playerData } = usePlayerDataStore(); 
-  
+
   return (
     <div>
-      {playerData.currentRoom === "entrance" ?
+      {currentRoom === "entrance" ?
         <div>
           {playerData.entrance.event0Finished &&
             <div>
@@ -23,11 +23,11 @@ const ProbBase = () => {
                   <Prob1_1 />
                 </div>
               </motion.div>
-              
             </div>
           }
           <Image src="/images/rooms/entrance.webp" alt="main" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover" width="2000" height="2000" />
-        </div> :
+        </div>
+        :
         <div></div>
       }
     </div>

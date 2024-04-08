@@ -4,6 +4,8 @@ import { immer } from "zustand/middleware/immer";
 
 type PlayerData = {
   currentRoom: string;
+  [key: string]: any;
+  movableRoomList: string[];
   entrance: {
     eventIndex: number;
     event0Finished: boolean;
@@ -17,6 +19,7 @@ type PlayerDataStoreType = {
 
 const defaultPlayerData: PlayerData = {
   currentRoom: "entrance",
+  movableRoomList: ["entrance", "bathroom"],
   entrance: {
     eventIndex: 0,
     event0Finished: false,

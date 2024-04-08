@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import Prob1_1 from "~/features/floor1/prob1_1";
+import Prob1_1 from "~/features/floor1/prob/prob1_1";
 import { motion } from "framer-motion";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
@@ -19,7 +19,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
-                <div className="p-6">
+                <div className="h-full p-6">
                   <Prob1_1 />
                 </div>
               </motion.div>

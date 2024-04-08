@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SendingText from "./sendingText";
 import { usePlayerDataStore } from "~/store/playerDataStore";
@@ -26,54 +26,58 @@ const SendingTexts = () => {
     };
   }, []);
 
+  
+  const eventIndex = playerData.entrance.eventIndex;
+  const entranceTextList = useMemo(() => {
+    return {
+      0: [
+        ["you", "こ、ここは..."],
+        ["k-15", "..."],
+        ["you", "だ、だれ...?"],
+        ["k-15", "私はk-15、あなたの脱出をサポートします"],
+        ["you", "よろしく"],
+      ],
+      1: [
+        ["k-15", "先ほど手に入れたアイテムを使うのでしょうか..."],
+        ["you", "やってみる"],
+      ],
+    };
+  }, []);
+  
+
   // textIndex が変更されたらレンダリングのトリガーを更新
   useEffect(() => {
     if (0 <= eventIndex) {
       setRenderTrigger(prev => prev + 1);
-      if (textIndex == entranceTexts[eventIndex as keyof typeof entranceTexts].length) {
+      if (textIndex == entranceTextList[eventIndex as keyof typeof entranceTextList].length) {
         setPlayerData({ entrance: { eventIndex: -1, event0Finished: true } });
       }
     }
-  }, [textIndex]);
-
-  const eventIndex = playerData.entrance.eventIndex;
-  const entranceTexts = {
-    0: [
-      ["you", "こ、ここは..."],
-      ["k-15", "..."],
-      ["you", "だ、だれ...?"],
-      ["k-15", "私はk-15、あなたの脱出をサポートします"],
-      ["you", "よろしく"],
-    ],
-    1: [
-      ["k-15", "先ほど手に入れたアイテムを使うのでしょうか..."],
-      ["you", "やってみる"],
-    ],
-  };
+  },  [textIndex, entranceTextList, eventIndex, setPlayerData]);
 
   return (
     <div>
       {/* Entrance */}
       {0 <= eventIndex &&
         <div>
-          {playerData.currentRoom === "entrance" && eventIndex < Object.keys(entranceTexts)?.length && (
+          {playerData.currentRoom === "entrance" && eventIndex < Object.keys(entranceTextList)?.length && (
             <div>
               <div className="absolute bottom-[50px] left-0 w-full">
-                {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
+                {entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] &&
                   <div className="relative z-[1000] mx-auto h-[200px] w-4/5">
                     <SendingText
                       key={renderTrigger} // レンダリングのトリガーとして使用
-                      textList={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex]}
+                      textList={entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex]}
                       textIndex={textIndex}
                     />
-                    {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
+                    {entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] &&
                       // テキストの背景
                       <motion.div
-                        animate={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] ?
+                        animate={entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] ?
                           { opacity: [0, 0.8], display: "none" } :
                           { opacity: [0.8, 0], display: "none" }
                         }
-                        transition={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] ?
+                        transition={entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] ?
                           { duration: 1, delay: 0.5 } :
                           { duration: 0.3 }
                         }
@@ -85,7 +89,7 @@ const SendingTexts = () => {
               </div>
 
               <AnimatePresence>
-                {textIndex < entranceTexts[eventIndex as keyof typeof entranceTexts].length &&
+                {textIndex < entranceTextList[eventIndex as keyof typeof entranceTextList].length &&
                   // テキスト送り中に操作を不能にする
                   <motion.div
                     exit={{ opacity: [0.5, 0], display: "none" }}

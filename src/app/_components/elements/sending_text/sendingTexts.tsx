@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import SendingText from "./sendingText";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
@@ -79,10 +79,17 @@ const SendingTexts = () => {
               </div>
             }
           </div>
-          { textIndex < entranceTexts[eventIndex as keyof typeof entranceTexts].length &&
-            // テキスト送り中に操作を不能にする
-            <div className="absolute left-0 top-0 z-[800] size-full bg-black opacity-10"></div>
-          }
+
+          <AnimatePresence>
+            { textIndex < entranceTexts[eventIndex as keyof typeof entranceTexts].length &&
+              // テキスト送り中に操作を不能にする
+              <motion.div
+              exit={{opacity: [0.5,0], display: "none"}}
+              transition={{duration: 0.3}}
+              className="absolute left-0 top-0 z-[800] size-full bg-black opacity-50"
+              ></motion.div>
+            }
+          </AnimatePresence>
         </div>
       )}
     </div>

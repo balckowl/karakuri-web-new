@@ -6,7 +6,7 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const SendingTexts = () => {
   // dbに書き換える 
-  const { playerData, setPlayerData } = usePlayerDataStore(); 
+  const { playerData, setPlayerData } = usePlayerDataStore();
 
   const [textIndex, setTextIndex] = useState<number>(0);
   const [renderTrigger, setRenderTrigger] = useState<number>(0); // レンダリングのトリガー
@@ -17,7 +17,7 @@ const SendingTexts = () => {
       setTextIndex((prev) => prev + 1);
     }
   };
-  
+
   // キーボードイベントのリスナーを設定
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
@@ -25,12 +25,14 @@ const SendingTexts = () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
-  
+
   // textIndex が変更されたらレンダリングのトリガーを更新
   useEffect(() => {
-    setRenderTrigger(prev => prev + 1);
-    if(textIndex+1 ==  entranceTexts[eventIndex as keyof typeof entranceTexts].length){
-      setPlayerData({ entrance: { eventIndex: 0, event0Finished: true } });
+    if (0 <= eventIndex) {
+      setRenderTrigger(prev => prev + 1);
+      if (textIndex == entranceTexts[eventIndex as keyof typeof entranceTexts].length) {
+        setPlayerData({ entrance: { eventIndex: -1, event0Finished: true } });
+      }
     }
   }, [textIndex]);
 
@@ -52,46 +54,50 @@ const SendingTexts = () => {
   return (
     <div>
       {/* Entrance */}
-      {playerData.currentRoom === "entrance" && eventIndex < Object.keys(entranceTexts).length && (
+      {0 <= eventIndex &&
         <div>
-          <div className="absolute bottom-[50px] left-0 w-full">
-            {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
-              <div className="relative z-[1000] mx-auto h-[200px] w-4/5">
-                <SendingText
-                  key={renderTrigger} // レンダリングのトリガーとして使用
-                  textList={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex]}
-                  textIndex={textIndex}
-                />
+          {playerData.currentRoom === "entrance" && eventIndex < Object.keys(entranceTexts)?.length && (
+            <div>
+              <div className="absolute bottom-[50px] left-0 w-full">
                 {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
-                  // テキストの背景
-                  <motion.div
-                    animate={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] ?
-                      { opacity: [0, 0.8], display: "none" } :
-                      { opacity: [0.8, 0], display: "none" }
+                  <div className="relative z-[1000] mx-auto h-[200px] w-4/5">
+                    <SendingText
+                      key={renderTrigger} // レンダリングのトリガーとして使用
+                      textList={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex]}
+                      textIndex={textIndex}
+                    />
+                    {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
+                      // テキストの背景
+                      <motion.div
+                        animate={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] ?
+                          { opacity: [0, 0.8], display: "none" } :
+                          { opacity: [0.8, 0], display: "none" }
+                        }
+                        transition={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] ?
+                          { duration: 1, delay: 0.5 } :
+                          { duration: 0.3 }
+                        }
+                        className="absolute z-[900] mx-auto size-full rounded-md bg-black outline outline-[10px] outline-gray-500"
+                      ></motion.div>
                     }
-                    transition={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] ?
-                      { duration: 1, delay: 0.5 } :
-                      { duration: 0.3 }
-                    }
-                    className="absolute z-[900] mx-auto size-full rounded-md bg-black outline outline-[10px] outline-gray-500"
-                  ></motion.div>
+                  </div>
                 }
               </div>
-            }
-          </div>
 
-          <AnimatePresence>
-            { textIndex < entranceTexts[eventIndex as keyof typeof entranceTexts].length &&
-              // テキスト送り中に操作を不能にする
-              <motion.div
-              exit={{opacity: [0.5,0], display: "none"}}
-              transition={{duration: 0.3}}
-              className="absolute left-0 top-0 z-[800] size-full bg-black opacity-50"
-              ></motion.div>
-            }
-          </AnimatePresence>
+              <AnimatePresence>
+                {textIndex < entranceTexts[eventIndex as keyof typeof entranceTexts].length &&
+                  // テキスト送り中に操作を不能にする
+                  <motion.div
+                    exit={{ opacity: [0.5, 0], display: "none" }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute left-0 top-0 z-[800] size-full bg-black opacity-50"
+                  ></motion.div>
+                }
+              </AnimatePresence>
+            </div>
+          )}
         </div>
-      )}
+      }
     </div>
   );
 };

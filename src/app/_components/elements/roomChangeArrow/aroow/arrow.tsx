@@ -12,8 +12,8 @@ const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
 
   return (
     <motion.div
-      animate={playerData[currentRoom].event0Finished && { opacity: [0, 1] }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+    animate={playerData[currentRoom].event0Finished ? { opacity: [0, 1] } : { opacity: 0 }}
+    transition={playerData[currentRoom].event0Finished ? { duration: 0.5, delay: 0.3 } : { duration: 0 }}
       className={`${movableRoomList.includes(hrefProps)==false && "cursor-not-allowed"}`}
     >
       <Link 

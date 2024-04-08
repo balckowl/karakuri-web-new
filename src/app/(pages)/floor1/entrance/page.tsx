@@ -2,11 +2,11 @@
 import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow"
 import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow"
 import RightArrow from "~/app/_components/elements/roomChangeArrow/RightArrow/rightArrow"
-import SendingTexts from "~/app/_components/elements/sendingText/sendingTexts"
 import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import Belongings from "~/app/_components/elements/belongings/belongings"
 import { usePlayerDataStore } from "~/store/playerDataStore"
 import { useEffect } from "react"
+import WholeSendingTexts from "~/app/_components/elements/sendingText/WholeSendingText"
 
 const Entrance = () => {
   const { setPlayerData } = usePlayerDataStore();
@@ -17,7 +17,7 @@ const Entrance = () => {
 
   return (
     <div>
-      <SendingTexts />
+      <WholeSendingTexts />
 
       <UpArrow floor={1} hrefProps={"socialroom"}  />
       <LeftArrow floor={1} hrefProps={"bathroom"} />

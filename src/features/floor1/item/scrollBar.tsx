@@ -7,8 +7,14 @@ const ScrollBar = () => {
 
   const getScrollBar = () => {
     console.log("a")
-    // アイテムを取った判定、持ち物の追加
-    setPlayerData({isGetItems: {scrollBar: true}, belongingList: [...preBelongings,"scrollBar"]})
+    // アイテムを取った判定 & 持ち物の追加 & エントランスの会話フラグ
+    setPlayerData(
+      {
+        isGetItems: {scrollBar: true},
+        belongingList: [...preBelongings,"scrollBar"],
+        entrance: {eventIndex: 1, event0Finished: true} 
+      }
+    )
   }
 
   return (

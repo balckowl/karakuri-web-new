@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const SendingText = ({ textList, textIndex }: { textList: string[] | undefined, textIndex: number }) => {
+const PartSendingText = ({ textList, textIndex }: { textList: string[] | undefined, textIndex: number }) => {
   return (
     <div className="absolute z-[1500] size-full p-[16px] text-xl text-white">
       {/* 話し手のテキスト */}
@@ -55,4 +55,4 @@ const SendingText = ({ textList, textIndex }: { textList: string[] | undefined, 
   );
 };
 
-export default SendingText;
+export default PartSendingText;

@@ -18,6 +18,13 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
+  gimmicks: {
+    prob1_1: {
+      isFitScrollbar: boolean
+      answer: string;
+      isClear: boolean;
+    },
+  }
   [key: string]: any
 };
 
@@ -32,7 +39,7 @@ const defaultPlayerData: PlayerData = {
   belonging: "",
   belongingList: [],
   isGetItems: {
-    scrollBar: true
+    scrollBar: false,
   },
   entrance: {
     eventIndex: 0,
@@ -42,6 +49,13 @@ const defaultPlayerData: PlayerData = {
     eventIndex: 0,
     event0Finished: true,
   },
+  gimmicks: {
+    prob1_1: {
+      isFitScrollbar: false,
+      answer: "",
+      isClear: false,
+    },
+  }
 };
 
 export const usePlayerDataStore = create<PlayerDataStoreType>()(

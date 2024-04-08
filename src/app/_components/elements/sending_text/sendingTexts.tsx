@@ -52,9 +52,9 @@ const SendingTexts = () => {
   return (
     <div>
       {/* Entrance */}
-      {playerData.currentRoom === "entrance" && eventIndex < 2 && (
+      {playerData.currentRoom === "entrance" && eventIndex < Object.keys(entranceTexts).length && (
         <div>
-          <div className="absolute bottom-[30px] left-0 w-full">
+          <div className="absolute bottom-[50px] left-0 w-full">
             {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
               <div className="relative z-[1000] mx-auto h-[200px] w-4/5">
                 <SendingText
@@ -62,7 +62,6 @@ const SendingTexts = () => {
                   textList={entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex]}
                   textIndex={textIndex}
                 />
-                <div className="text-white">{textIndex}</div>
                 {entranceTexts[eventIndex as keyof typeof entranceTexts][textIndex] &&
                   // テキストの背景
                   <motion.div

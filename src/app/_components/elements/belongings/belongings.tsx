@@ -16,8 +16,8 @@ const Belongings = () => {
 
   return (
     <motion.div
-      animate={playerData[currentRoom].event0Finished && { opacity: [0, 1] }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      animate={playerData[currentRoom].event0Finished ? { opacity: [0, 1] } : { opacity: 0 }}
+      transition={playerData[currentRoom].event0Finished ? { duration: 0.5, delay: 0.7 } : { duration: 0 }}
       className="absolute bottom-[30px] left-[30px] flex h-[50px] w-[250px]"
     >
       {emptys.map((_, index: number) => (

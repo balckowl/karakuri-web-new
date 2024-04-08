@@ -25,7 +25,7 @@ const defaultPlayerData: PlayerData = {
 
 export const usePlayerDataStore = create<PlayerDataStoreType>()(
   persist(
-    immer((set, get) => ({
+    immer((set) => ({
       playerData: defaultPlayerData,
       setPlayerData: (data) => { // 引数を受け入れる
         set((state) => ({

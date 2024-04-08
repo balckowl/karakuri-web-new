@@ -17,7 +17,7 @@ const ProbBase = () => {
               <motion.div
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute left-1/2 top-1/2 size-4/5 -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
+                className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="p-6">
                   <Prob1_1 />

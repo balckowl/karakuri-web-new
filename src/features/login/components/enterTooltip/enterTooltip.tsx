@@ -34,7 +34,7 @@ const EnterTooltip = () => {
 
       {/* hover-judgement */}
       {/* 屋敷に入るリンク */}
-      <Link href="/entrance" className="absolute bottom-[10vh] left-1/2 -translate-x-1/2 lg:bottom-[14vh]">
+      <Link href="floor1/entrance" className="absolute bottom-[10vh] left-1/2 -translate-x-1/2 lg:bottom-[14vh]">
         <div
           className="ml-[30px] h-[200px] w-[220px] cursor-pointer lg:h-[400px] lg:w-[440px]"
           onMouseEnter={handleMouseEnter}

@@ -5,8 +5,7 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 const Prob1_1Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
   const [answer, setAnswer] = useState<string>(playerData.gimmicks.prob1_1.answer)
-  const [isClear, setIsClear] = useState<boolean>(false);
-  
+
   const sendAnswer = () => {
     setPlayerData(
       {
@@ -14,21 +13,25 @@ const Prob1_1Answer = () => {
           prob1_1: {
             ...playerData.gimmicks.prob1_1,
             answer: answer,
-            isClear: answer == "HELLO"
+          },
+          prob1_2: {
+            ...playerData.gimmicks.prob1_2,
           }
         }
       }
       )
-      if(answer == "HELLO"){
-      // 初クリアかどうか
-      if(playerData.gimmicks.prob1_1.isClear == false){
-        setIsClear(true)
-      }
+      if(playerData.gimmicks.prob1_1.isFirstClear == false && answer == "HELLO"){
       setPlayerData(
         {
-          movableRoomList: [...playerData.movableRoomList, "socialroom", "cafeteria"],
-          entrance: {
-            ...playerData.entrance,
+          movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
+          gimmicks: {
+            prob1_1: {
+              ...playerData.gimmicks.prob1_1,
+              isFirstClear: true,
+            },
+            prob1_2: {
+              ...playerData.gimmicks.prob1_2,
+            }
           }
         }
       )
@@ -36,11 +39,8 @@ const Prob1_1Answer = () => {
   }
 
   return (
-
     <div>
-      {isClear &&
-        <div className="text-red-500">クリア</div>
-      }
+      {/* 回答欄 */}
       <input type="text"
         value={answer}
         placeholder="回答欄"

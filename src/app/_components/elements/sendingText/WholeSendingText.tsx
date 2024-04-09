@@ -2,7 +2,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePlayerDataStore } from "~/store/playerDataStore";
-import PartSendingText from "./PartSendingText";
+import PartSendingText from "./partSendingText";
 
 const WholeSendingTexts = () => {
     // テキスト
@@ -61,9 +61,9 @@ const WholeSendingTexts = () => {
 
   return (
     <div>
-      {/* Entrance */}
       {0 <= eventIndex &&
         <div>
+          {/* Entrance */}
           {playerData.currentRoom === "entrance" && eventIndex < Object.keys(entranceTextList)?.length && (
             <div>
               <div className="absolute bottom-[50px] left-0 w-full">

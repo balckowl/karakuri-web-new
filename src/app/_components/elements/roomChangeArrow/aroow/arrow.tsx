@@ -5,20 +5,20 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
   // dbに書き換える 
-  const { playerData }= usePlayerDataStore();
+  const { playerData } = usePlayerDataStore();
 
   const currentRoom = playerData.currentRoom
   const movableRoomList = playerData.movableRoomList
 
   return (
     <motion.div
-    animate={playerData[currentRoom].event0Finished ? { opacity: [0, 1] } : { opacity: 0 }}
-    transition={playerData[currentRoom].event0Finished ? { duration: 0.5, delay: 0.3 } : { duration: 0 }}
-      className={`${movableRoomList.includes(hrefProps)==false && "cursor-not-allowed"}`}
+      animate={playerData[currentRoom].event0Finished ? { opacity: [0, 1] } : { opacity: 0 }}
+      transition={playerData[currentRoom].event0Finished ? { duration: 0.5, delay: 0.3 } : { duration: 0 }}
+      className={`${movableRoomList.includes(hrefProps) == false && "cursor-not-allowed"} relative z-[500]`}
     >
-      <Link 
+      <Link
         href={`/floor${floor}/${hrefProps}`}
-        className={`${movableRoomList.includes(hrefProps)==false && "pointer-events-none"}`}
+        className={`${movableRoomList.includes(hrefProps) == false && "pointer-events-none"}`}
       >
         <motion.div
           whileHover={{ y: [0, -5, 0] }}

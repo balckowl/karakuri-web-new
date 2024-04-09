@@ -15,14 +15,24 @@ type PlayerData = {
     event0Finished: boolean;
   };
   bathroom: {
+    event0Finished: boolean;
+  };
+  cafeteria: {
+    event0Finished: boolean;
+  };
+  kitchen: {
     eventIndex: number;
     event0Finished: boolean;
   };
   gimmicks: {
     prob1_1: {
-      isFitScrollbar: boolean
+      isFitScrollbar: boolean;
       answer: string;
-      isClear: boolean;
+      isFirstClear: boolean;
+    },
+    prob1_2: {
+      answer: string;
+      isFirstClear: boolean;
     },
   }
   [key: string]: any
@@ -46,6 +56,12 @@ const defaultPlayerData: PlayerData = {
     event0Finished: false,
   },
   bathroom: {
+    event0Finished: true,
+  },
+  cafeteria: {
+    event0Finished: true,
+  },
+  kitchen: {
     eventIndex: 0,
     event0Finished: true,
   },
@@ -53,7 +69,11 @@ const defaultPlayerData: PlayerData = {
     prob1_1: {
       isFitScrollbar: false,
       answer: "",
-      isClear: false,
+      isFirstClear: false,
+    },
+    prob1_2: {
+      answer: "",
+      isFirstClear: false,
     },
   }
 };

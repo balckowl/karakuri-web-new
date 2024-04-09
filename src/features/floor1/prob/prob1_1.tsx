@@ -26,7 +26,7 @@ const Prob1_1 = () => {
   return (
     <div className="flex h-full items-center justify-center">
       <div className="flex h-full flex-col items-center justify-center gap-10">
-        <div className="relative mx-auto flex max-w-[490px] flex-col h-max">
+        <div className="relative mx-auto flex h-max max-w-[490px] flex-col">
           {/* hello */}
           <div className="flex h-[150px] select-none items-end outline outline-2 outline-black">
             <Image

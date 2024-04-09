@@ -6,13 +6,14 @@ import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import Belongings from "~/app/_components/elements/belongings/belongings"
 import { usePlayerDataStore } from "~/store/playerDataStore"
 import { useEffect } from "react"
-import WholeSendingText from "~/app/_components/elements/sendingText/wholeSendingText"
+
 import ProbClearAlert from "~/app/_components/elements/probClearAlert/probClearAlert"
-import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/downArrow"
+import EntranceSendingText from "~/features/floor1/sendingText/entranceSendingText"
+
 
 const Entrance = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  // 現在位置の更新 && isFirstClearをfalseにする
+  // 現在位置の更新
   useEffect(() =>{
     setPlayerData(
       { 
@@ -28,16 +29,15 @@ const Entrance = () => {
         }
       }
     )
-  },[setPlayerData])
+  },[])
 
   return (
     <div>
-      <WholeSendingText />
+      <EntranceSendingText />
 
       <UpArrow floor={1} hrefProps={"socialroom"}  />
       <RightArrow floor={1} hrefProps={"cafeteria"} />
       <LeftArrow floor={1} hrefProps={"bathroom"} />
-      <DownArrow floor={1} hrefProps={"bathroom"} />
 
       <ProbBase currentRoom={"entrance"}/>
 

@@ -31,6 +31,7 @@ type PlayerData = {
       isFirstClear: boolean;
     },
     prob1_2: {
+      isClickRock: boolean;
       answer: string;
       isFirstClear: boolean;
     },
@@ -72,6 +73,7 @@ const defaultPlayerData: PlayerData = {
       isFirstClear: false,
     },
     prob1_2: {
+      isClickRock: false,
       answer: "",
       isFirstClear: false,
     },

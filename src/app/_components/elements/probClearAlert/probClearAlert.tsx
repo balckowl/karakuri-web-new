@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProbClearAlert = () => {
   // テキスト
@@ -27,7 +27,7 @@ const ProbClearAlert = () => {
           className="absolute bottom-[50px] left-0 w-full"
         >
           <div className="relative z-[1000] mx-auto h-[200px] w-4/5 text-xl text-white">
-            <div className="flex absolute p-[16px] z-[1100]">
+            <div className="absolute z-[1100] flex p-[16px]">
               {probClearText.split("").map((word: string, index: number) => (
                 <motion.div
                   animate={{ opacity: [0, 1] }}

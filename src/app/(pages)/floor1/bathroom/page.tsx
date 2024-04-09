@@ -10,7 +10,7 @@ const Bathroom = () => {
   // 現在位置の更新
   useEffect(() => {
     setPlayerData({ currentRoom: "bathroom" })
-  }, [setPlayerData])
+  }, [])
 
   return (
     <div>

@@ -2,26 +2,25 @@
 import { useState, useEffect, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePlayerDataStore } from "~/store/playerDataStore";
-import PartSendingText from "./partSendingText";
+import PartSendingText from "../../../app/_components/elements/sendingText/partSendingText";
 
-const WholeSendingTexts = () => {
-    // テキスト
-    const entranceTextList = useMemo(() => {
-      return {
-        0: [
-          ["you", "こ、ここは..."],
-          ["k-15", "..."],
-          ["you", "だ、だれ...?"],
-          ["k-15", "私はk-15、あなたの脱出をサポートします"],
-          ["you", "よろしく"],
-        ],
-        1: [
-          ["k-15", "先ほど手に入れたアイテムを使うのでしょうか..."],
-          ["you", "やってみる"],
-        ],
-      };
-    }, []);
-
+const EntranceSendingText = () => {
+  // テキスト
+  const entranceTextList = useMemo(() => {
+    return {
+      0: [
+        ["you", "こ、ここは..."],
+        ["k-15", "..."],
+        ["you", "だ、だれ...?"],
+        ["k-15", "私はk-15、あなたの脱出をサポートします"],
+        ["you", "よろしく"],
+      ],
+      1: [
+        ["k-15", "先ほど手に入れたアイテムを使うのでしょうか..."],
+        ["you", "やってみる"],
+      ],
+    };
+  }, []);
 
   // dbに書き換える 
   const { playerData, setPlayerData } = usePlayerDataStore();
@@ -44,10 +43,8 @@ const WholeSendingTexts = () => {
     };
   }, []);
 
-  
-  const eventIndex = playerData.entrance.eventIndex;
-  
 
+  const eventIndex = playerData.entrance.eventIndex;
   // textIndex が変更されたらレンダリングのトリガーを更新
   useEffect(() => {
     if (0 <= eventIndex) {
@@ -57,14 +54,14 @@ const WholeSendingTexts = () => {
         setTextIndex(0);
       }
     }
-  },  [textIndex, entranceTextList, eventIndex, setPlayerData]);
+  }, [textIndex, entranceTextList, eventIndex, setPlayerData]);
 
   return (
     <div>
       {0 <= eventIndex &&
         <div>
           {/* Entrance */}
-          {playerData.currentRoom === "entrance" && eventIndex < Object.keys(entranceTextList)?.length && (
+          {eventIndex < Object.keys(entranceTextList)?.length && (
             <div>
               <div className="absolute bottom-[50px] left-0 w-full">
                 {entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] &&
@@ -110,4 +107,4 @@ const WholeSendingTexts = () => {
   );
 };
 
-export default WholeSendingTexts;
+export default EntranceSendingText;

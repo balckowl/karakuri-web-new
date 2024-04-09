@@ -18,7 +18,7 @@ const PartSendingText = ({ textList, textIndex }: { textList: string[] | undefin
               {textList[1].split("").map((word: string, index: number) => (
                 <motion.div
                   animate={{ opacity: [0, 1] }}
-                  transition={textIndex !== 0 ? { duration: 0.2, delay: 1 + index * 0.05 } : { duration: 0.5, delay: 1.5 + index * 0.05 }}
+                  transition={textIndex !== 0 ? { duration: 0.2, delay: 0.5 + index * 0.05 } : { duration: 0.5, delay: 1.5 + index * 0.05 }}
                   key={index}
                 >
                   {word}

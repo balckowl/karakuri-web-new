@@ -22,12 +22,12 @@ const ScrollBar = () => {
   }
 
   return (
-    <div className="h-full w-full flex items-center justify-center">
+    <div className="flex size-full items-center justify-center">
       {isGetItem &&
         <GetItemPopup>
           <p className="mb-2 text-center">アイテムを入手しました</p>
-          <div className="w-[300px] h-[200px] flex flex-col items-center justify-center">
-            <Image src={"/images/floor1/item/scroll.png"} width={200} height={100} alt="scroll" className="object-fit h-[30px] mb-2"></Image>
+          <div className="flex h-[200px] w-[300px] flex-col items-center justify-center">
+            <Image src={"/images/floor1/item/scroll.png"} width={200} height={100} alt="scroll" className="mb-2 h-[30px]"></Image>
             <p>スクロールバー</p>
           </div>
         </GetItemPopup>
@@ -35,7 +35,7 @@ const ScrollBar = () => {
 
       <div onClick={getScrollBar} className="cursor-pointer">
         {playerData.isGetItems.scrollBar == false &&
-          <Image src={"/images/floor1/item/scroll.png"} width={200} height={100} alt="scroll" className="object-fit h-[30px] mb-2"></Image>
+          <Image src={"/images/floor1/item/scroll.png"} width={200} height={100} alt="scroll" className="mb-2 h-[30px]"></Image>
         }
       </div>
     </div>

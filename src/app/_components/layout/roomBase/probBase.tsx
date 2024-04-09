@@ -26,7 +26,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
               </motion.div>
             </div>
           }
-          <Image src="/images/floor1/rooms/entrance.webp" alt="entrance" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover" width="2000" height="2000" />
+          <Image src="/images/floor1/rooms/entrance.webp" alt="entrance" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
         : currentRoom === "kitchen" ?
         <div>
@@ -43,7 +43,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
               </motion.div>
             </div>
           }
-          <Image src="/images/floor1/rooms/kitchen.webp" alt="kitchen" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover" width="2000" height="2000" />
+          <Image src="/images/floor1/rooms/kitchen.webp" alt="kitchen" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
 
         </div>
         :

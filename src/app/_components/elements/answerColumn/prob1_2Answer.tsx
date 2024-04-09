@@ -2,36 +2,36 @@
 import { useState } from "react";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
-const Prob1_1Answer = () => {
+const Prob1_2Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const [answer, setAnswer] = useState<string>(playerData.gimmicks.prob1_1.answer)
+  const [answer, setAnswer] = useState<string>(playerData.gimmicks.prob1_2.answer)
 
   const sendAnswer = () => {
     setPlayerData(
       {
-        movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
+        movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
         gimmicks: {
           prob1_1: {
             ...playerData.gimmicks.prob1_1,
-            answer: answer
           },
           prob1_2: {
             ...playerData.gimmicks.prob1_2,
+            answer: answer
           }
         }
       }
     )
-    if (playerData.gimmicks.prob1_1.isFirstClear == false && answer == "HELLO") {
+    if (playerData.gimmicks.prob1_2.isFirstClear == false && answer == "PART") {
       setPlayerData(
         {
-          movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
+          movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
           gimmicks: {
             prob1_1: {
               ...playerData.gimmicks.prob1_1,
-              isFirstClear: true,
             },
             prob1_2: {
               ...playerData.gimmicks.prob1_2,
+              isFirstClear: true,
             }
           }
         }
@@ -57,4 +57,4 @@ const Prob1_1Answer = () => {
   )
 }
 
-export default Prob1_1Answer
+export default Prob1_2Answer

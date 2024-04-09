@@ -14,7 +14,6 @@ const Bathroom = () => {
 
   return (
     <div>
-
       <RightArrow floor={1} hrefProps={"entrance"} />
 
       <ItemBase currentRoom={"bathroom"} />

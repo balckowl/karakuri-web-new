@@ -9,13 +9,19 @@ const IntroAnimation = ({ isPullString, setIsPullString }: { isPullString: boole
 
   // isPullStringがtrueになったとき、clipPathRadiusを徐々に大きくする
   useEffect(() => {
+    let timeout: NodeJS.Timeout | undefined;
     if (isPullString) {
-      const interval = setInterval(() => {
-        setClipPathRadius(prevRadius => prevRadius + 4);
-      }, 10); // 10msごとに増加
-      return () => clearInterval(interval);
+      timeout = setTimeout(() => {
+        const interval = setInterval(() => {
+          setClipPathRadius(prevRadius => prevRadius + 4);
+        }, 10); // 10msごとに増加
+        return () => clearInterval(interval);
+      }, 100); // 100ms待つ
     }
+  
+    return () => clearTimeout(timeout);
   }, [isPullString]);
+  
 
   return (
     <div className="absolute left-0 top-0 size-full overflow-hidden bg-black">
@@ -42,7 +48,7 @@ const IntroAnimation = ({ isPullString, setIsPullString }: { isPullString: boole
           からくり館へ、ようこそ
         </motion.p>
       </div>
-      {/* string */}
+      {/* ひも */}
       <motion.div
         animate={isPullString ? { y: [-100, -80, -200] } : { y: [-200, -100] }}
         transition={isPullString ? { duration: 0.4, times: [0, 0.3, 1] } : { duration: 1, delay: 1, type: 'spring' }}

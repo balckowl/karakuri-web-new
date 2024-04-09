@@ -1,25 +1,43 @@
+"use client"
+import Image from "next/image";
+import { useState } from "react";
+import GetItemPopup from "~/app/_components/elements/getItemPopUp/getItemPopUp";
 import { usePlayerDataStore } from "~/store/playerDataStore";
-
 
 const ScrollBar = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const preBelongings: string[] = playerData.belongingList 
+  const preBelongings: string[] = playerData.belongingList;
+  const [isGetItem, setIsGetItem] = useState<boolean>(false);
 
   const getScrollBar = () => {
-    console.log("a")
+    setIsGetItem(true);
     // アイテムを取った判定 & 持ち物の追加 & エントランスの会話フラグ
     setPlayerData(
       {
-        isGetItems: {scrollBar: true},
-        belongingList: [...preBelongings,"scrollBar"],
-        entrance: {eventIndex: 1, event0Finished: true} 
+        isGetItems: { scrollBar: true },
+        belongingList: [...preBelongings, "scrollBar"],
+        entrance: { eventIndex: 1, event0Finished: true }
       }
     )
   }
 
   return (
-    <div onClick={getScrollBar} className="cursor-pointer">
-      {playerData.isGetItems.scrollBar == false && <div>ScrollBar</div>}
+    <div className="h-full w-full flex items-center justify-center">
+      {isGetItem &&
+        <GetItemPopup>
+          <p className="mb-2 text-center">アイテムを入手しました</p>
+          <div className="w-[300px] h-[200px] flex flex-col items-center justify-center">
+            <Image src={"/images/floor1/item/scroll.png"} width={200} height={100} alt="scroll" className="object-fit h-[30px] mb-2"></Image>
+            <p>スクロールバー</p>
+          </div>
+        </GetItemPopup>
+      }
+
+      <div onClick={getScrollBar} className="cursor-pointer">
+        {playerData.isGetItems.scrollBar == false &&
+          <Image src={"/images/floor1/item/scroll.png"} width={200} height={100} alt="scroll" className="object-fit h-[30px] mb-2"></Image>
+        }
+      </div>
     </div>
   )
 }

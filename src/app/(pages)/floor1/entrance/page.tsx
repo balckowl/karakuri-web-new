@@ -6,26 +6,45 @@ import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import Belongings from "~/app/_components/elements/belongings/belongings"
 import { usePlayerDataStore } from "~/store/playerDataStore"
 import { useEffect } from "react"
-import WholeSendingTexts from "~/app/_components/elements/sendingText/WholeSendingText"
+import WholeSendingText from "~/app/_components/elements/sendingText/wholeSendingText"
+import ProbClearAlert from "~/app/_components/elements/probClearAlert/probClearAlert"
+import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/downArrow"
 
 const Entrance = () => {
-  const { setPlayerData } = usePlayerDataStore();
-  // 現在位置の更新
+  const { playerData, setPlayerData } = usePlayerDataStore();
+  // 現在位置の更新 && isFirstClearをfalseにする
   useEffect(() =>{
-    setPlayerData({ currentRoom: "entrance" })
+    setPlayerData(
+      { 
+        currentRoom: "entrance" ,
+        gimmicks: {
+          prob1_1: {
+            ...playerData.gimmicks.prob1_1,
+            isFirstClear: false,
+          },
+          prob1_2: {
+            ...playerData.gimmicks.prob1_2,
+          }
+        }
+      }
+    )
   },[setPlayerData])
 
   return (
     <div>
-      <WholeSendingTexts />
+      <WholeSendingText />
 
       <UpArrow floor={1} hrefProps={"socialroom"}  />
-      <LeftArrow floor={1} hrefProps={"bathroom"} />
       <RightArrow floor={1} hrefProps={"cafeteria"} />
+      <LeftArrow floor={1} hrefProps={"bathroom"} />
+      <DownArrow floor={1} hrefProps={"bathroom"} />
 
       <ProbBase currentRoom={"entrance"}/>
 
       <Belongings />
+      { playerData.gimmicks.prob1_1.isFirstClear &&
+        <ProbClearAlert />
+      }
     </div>
   )
 }

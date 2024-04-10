@@ -19,12 +19,17 @@ const Entrance = () => {
       { 
         currentRoom: "entrance" ,
         gimmicks: {
-          prob1_1: {
-            ...playerData.gimmicks.prob1_1,
-            isFirstClear: false,
-          },
-          prob1_2: {
-            ...playerData.gimmicks.prob1_2,
+          floor1: {
+            prob1_1: {
+              ...playerData.gimmicks.floor1.prob1_1,
+              isFirstClear: false,
+            },
+            prob1_2: {
+              ...playerData.gimmicks.floor1.prob1_2,
+            },
+            prob1_3: {
+              ...playerData.gimmicks.floor1.prob1_3,
+            },
           }
         }
       }
@@ -42,7 +47,7 @@ const Entrance = () => {
       <ProbBase currentRoom={"entrance"}/>
 
       <Belongings />
-      { playerData.gimmicks.prob1_1.isFirstClear &&
+      { playerData.gimmicks.floor1.prob1_1.isFirstClear &&
         <ProbClearAlert />
       }
     </div>

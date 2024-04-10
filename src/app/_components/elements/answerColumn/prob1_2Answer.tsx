@@ -4,7 +4,7 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Prob1_2Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const [answer, setAnswer] = useState<string>(playerData.gimmicks.prob1_2.answer)
+  const [answer, setAnswer] = useState<string>(playerData.gimmicks.floor1.prob1_2.answer)
 
   const sendAnswer = (e:FormEvent) => {
     e.preventDefault();
@@ -12,35 +12,39 @@ const Prob1_2Answer = () => {
       {
         movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
         gimmicks: {
-          prob1_1: {
-            ...playerData.gimmicks.prob1_1,
-          },
-          prob1_2: {
-            ...playerData.gimmicks.prob1_2,
-            answer: answer,
-          },
-          prob1_3: {
-            ...playerData.gimmicks.prob1_3,
+          floor1: {
+            prob1_1: {
+              ...playerData.gimmicks.floor1.prob1_1,
+            },
+            prob1_2: {
+              ...playerData.gimmicks.floor1.prob1_2,
+              answer: answer,
+            },
+            prob1_3: {
+              ...playerData.gimmicks.floor1.prob1_3,
+            }
           }
         }
       }
     )
-    if (playerData.gimmicks.prob1_2.isFirstClear == false && answer == "RICE") {
+    if (playerData.gimmicks.floor1.prob1_2.isFirstClear == false && answer == "RICE") {
       setPlayerData(
         {
           movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
           progress: 2,
           gimmicks: {
-            prob1_1: {
-              ...playerData.gimmicks.prob1_1,
-            },
-            prob1_2: {
-              ...playerData.gimmicks.prob1_2,
-              isFirstClear: true,
-              isClear: true,
-            },
-            prob1_3: {
-              ...playerData.gimmicks.prob1_3,
+            floor1: {
+              prob1_1: {
+                ...playerData.gimmicks.floor1.prob1_1,
+              },
+              prob1_2: {
+                ...playerData.gimmicks.floor1.prob1_2,
+                isFirstClear: true,
+                isClear: true,
+              },
+              prob1_3: {
+                ...playerData.gimmicks.floor1.prob1_3,
+              }
             }
           }
         }
@@ -50,7 +54,7 @@ const Prob1_2Answer = () => {
 
   return (
     <div>
-      {playerData.gimmicks.prob1_2.isClear ? (
+      {playerData.gimmicks.floor1.prob1_2.isClear ? (
         <div
           className="flex gap-2 border-b-2 border-[#ff5160] text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-[#ff7d88]"
         >

@@ -10,12 +10,17 @@ const Prob1_2 = () => {
     setPlayerData(
       {
         gimmicks: {
-          prob1_1: {
-            ...playerData.gimmicks.prob1_1,
-          },
-          prob1_2: {
-            ...playerData.gimmicks.prob1_2,
-            isClickRock: true
+          floor1: {
+            prob1_1: {
+              ...playerData.gimmicks.floor1.prob1_1,
+            },
+            prob1_2: {
+              ...playerData.gimmicks.floor1.prob1_2,
+              isClickRock: true
+            },
+            prob1_3: {
+              ...playerData.gimmicks.floor1.prob1_3,
+            }
           }
         }
       }
@@ -27,19 +32,17 @@ const Prob1_2 = () => {
     <div className="size-full">
       <div className="flex size-full items-center justify-center">
         <div className="relative flex size-max gap-10">
-          {["P","A","R","T"].map((char, index) => (
+          {["R","I","C","E"].map((char, index) => (
           <div className="relative flex h-[140px] w-[100px] items-center justify-center" key={index}>
             <Image
               src="/images/floor1/prob/prob1_2/rock.png" alt="bathroom" width="2000" height="2000"
               className="absolute cursor-pointer"
               onClick={ClickRock}
             />
-            <p className="hidden">Look at the contents of the div below.</p>
+            <p className="hidden">Look at the contents of the  &lt;div&gt; below.</p>
             <div>
               <div>
-                <div>
-                  <p>{char}</p>
-                </div>
+                <p>{char}</p>
               </div>
             </div>
           </div>

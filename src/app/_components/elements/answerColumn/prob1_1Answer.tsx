@@ -4,7 +4,7 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Prob1_1Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const [answer, setAnswer] = useState<string>(playerData.gimmicks.prob1_1.answer)
+  const [answer, setAnswer] = useState<string>(playerData.gimmicks.floor1.prob1_1.answer)
 
   const sendAnswer = (e: FormEvent) => {
     e.preventDefault();
@@ -12,29 +12,39 @@ const Prob1_1Answer = () => {
       {
         movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
         gimmicks: {
-          prob1_1: {
-            ...playerData.gimmicks.prob1_1,
-            answer: answer
-          },
-          prob1_2: {
-            ...playerData.gimmicks.prob1_2,
+          floor1: {
+            prob1_1: {
+              ...playerData.gimmicks.floor1.prob1_1,
+              answer: answer
+            },
+            prob1_2: {
+              ...playerData.gimmicks.floor1.prob1_2,
+            },
+            prob1_3: {
+              ...playerData.gimmicks.floor1.prob1_3,
+            },
           }
         }
       }
     )
-    if (playerData.gimmicks.prob1_1.isFirstClear == false && answer == "HELLO") {
+    if (playerData.gimmicks.floor1.prob1_1.isFirstClear == false && answer == "HELLO") {
       setPlayerData(
         {
           movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
           progress: 1,
           gimmicks: {
-            prob1_1: {
-              ...playerData.gimmicks.prob1_1,
-              isFirstClear: true,
-              isClear: true,
-            },
-            prob1_2: {
-              ...playerData.gimmicks.prob1_2,
+            floor1 : {
+              prob1_1: {
+                ...playerData.gimmicks.floor1.prob1_1,
+                isFirstClear: true,
+                isClear: true,
+              },
+              prob1_2: {
+                ...playerData.gimmicks.floor1.prob1_2,
+              },
+              prob1_3: {
+                ...playerData.gimmicks.floor1.prob1_3,
+              },
             }
           }
         }
@@ -44,7 +54,7 @@ const Prob1_1Answer = () => {
 
   return (
     <div>
-      {playerData.gimmicks.prob1_1.isClear ? (
+      {playerData.gimmicks.floor1.prob1_1.isClear ? (
         <div
           className="flex gap-2 border-b-2 border-[#ff5160] text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-[#ff7d88]"
         >

@@ -11,6 +11,7 @@ type PlayerData = {
   isGetItems: {
     scrollBar: boolean;
   };
+
   entrance: {
     eventIndex: number;
     event0Finished: boolean;
@@ -31,24 +32,27 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
+
   gimmicks: {
-    prob1_1: {
-      isFitScrollbar: boolean;
-      answer: string;
-      isFirstClear: boolean;
-      isClear: boolean;
-    },
-    prob1_2: {
-      isClickRock: boolean;
-      answer: string;
-      isFirstClear: boolean;
-      isClear: boolean;
-    },
-    prob1_3: {
-      isLighting: boolean;
-      answer: string;
-      isFirstClear: boolean;
-      isClear: boolean;
+    floor1: {
+      prob1_1: {
+        isFitScrollbar: boolean;
+        answer: string;
+        isFirstClear: boolean;
+        isClear: boolean;
+      },
+      prob1_2: {
+        isClickRock: boolean;
+        answer: string;
+        isFirstClear: boolean;
+        isClear: boolean;
+      },
+      prob1_3: {
+        isLighting: boolean;
+        answer: string;
+        isFirstClear: boolean;
+        isClear: boolean;
+      },
     },
   }
   [key: string]: any
@@ -68,6 +72,7 @@ const defaultPlayerData: PlayerData = {
   isGetItems: {
     scrollBar: false,
   },
+
   entrance: {
     eventIndex: 0,
     event0Finished: false,
@@ -88,26 +93,29 @@ const defaultPlayerData: PlayerData = {
     eventIndex: 0,
     event0Finished: true,
   },
+
   gimmicks: {
-    prob1_1: {
-      isFitScrollbar: false,
-      answer: "",
-      isFirstClear: false,
-      isClear: false,
+    floor1 : {
+      prob1_1: {
+        isFitScrollbar: false,
+        answer: "",
+        isFirstClear: false,
+        isClear: false,
+      },
+      prob1_2: {
+        isClickRock: false,
+        answer: "",
+        isFirstClear: false,
+        isClear: false,
+      },
+      prob1_3: {
+        isLighting: false,
+        answer: "",
+        isFirstClear: false,
+        isClear: false,
+      },
     },
-    prob1_2: {
-      isClickRock: false,
-      answer: "",
-      isFirstClear: false,
-      isClear: false,
-    },
-    prob1_3: {
-      isLighting: false,
-      answer: "",
-      isFirstClear: false,
-      isClear: false,
-    },
-  }
+  },
 };
 
 export const usePlayerDataStore = create<PlayerDataStoreType>()(

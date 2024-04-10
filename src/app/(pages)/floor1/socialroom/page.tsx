@@ -16,15 +16,17 @@ const Socialroom = () => {
       {
         currentRoom: "kitchen",
         gimmicks: {
-          prob1_1: {
-            ...playerData.gimmicks.prob1_1,
-          },
-          prob1_2: {
-            ...playerData.gimmicks.prob1_2,
-            isFirstClear: false,
-          },
-          prob1_3: {
-            ...playerData.gimmicks.prob1_3,
+          floor1: {
+            prob1_1: {
+              ...playerData.gimmicks.floor1.prob1_1,
+            },
+            prob1_2: {
+              ...playerData.gimmicks.floor1.prob1_2,
+              isFirstClear: false,
+            },
+            prob1_3: {
+              ...playerData.gimmicks.floor1.prob1_3,
+            }
           }
         }
       }
@@ -33,7 +35,7 @@ const Socialroom = () => {
 
   return (
     <div>
-      {playerData.gimmicks.prob1_2.isClickRock &&
+      {playerData.gimmicks.floor1.prob1_2.isClickRock &&
         <div>
           <SocialSendingText />
         </div>
@@ -45,7 +47,7 @@ const Socialroom = () => {
       <ProbBase currentRoom={"socialroom"} />
   
       <Belongings />
-      {playerData.gimmicks.prob1_3.isFirstClear &&
+      {playerData.gimmicks.floor1.prob1_3.isFirstClear &&
         <ProbClearAlert />
       }
     </div>

@@ -4,48 +4,26 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Prob1_1Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const [answer, setAnswer] = useState<string>(playerData.gimmicks.floor1.prob1_1.answer)
+  const [answer, setAnswer] = useState<string>(playerData.entrance.answer)
 
   const sendAnswer = (e: FormEvent) => {
     e.preventDefault();
     setPlayerData(
       {
-        movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
-        gimmicks: {
-          floor1: {
-            prob1_1: {
-              ...playerData.gimmicks.floor1.prob1_1,
-              answer: answer
-            },
-            prob1_2: {
-              ...playerData.gimmicks.floor1.prob1_2,
-            },
-            prob1_3: {
-              ...playerData.gimmicks.floor1.prob1_3,
-            },
-          }
+        entrance: {
+          ...playerData.entrance,
+          answer: answer
         }
       }
     )
-    if (playerData.gimmicks.floor1.prob1_1.isFirstClear == false && answer == "HELLO") {
+    if (playerData.entrance.isFirstClear == false && answer == "HELLO") {
       setPlayerData(
         {
           movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
-          progress: 1,
-          gimmicks: {
-            floor1 : {
-              prob1_1: {
-                ...playerData.gimmicks.floor1.prob1_1,
-                isFirstClear: true,
-                isClear: true,
-              },
-              prob1_2: {
-                ...playerData.gimmicks.floor1.prob1_2,
-              },
-              prob1_3: {
-                ...playerData.gimmicks.floor1.prob1_3,
-              },
-            }
+          entrance: {
+            ...playerData.entrance,
+            isFirstClear: true,
+            isClear: true,
           }
         }
       )
@@ -54,7 +32,7 @@ const Prob1_1Answer = () => {
 
   return (
     <div>
-      {playerData.gimmicks.floor1.prob1_1.isClear ? (
+      {playerData.entrance.isClear ? (
         <div
           className="flex gap-2 border-b-2 border-[#ff5160] text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-[#ff7d88]"
         >

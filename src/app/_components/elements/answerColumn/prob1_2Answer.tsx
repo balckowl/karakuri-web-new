@@ -4,48 +4,28 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Prob1_2Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const [answer, setAnswer] = useState<string>(playerData.gimmicks.floor1.prob1_2.answer)
+  const [answer, setAnswer] = useState<string>(playerData.kitchen.answer)
 
   const sendAnswer = (e:FormEvent) => {
     e.preventDefault();
     setPlayerData(
       {
         movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
-        gimmicks: {
-          floor1: {
-            prob1_1: {
-              ...playerData.gimmicks.floor1.prob1_1,
-            },
-            prob1_2: {
-              ...playerData.gimmicks.floor1.prob1_2,
-              answer: answer,
-            },
-            prob1_3: {
-              ...playerData.gimmicks.floor1.prob1_3,
-            }
-          }
+        kitchen: {
+          ...playerData.kitchen,
+          answer: answer,
         }
       }
     )
-    if (playerData.gimmicks.floor1.prob1_2.isFirstClear == false && answer == "RICE") {
+    if (playerData.kitchen.isFirstClear == false && answer == "RICE") {
       setPlayerData(
         {
           movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
           progress: 2,
-          gimmicks: {
-            floor1: {
-              prob1_1: {
-                ...playerData.gimmicks.floor1.prob1_1,
-              },
-              prob1_2: {
-                ...playerData.gimmicks.floor1.prob1_2,
-                isFirstClear: true,
-                isClear: true,
-              },
-              prob1_3: {
-                ...playerData.gimmicks.floor1.prob1_3,
-              }
-            }
+          kitchen: {
+            ...playerData.kitchen,
+            isFirstClear: true,
+            isClear: true,
           }
         }
       )
@@ -54,7 +34,7 @@ const Prob1_2Answer = () => {
 
   return (
     <div>
-      {playerData.gimmicks.floor1.prob1_2.isClear ? (
+      {playerData.kitchen.isClear ? (
         <div
           className="flex gap-2 border-b-2 border-[#ff5160] text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-[#ff7d88]"
         >

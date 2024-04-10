@@ -50,7 +50,16 @@ const EntranceSendingText = () => {
     if (0 <= eventIndex) {
       setRenderTrigger(prev => prev + 1);
       if (textIndex == entranceTextList[eventIndex as keyof typeof entranceTextList].length) {
-        setPlayerData({ entrance: { eventIndex: -1, event0Finished: true } });
+        setPlayerData(
+          { 
+            entrance: 
+            { 
+              ...playerData.entrance,
+              eventIndex: -1, 
+              event0Finished: true,
+            } 
+          }
+        );
         setTextIndex(0);
       }
     }

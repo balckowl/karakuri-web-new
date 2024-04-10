@@ -4,7 +4,7 @@ import { useState } from "react";
 import GetItemPopup from "~/app/_components/elements/getItemPopUp/getItemPopUp";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
-const ScrollBar = () => {
+const Item1_1 = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
   const preBelongings: string[] = playerData.belongingList;
   const [isGetItem, setIsGetItem] = useState<boolean>(false);
@@ -14,7 +14,10 @@ const ScrollBar = () => {
     // アイテムを取った判定 & 持ち物の追加 & エントランスの会話フラグ
     setPlayerData(
       {
-        isGetItems: { scrollBar: true },
+        isGetItems: {
+          scrollBar: true,
+          lightToggle: false,
+        },
         belongingList: [...preBelongings, "scrollBar"],
         entrance: { eventIndex: 1, event0Finished: true }
       }
@@ -42,4 +45,4 @@ const ScrollBar = () => {
   )
 }
 
-export default ScrollBar
+export default Item1_1

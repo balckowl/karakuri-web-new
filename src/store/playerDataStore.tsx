@@ -10,6 +10,7 @@ type PlayerData = {
   progress: number;
   isGetItems: {
     scrollBar: boolean;
+    lightToggle: boolean;
   };
 
   entrance: {
@@ -71,6 +72,7 @@ const defaultPlayerData: PlayerData = {
   progress: 0,
   isGetItems: {
     scrollBar: false,
+    lightToggle: false,
   },
 
   entrance: {

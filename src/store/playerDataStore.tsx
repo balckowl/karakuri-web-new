@@ -7,6 +7,7 @@ type PlayerData = {
   movableRoomList: string[];
   belonging: string;
   belongingList: string[];
+  progress: number;
   isGetItems: {
     scrollBar: boolean;
   };
@@ -15,12 +16,18 @@ type PlayerData = {
     event0Finished: boolean;
   };
   bathroom: {
+    eventIndex: number;
     event0Finished: boolean;
   };
   cafeteria: {
+    eventIndex: number;
     event0Finished: boolean;
   };
   kitchen: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  socialroom: {
     eventIndex: number;
     event0Finished: boolean;
   };
@@ -29,11 +36,19 @@ type PlayerData = {
       isFitScrollbar: boolean;
       answer: string;
       isFirstClear: boolean;
+      isClear: boolean;
     },
     prob1_2: {
       isClickRock: boolean;
       answer: string;
       isFirstClear: boolean;
+      isClear: boolean;
+    },
+    prob1_3: {
+      isLighting: boolean;
+      answer: string;
+      isFirstClear: boolean;
+      isClear: boolean;
     },
   }
   [key: string]: any
@@ -49,6 +64,7 @@ const defaultPlayerData: PlayerData = {
   movableRoomList: ["entrance", "bathroom"],
   belonging: "",
   belongingList: [],
+  progress: 0,
   isGetItems: {
     scrollBar: false,
   },
@@ -57,12 +73,18 @@ const defaultPlayerData: PlayerData = {
     event0Finished: false,
   },
   bathroom: {
+    eventIndex: 0,
     event0Finished: true,
   },
   cafeteria: {
+    eventIndex: 0,
     event0Finished: true,
   },
   kitchen: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  socialroom: {
     eventIndex: 0,
     event0Finished: true,
   },
@@ -71,11 +93,19 @@ const defaultPlayerData: PlayerData = {
       isFitScrollbar: false,
       answer: "",
       isFirstClear: false,
+      isClear: false,
     },
     prob1_2: {
       isClickRock: false,
       answer: "",
       isFirstClear: false,
+      isClear: false,
+    },
+    prob1_3: {
+      isLighting: false,
+      answer: "",
+      isFirstClear: false,
+      isClear: false,
     },
   }
 };

@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image"
-import { useState } from "react"
 import Prob1_2Answer from "~/app/_components/elements/answerColumn/prob1_2Answer";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
@@ -29,7 +28,7 @@ const Prob1_2 = () => {
       <div className="flex size-full items-center justify-center">
         <div className="relative flex size-max gap-10">
           {["P","A","R","T"].map((char, index) => (
-          <div className="relative flex h-[140px] w-[100px] items-center justify-center key={index}">
+          <div className="relative flex h-[140px] w-[100px] items-center justify-center" key={index}>
             <Image
               src="/images/floor1/prob/prob1_2/rock.png" alt="bathroom" width="2000" height="2000"
               className="absolute cursor-pointer"
@@ -49,9 +48,10 @@ const Prob1_2 = () => {
       </div>
       
       {/* 回答欄 */}
-      <div className="absolute bottom-0">
+      <div className="absolute bottom-10 right-10">
         <Prob1_2Answer />
       </div>
+
     </div>
   )
 }

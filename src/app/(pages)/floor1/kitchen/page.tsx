@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import Belongings from "~/app/_components/elements/belongings/belongings"
 import ProbClearAlert from "~/app/_components/elements/probClearAlert/probClearAlert"
 import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/downArrow";
-import WholeSendingText from "~/features/floor1/sendingText/entranceSendingText";
 import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import { usePlayerDataStore } from "~/store/playerDataStore";
 import KitchenSendingText from "~/features/floor1/sendingText/kitchenSendingText";
@@ -22,11 +21,14 @@ const Kitchen = () => {
           prob1_2: {
             ...playerData.gimmicks.prob1_2,
             isFirstClear: false,
-          }
+          },
+          prob1_3: {
+            ...playerData.gimmicks.prob1_3,
+          },
         }
       }
     )
-  }, [])
+  }, [setPlayerData])
 
   return (
     <div>

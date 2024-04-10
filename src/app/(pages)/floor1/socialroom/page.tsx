@@ -14,7 +14,7 @@ const Socialroom = () => {
   useEffect(() => {
     setPlayerData(
       {
-        currentRoom: "kitchen",
+        currentRoom: "socialroom",
         gimmicks: {
           floor1: {
             prob1_1: {

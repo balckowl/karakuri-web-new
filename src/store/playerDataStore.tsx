@@ -33,6 +33,10 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
+  storeroom: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
 
   gimmicks: {
     floor1: {
@@ -92,6 +96,10 @@ const defaultPlayerData: PlayerData = {
     event0Finished: true,
   },
   socialroom: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  storeroom: {
     eventIndex: 0,
     event0Finished: true,
   },

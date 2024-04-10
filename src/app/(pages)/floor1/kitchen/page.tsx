@@ -14,19 +14,9 @@ const Kitchen = () => {
     setPlayerData(
       {
         currentRoom: "kitchen",
-        gimmicks: {
-          floor1: {
-            prob1_1: {
-              ...playerData.gimmicks.floor1.prob1_1,
-            },
-            prob1_2: {
-              ...playerData.gimmicks.floor1.prob1_2,
-              isFirstClear: false,
-            },
-            prob1_3: {
-              ...playerData.gimmicks.floor1.prob1_3,
-            },
-          }
+        kitchen: {
+          ...playerData.kitchen,
+          isFirstClear: false
         }
       }
     )
@@ -34,7 +24,7 @@ const Kitchen = () => {
 
   return (
     <div>
-      {playerData.gimmicks.floor1.prob1_2.isClickRock &&
+      {playerData.kitchen.isClickRock &&
         <div>
           <KitchenSendingText />
         </div>
@@ -45,7 +35,7 @@ const Kitchen = () => {
       <ProbBase currentRoom={"kitchen"} />
 
       <Belongings />
-      {playerData.gimmicks.floor1.prob1_2.isFirstClear &&
+      {playerData.kitchen.isFirstClear &&
         <ProbClearAlert />
       }
     </div>

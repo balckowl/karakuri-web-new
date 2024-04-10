@@ -16,10 +16,13 @@ const Item1_1 = () => {
       {
         isGetItems: {
           scrollBar: true,
-          lightToggle: false,
         },
         belongingList: [...preBelongings, "scrollBar"],
-        entrance: { eventIndex: 1, event0Finished: true }
+        entrance: { 
+          ...playerData.entrance,
+          eventIndex: 1,
+          event0Finished: true
+        }
       }
     )
   }

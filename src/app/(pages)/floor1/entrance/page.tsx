@@ -14,40 +14,30 @@ import EntranceSendingText from "~/features/floor1/sendingText/entranceSendingTe
 const Entrance = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
   // 現在位置の更新
-  useEffect(() =>{
+  useEffect(() => {
     setPlayerData(
-      { 
-        currentRoom: "entrance" ,
-        gimmicks: {
-          floor1: {
-            prob1_1: {
-              ...playerData.gimmicks.floor1.prob1_1,
-              isFirstClear: false,
-            },
-            prob1_2: {
-              ...playerData.gimmicks.floor1.prob1_2,
-            },
-            prob1_3: {
-              ...playerData.gimmicks.floor1.prob1_3,
-            },
-          }
+      {
+        currentRoom: "entrance",
+        entrance: {
+          ...playerData.entrance,
+          isFirstClear: false,
         }
       }
     )
-  },[setPlayerData])
+  }, [setPlayerData])
 
   return (
     <div>
       <EntranceSendingText />
 
-      <UpArrow floor={1} hrefProps={"socialroom"}  />
+      <UpArrow floor={1} hrefProps={"socialroom"} />
       <RightArrow floor={1} hrefProps={"cafeteria"} />
       <LeftArrow floor={1} hrefProps={"bathroom"} />
 
-      <ProbBase currentRoom={"entrance"}/>
+      <ProbBase currentRoom={"entrance"} />
 
       <Belongings />
-      { playerData.gimmicks.floor1.prob1_1.isFirstClear &&
+      {playerData.entrance.isFirstClear &&
         <ProbClearAlert />
       }
     </div>

@@ -45,7 +45,16 @@ const KitchenSendingText = () => {
     if (0 <= eventIndex) {
       setRenderTrigger(prev => prev + 1);
       if (textIndex == kitchenTextList[eventIndex as keyof typeof kitchenTextList].length) {
-        setPlayerData({ kitchen: { eventIndex: -1, event0Finished: true } });
+        setPlayerData(
+          {
+            kitchen:
+            {
+              ...playerData.kitchen,
+              eventIndex: -1,
+              event0Finished: true
+            }
+          }
+        );
         setTextIndex(0);
       }
     }

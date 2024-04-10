@@ -2,7 +2,6 @@
 import Image from "next/image"
 import { motion } from "framer-motion";
 import Item1_1 from "~/features/floor1/item/item1_1";
-import Item1_2 from "~/features/floor1/item/item1_3";
 import Item1_3 from "~/features/floor1/item/item1_3";
 
 const ItemBase = ({ currentRoom }: { currentRoom: string }) => {

@@ -10,20 +10,10 @@ const Prob1_1 = () => {
       {
         belonging: "",
         belongingList: playerData.belongingList.filter(item => item !== "scrollBar"),
-        gimmicks: {
-          floor1: {
-            prob1_1: {
-              ...playerData.gimmicks.floor1.prob1_1,
-              isFitScrollbar: true
-            },
-            prob1_2: {
-              ...playerData.gimmicks.floor1.prob1_2,
-            },
-            prob1_3: {
-              ...playerData.gimmicks.floor1.prob1_3,
-            }
-          }
-        }
+        entrance: {
+          ...playerData.entrance,
+          isFitScrollbar: true
+        },
       }
     )
   }
@@ -44,7 +34,7 @@ const Prob1_1 = () => {
           </div>
           <div
             className={`h-[150px] select-none overflow-hidden outline outline-2  outline-black
-            ${playerData.gimmicks.floor1.prob1_1.isFitScrollbar && "overflow-x-scroll"}`}
+            ${playerData.entrance.isFitScrollbar && "overflow-x-scroll"}`}
           >
             <div className="flex w-[648px] justify-end">
               <div className="w-[490px] overflow-hidden">
@@ -59,7 +49,7 @@ const Prob1_1 = () => {
             </div>
           </div>
           {/* スクロールバーをはめ込むところ */}
-          {playerData.gimmicks.floor1.prob1_1.isFitScrollbar == false &&
+          {playerData.entrance.isFitScrollbar == false &&
             <div
               className="absolute bottom-0 h-[16px] w-full max-w-[490px] cursor-pointer outline outline-2 outline-black"
               onClick={playerData.belonging == "scrollBar" ? fitScrollBar : undefined}

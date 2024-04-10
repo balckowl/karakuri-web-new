@@ -9,15 +9,12 @@ const SocialroomSendingText = () => {
   const socialroomTextList = useMemo(() => {
     return {
       0: [
-        ["you", "こ、ここは..."],
-        ["k-15", "..."],
-        ["you", "だ、だれ...?"],
-        ["k-15", "私はk-15、あなたの脱出をサポートします"],
-        ["you", "よろしく"],
+        ["you", "暗い！"],
+        ["k-15", "うーむ、これじゃどこに何があるか分からないですね"],
+        ["you", "明るくしたいな"],
       ],
       1: [
-        ["k-15", "先ほど手に入れたアイテムを使うのでしょうか..."],
-        ["you", "やってみる"],
+        ["k-15", "明るくなりましたね。"],
       ],
     };
   }, []);
@@ -43,14 +40,22 @@ const SocialroomSendingText = () => {
     };
   }, []);
 
-
   const eventIndex = playerData.socialroom.eventIndex;
   // textIndex が変更されたらレンダリングのトリガーを更新
   useEffect(() => {
     if (0 <= eventIndex) {
       setRenderTrigger(prev => prev + 1);
       if (textIndex == socialroomTextList[eventIndex as keyof typeof socialroomTextList].length) {
-        setPlayerData({ socialroom: { eventIndex: -1, event0Finished: true } });
+        setPlayerData(
+          {
+            socialroom:
+            {
+              ...playerData.socialroom,
+              eventIndex: -1,
+              event0Finished: true
+            }
+          }
+        );
         setTextIndex(0);
       }
     }

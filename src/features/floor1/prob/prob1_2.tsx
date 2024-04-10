@@ -9,20 +9,10 @@ const Prob1_2 = () => {
   const ClickRock = () => {
     setPlayerData(
       {
-        gimmicks: {
-          floor1: {
-            prob1_1: {
-              ...playerData.gimmicks.floor1.prob1_1,
-            },
-            prob1_2: {
-              ...playerData.gimmicks.floor1.prob1_2,
-              isClickRock: true
-            },
-            prob1_3: {
-              ...playerData.gimmicks.floor1.prob1_3,
-            }
-          }
-        }
+        kitchen: {
+          ...playerData.kitchen,
+          isClickRock: true,
+        },
       }
     )
   }

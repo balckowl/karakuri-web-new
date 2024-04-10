@@ -10,10 +10,13 @@ type PlayerData = {
   progress: number;
   isGetItems: {
     scrollBar: boolean;
-    lightToggle: boolean;
   };
-
+  // prob1_1
   entrance: {
+    isFitScrollbar: boolean;
+    answer: string;
+    isFirstClear: boolean;
+    isClear: boolean;
     eventIndex: number;
     event0Finished: boolean;
   };
@@ -25,41 +28,28 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
+  // prob1_2
   kitchen: {
     eventIndex: number;
     event0Finished: boolean;
+    isClickRock: boolean;
+    answer: string;
+    isFirstClear: boolean;
+    isClear: boolean;
   };
+  // prob1_3
   socialroom: {
     eventIndex: number;
     event0Finished: boolean;
+    isLighting: boolean;
+    answer: string;
+    isFirstClear: boolean;
+    isClear: boolean;
   };
   storeroom: {
     eventIndex: number;
     event0Finished: boolean;
   };
-
-  gimmicks: {
-    floor1: {
-      prob1_1: {
-        isFitScrollbar: boolean;
-        answer: string;
-        isFirstClear: boolean;
-        isClear: boolean;
-      },
-      prob1_2: {
-        isClickRock: boolean;
-        answer: string;
-        isFirstClear: boolean;
-        isClear: boolean;
-      },
-      prob1_3: {
-        isLighting: boolean;
-        answer: string;
-        isFirstClear: boolean;
-        isClear: boolean;
-      },
-    },
-  }
   [key: string]: any
 };
 
@@ -76,12 +66,15 @@ const defaultPlayerData: PlayerData = {
   progress: 0,
   isGetItems: {
     scrollBar: false,
-    lightToggle: false,
   },
-
+  // prob1_1
   entrance: {
     eventIndex: 0,
     event0Finished: false,
+    isFitScrollbar: false,
+    answer: "",
+    isFirstClear: false,
+    isClear: false,
   },
   bathroom: {
     eventIndex: 0,
@@ -91,40 +84,27 @@ const defaultPlayerData: PlayerData = {
     eventIndex: 0,
     event0Finished: true,
   },
+  // prob1_2
   kitchen: {
     eventIndex: 0,
     event0Finished: true,
+    isClickRock: false,
+    answer: "",
+    isFirstClear: false,
+    isClear: false,
   },
+  // prob1_3
   socialroom: {
     eventIndex: 0,
-    event0Finished: true,
+    event0Finished: false,
+    isLighting: false,
+    answer: "",
+    isFirstClear: false,
+    isClear: false,
   },
   storeroom: {
     eventIndex: 0,
     event0Finished: true,
-  },
-
-  gimmicks: {
-    floor1 : {
-      prob1_1: {
-        isFitScrollbar: false,
-        answer: "",
-        isFirstClear: false,
-        isClear: false,
-      },
-      prob1_2: {
-        isClickRock: false,
-        answer: "",
-        isFirstClear: false,
-        isClear: false,
-      },
-      prob1_3: {
-        isLighting: false,
-        answer: "",
-        isFirstClear: false,
-        isClear: false,
-      },
-    },
   },
 };
 

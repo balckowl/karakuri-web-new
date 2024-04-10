@@ -11,7 +11,7 @@ const Cafeteria = () => {
   // 現在位置の更新
   useEffect(() => {
     setPlayerData({ currentRoom: "cafeteria" })
-  }, [])
+  }, [setPlayerData])
 
   return (
     <div>

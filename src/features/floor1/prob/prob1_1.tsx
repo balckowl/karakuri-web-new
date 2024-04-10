@@ -72,7 +72,7 @@ const Prob1_1 = () => {
       </div>
 
       {/* 回答欄 */}
-      <div className="absolute bottom-0">
+      <div className="absolute bottom-10 right-10">
         <Prob1_1Answer />
       </div>
 

@@ -1,7 +1,7 @@
 "use client"
 import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow"
 import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow"
-import RightArrow from "~/app/_components/elements/roomChangeArrow/RightArrow/rightArrow"
+import RightArrow from "~/app/_components/elements/roomChangeArrow/rightArrow/rightArrow"
 import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import Belongings from "~/app/_components/elements/belongings/belongings"
 import { usePlayerDataStore } from "~/store/playerDataStore"
@@ -29,7 +29,7 @@ const Entrance = () => {
         }
       }
     )
-  },[])
+  },[setPlayerData])
 
   return (
     <div>

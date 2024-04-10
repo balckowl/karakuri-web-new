@@ -4,9 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 import PartSendingText from "~/app/_components/elements/sendingText/partSendingText";
 
-const EntranceSendingText = () => {
+const SocialSendingText = () => {
   // テキスト
-  const entranceTextList = useMemo(() => {
+  const socialTextList = useMemo(() => {
     return {
       0: [
         ["you", "こ、ここは..."],
@@ -44,41 +44,41 @@ const EntranceSendingText = () => {
   }, []);
 
 
-  const eventIndex = playerData.entrance.eventIndex;
+  const eventIndex = playerData.social.eventIndex;
   // textIndex が変更されたらレンダリングのトリガーを更新
   useEffect(() => {
     if (0 <= eventIndex) {
       setRenderTrigger(prev => prev + 1);
-      if (textIndex == entranceTextList[eventIndex as keyof typeof entranceTextList].length) {
-        setPlayerData({ entrance: { eventIndex: -1, event0Finished: true } });
+      if (textIndex == socialTextList[eventIndex as keyof typeof socialTextList].length) {
+        setPlayerData({ social: { eventIndex: -1, event0Finished: true } });
         setTextIndex(0);
       }
     }
-  }, [textIndex, entranceTextList, eventIndex, setPlayerData]);
+  }, [textIndex, socialTextList, eventIndex, setPlayerData]);
 
   return (
     <div>
       {0 <= eventIndex &&
         <div>
-          {/* Entrance */}
-          {eventIndex < Object.keys(entranceTextList)?.length && (
+          {/* social */}
+          {eventIndex < Object.keys(socialTextList)?.length && (
             <div>
               <div className="absolute bottom-[50px] left-0 w-full">
-                {entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] &&
+                {socialTextList[eventIndex as keyof typeof socialTextList][textIndex] &&
                   <div className="relative z-[1000] mx-auto h-[200px] w-4/5">
                     <PartSendingText
                       key={renderTrigger} // レンダリングのトリガーとして使用
-                      textList={entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex]}
+                      textList={socialTextList[eventIndex as keyof typeof socialTextList][textIndex]}
                       textIndex={textIndex}
                     />
-                    {entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] &&
+                    {socialTextList[eventIndex as keyof typeof socialTextList][textIndex] &&
                       // テキストの背景
                       <motion.div
-                        animate={entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] ?
+                        animate={socialTextList[eventIndex as keyof typeof socialTextList][textIndex] ?
                           { opacity: [0, 0.8], display: "none" } :
                           { opacity: [0.8, 0], display: "none" }
                         }
-                        transition={entranceTextList[eventIndex as keyof typeof entranceTextList][textIndex] ?
+                        transition={socialTextList[eventIndex as keyof typeof socialTextList][textIndex] ?
                           { duration: 1, delay: 0.5 } :
                           { duration: 0.3 }
                         }
@@ -90,7 +90,7 @@ const EntranceSendingText = () => {
               </div>
 
               <AnimatePresence>
-                {textIndex < entranceTextList[eventIndex as keyof typeof entranceTextList].length &&
+                {textIndex < socialTextList[eventIndex as keyof typeof socialTextList].length &&
                   // テキスト送り中に操作を不能にする
                   <motion.div
                     exit={{ opacity: [0.5, 0], display: "none" }}
@@ -107,4 +107,4 @@ const EntranceSendingText = () => {
   );
 };
 
-export default EntranceSendingText;
+export default SocialSendingText;

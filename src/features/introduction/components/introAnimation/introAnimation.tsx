@@ -16,7 +16,7 @@ const IntroAnimation = ({ isPullString, setIsPullString }: { isPullString: boole
           setClipPathRadius(prevRadius => prevRadius + 4);
         }, 10); // 10msごとに増加
         return () => clearInterval(interval);
-      }, 100); // 100ms待つ
+      }, 300); // 100ms待つ
     }
   
     return () => clearTimeout(timeout);

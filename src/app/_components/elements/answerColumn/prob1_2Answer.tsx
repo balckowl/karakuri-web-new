@@ -10,7 +10,6 @@ const Prob1_2Answer = () => {
     e.preventDefault();
     setPlayerData(
       {
-        movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
         kitchen: {
           ...playerData.kitchen,
           answer: answer,

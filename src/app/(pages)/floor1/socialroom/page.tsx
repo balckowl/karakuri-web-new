@@ -4,6 +4,7 @@ import Belongings from "~/app/_components/elements/belongings/belongings";
 import ProbClearAlert from "~/app/_components/elements/probClearAlert/probClearAlert";
 import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/downArrow";
 import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow";
+import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow";
 import ProbBase from "~/app/_components/layout/roomBase/probBase";
 import SocialSendingText from "~/features/floor1/sendingText/socalroomSendingText";
 import { usePlayerDataStore } from "~/store/playerDataStore";
@@ -32,7 +33,9 @@ const Socialroom = () => {
         <div className="absolute left-0 top-0 -z-10 size-full bg-black"></div>
       }
 
+      {/* ライトが点灯したら見えるもの*/}
       <div className={`${playerData.socialroom.isLighting === false && "opacity-0"}`}>
+        <UpArrow floor={1} hrefProps={"elevator"} />
         <LeftArrow floor={1} hrefProps={"storeroom"} />
 
         <ProbBase currentRoom={"socialroom"} />

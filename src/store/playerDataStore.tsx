@@ -11,6 +11,13 @@ type PlayerData = {
   isGetItems: {
     scrollBar: boolean;
   };
+  // floor0
+  elevator: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+
+  // floor1
   // prob1_1
   entrance: {
     isFitScrollbar: boolean;
@@ -67,6 +74,12 @@ const defaultPlayerData: PlayerData = {
   isGetItems: {
     scrollBar: false,
   },
+  // floor0
+  elevator: {
+    eventIndex: 0,
+    event0Finished: false,
+  },
+  // floor1
   // prob1_1
   entrance: {
     eventIndex: 0,

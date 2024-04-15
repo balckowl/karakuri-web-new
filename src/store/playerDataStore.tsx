@@ -57,6 +57,24 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
+
+  // floor2
+  corridor: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  pine: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  bamboo: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  plum: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
   [key: string]: any
 };
 
@@ -79,6 +97,7 @@ const defaultPlayerData: PlayerData = {
     eventIndex: 0,
     event0Finished: false,
   },
+
   // floor1
   // prob1_1
   entrance: {
@@ -116,6 +135,23 @@ const defaultPlayerData: PlayerData = {
     isClear: false,
   },
   storeroom: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  // floor2
+  corridor: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  pine: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  bamboo: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  plum: {
     eventIndex: 0,
     event0Finished: true,
   },

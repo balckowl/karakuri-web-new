@@ -32,7 +32,7 @@ const Elevator = () => {
             }
           </Link>
           <Link
-            href={"/floor2/xxx"}
+            href={"/floor2/corridor"}
             className={`w-[200px] h-[120px] border-[6px] border-gray-200 bg-gray-800 flex justify-center items-center shadow-xl rounded-lg  transition-all relative cursor-not-allowed
             ${playerData.progress < 3 ? "cursor-not-allowed" : "cursor-pointer hover:opacity-80"}`}>
             <p className="text-gray-200 text-3xl">2</p>

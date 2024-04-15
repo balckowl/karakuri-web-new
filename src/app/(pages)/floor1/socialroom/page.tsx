@@ -35,7 +35,7 @@ const Socialroom = () => {
 
       {/* ライトが点灯したら見えるもの*/}
       <div className={`${playerData.socialroom.isLighting === false && "opacity-0"}`}>
-        <UpArrow floor={1} hrefProps={"elevator"} />
+        <UpArrow floor={0} hrefProps={"elevator"} />
         <LeftArrow floor={1} hrefProps={"storeroom"} />
 
         <ProbBase currentRoom={"socialroom"} />

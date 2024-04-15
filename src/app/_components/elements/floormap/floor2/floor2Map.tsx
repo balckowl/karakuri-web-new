@@ -19,31 +19,24 @@ const Floor2Map = () => {
         transition={{ duration: 2, repeat: Infinity}}
         className={`w-2 h-2 rounded-full bg-blue-500 absolute 
         ${ 
-          currentRoom === "entrance" ? "top-[144px] left-[121px]" 
-        : currentRoom === "bathroom" ? "top-[144px] left-[32px]" 
-        : currentRoom === "cafeteria" ? "top-[144px] left-[210px]" 
-        : currentRoom === "kitchen" ? "top-[83px] left-[210px]" 
-        : currentRoom === "socialroom" ? "top-[83px] left-[121px]" 
-        : currentRoom === "storeroom" && "top-[83px] left-[32px]" 
+          currentRoom === "corridor" ?  "top-[83px] left-[121px]"
+        : currentRoom === "pine" ? "top-[83px] left-[32px]"
+        : currentRoom === "bamboo" ? "top-[83px] left-[210px]" 
+        : currentRoom === "plum" && "top-[144px] left-[121px]" 
         }`}
       ></motion.div>
-      { playerData.progress === 0 ?
+      { playerData.progress === 3 ?
         <Image 
-          src={"/images/floor1/map/floor1_progress0.png"} width={1408} height={962} alt="progress0"
+          src={"/images/floor2/map/floor2_progress3.png"} width={1408} height={962} alt="progress0"
         ></Image>
-        : playerData.progress === 1 ?
+        : playerData.progress === 4 ?
         <Image 
-          src={"/images/floor1/map/floor1_progress1.png"} width={1408} height={962} alt="progress0"
+          src={"/images/floor2/map/floor2_progress4.png"} width={1408} height={962} alt="progress0"
         ></Image>
-        : playerData.progress === 2 ?
+        : playerData.progress >= 5 &&
         <Image 
-          src={"/images/floor1/map/floor1_progress2.png"} width={1408} height={962} alt="progress0"
+          src={"/images/floor2/map/floor2_progress5.png"} width={1408} height={962} alt="progress0"
         ></Image>
-        : playerData.progress === 3 ?
-        <Image 
-          src={"/images/floor1/map/floor1_progress3.png"} width={1408} height={962} alt="progress0"
-        ></Image>
-      : <div></div>
       }
 
     </motion.div>

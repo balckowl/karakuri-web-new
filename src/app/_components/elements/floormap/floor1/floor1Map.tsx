@@ -39,11 +39,10 @@ const Floor1Map = () => {
         <Image 
           src={"/images/floor1/map/floor1_progress2.png"} width={1408} height={962} alt="progress0"
         ></Image>
-        : playerData.progress === 3 ?
+        : playerData.progress >= 3 &&
         <Image 
           src={"/images/floor1/map/floor1_progress3.png"} width={1408} height={962} alt="progress0"
         ></Image>
-      : <div></div>
       }
 
     </motion.div>

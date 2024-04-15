@@ -9,7 +9,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
   // const { playerData } = usePlayerDataStore(); 
 
   return (
-    <div className="h-full">
+    <div>
       {currentRoom === "bathroom" ?
         <div>
           <div>

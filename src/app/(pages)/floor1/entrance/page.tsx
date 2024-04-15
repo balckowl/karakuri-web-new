@@ -9,6 +9,7 @@ import { useEffect } from "react"
 
 import ProbClearAlert from "~/app/_components/elements/probClearAlert/probClearAlert"
 import EntranceSendingText from "~/features/floor1/sendingText/entranceSendingText"
+import Floor1Map from "~/app/_components/elements/floormap/floor1/floor1Map"
 
 
 const Entrance = () => {
@@ -36,7 +37,9 @@ const Entrance = () => {
 
       <ProbBase currentRoom={"entrance"} />
 
+      <Floor1Map />
       <Belongings />
+      
       {playerData.entrance.isFirstClear &&
         <ProbClearAlert />
       }

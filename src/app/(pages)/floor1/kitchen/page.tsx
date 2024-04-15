@@ -6,6 +6,7 @@ import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/down
 import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import { usePlayerDataStore } from "~/store/playerDataStore";
 import KitchenSendingText from "~/features/floor1/sendingText/kitchenSendingText";
+import Floor1Map from "~/app/_components/elements/floormap/floor1/floor1Map";
 
 const Kitchen = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
@@ -34,6 +35,7 @@ const Kitchen = () => {
 
       <ProbBase currentRoom={"kitchen"} />
 
+      <Floor1Map />
       <Belongings />
       {playerData.kitchen.isFirstClear &&
         <ProbClearAlert />

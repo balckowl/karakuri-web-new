@@ -19,8 +19,8 @@ const Prob1_2Answer = () => {
     if (playerData.kitchen.isFirstClear == false && answer == "RICE") {
       setPlayerData(
         {
-          movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
           progress: 2,
+          movableRoomList: [...playerData.movableRoomList, "socialroom", "storeroom"],
           kitchen: {
             ...playerData.kitchen,
             isFirstClear: true,

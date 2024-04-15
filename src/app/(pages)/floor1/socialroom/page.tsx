@@ -1,6 +1,7 @@
 "use client"
 import { useEffect } from "react"
 import Belongings from "~/app/_components/elements/belongings/belongings";
+import Floor1Map from "~/app/_components/elements/floormap/floor1/floor1Map";
 import ProbClearAlert from "~/app/_components/elements/probClearAlert/probClearAlert";
 import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/downArrow";
 import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow";
@@ -33,6 +34,7 @@ const Socialroom = () => {
         <div className="absolute left-0 top-0 -z-10 size-full bg-black"></div>
       }
 
+      <Floor1Map />
       {/* ライトが点灯したら見えるもの*/}
       <div className={`${playerData.socialroom.isLighting === false && "opacity-0"}`}>
         <UpArrow floor={0} hrefProps={"elevator"} />

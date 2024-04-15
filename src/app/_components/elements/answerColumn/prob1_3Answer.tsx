@@ -19,8 +19,8 @@ const Prob1_3Answer = () => {
     if (playerData.socialroom.isFirstClear == false && answer == "LAND") {
       setPlayerData(
         {
-          movableRoomList: [...playerData.movableRoomList, "elevator"],
           progress: 3,
+          movableRoomList: [...playerData.movableRoomList, "elevator"],
           socialroom: {
             ...playerData.socialroom,
             isFirstClear: true,

@@ -7,7 +7,9 @@ type PlayerData = {
   movableRoomList: string[];
   belonging: string;
   belongingList: string[];
+  // 進捗(マップの更新)
   progress: number;
+  // アイテムの取得判定
   isGetItems: {
     scrollBar: boolean;
   };
@@ -21,11 +23,11 @@ type PlayerData = {
   // prob1_1
   entrance: {
     isFitScrollbar: boolean;
+    eventIndex: number;
+    event0Finished: boolean;
     answer: string;
     isFirstClear: boolean;
     isClear: boolean;
-    eventIndex: number;
-    event0Finished: boolean;
   };
   bathroom: {
     eventIndex: number;
@@ -37,18 +39,18 @@ type PlayerData = {
   };
   // prob1_2
   kitchen: {
+    isClickRock: boolean;
     eventIndex: number;
     event0Finished: boolean;
-    isClickRock: boolean;
     answer: string;
     isFirstClear: boolean;
     isClear: boolean;
   };
   // prob1_3
   socialroom: {
+    isLighting: boolean;
     eventIndex: number;
     event0Finished: boolean;
-    isLighting: boolean;
     answer: string;
     isFirstClear: boolean;
     isClear: boolean;
@@ -101,9 +103,9 @@ const defaultPlayerData: PlayerData = {
   // floor1
   // prob1_1
   entrance: {
+    isFitScrollbar: false,
     eventIndex: 0,
     event0Finished: false,
-    isFitScrollbar: false,
     answer: "",
     isFirstClear: false,
     isClear: false,
@@ -118,18 +120,18 @@ const defaultPlayerData: PlayerData = {
   },
   // prob1_2
   kitchen: {
+    isClickRock: false,
     eventIndex: 0,
     event0Finished: true,
-    isClickRock: false,
     answer: "",
     isFirstClear: false,
     isClear: false,
   },
   // prob1_3
   socialroom: {
+    isLighting: false,
     eventIndex: 0,
     event0Finished: false,
-    isLighting: false,
     answer: "",
     isFirstClear: false,
     isClear: false,

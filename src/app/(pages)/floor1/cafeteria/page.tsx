@@ -5,6 +5,7 @@ import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/
 import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow";
 import NothingBase from "~/app/_components/layout/roomBase/nothingBase";
 import Belongings from "~/app/_components/elements/belongings/belongings";
+import Floor1Map from "~/app/_components/elements/floormap/floor1/floor1Map";
 
 const Cafeteria = () => {
   const { setPlayerData } = usePlayerDataStore();
@@ -20,6 +21,7 @@ const Cafeteria = () => {
 
       <NothingBase currentRoom={"cafeteria"} />
 
+      <Floor1Map />
       <Belongings />
     </div>
   )

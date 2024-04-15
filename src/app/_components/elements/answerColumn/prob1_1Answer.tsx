@@ -19,6 +19,7 @@ const Prob1_1Answer = () => {
     if (playerData.entrance.isFirstClear == false && answer == "HELLO") {
       setPlayerData(
         {
+          progress: 1,
           movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
           entrance: {
             ...playerData.entrance,

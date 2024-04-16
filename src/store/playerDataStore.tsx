@@ -63,6 +63,8 @@ type PlayerData = {
 
   // floor2
   corridor: {
+    isTryMove: boolean;
+    movableBamboo: boolean;
     eventIndex: number;
     event0Finished: boolean;
   };
@@ -144,6 +146,8 @@ const defaultPlayerData: PlayerData = {
   },
   // floor2
   corridor: {
+    isTryMove: false,
+    movableBamboo: false,
     eventIndex: 0,
     event0Finished: true,
   },

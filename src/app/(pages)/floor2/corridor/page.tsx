@@ -7,10 +7,11 @@ import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/
 import RightArrow from "~/app/_components/elements/roomChangeArrow/rightArrow/rightArrow"
 import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow"
 import NothingBase from "~/app/_components/layout/roomBase/nothingBase"
+import CorridorSendingText from "~/features/floor1/sendingText/corridorSendingText"
 import { usePlayerDataStore } from "~/store/playerDataStore"
 
 const Corridor = () => {
-  const { setPlayerData } = usePlayerDataStore();
+  const { playerData, setPlayerData } = usePlayerDataStore();
   // 現在位置の更新
   useEffect(() => {
     setPlayerData({ currentRoom: "corridor" })
@@ -18,12 +19,17 @@ const Corridor = () => {
 
   return (
     <div>
+      {playerData.corridor.isTryMove &&
+        <div>
+          <CorridorSendingText />
+        </div>
+      }
       <UpArrow floor={0} hrefProps={"elevator"} />
       <RightArrow floor={2} hrefProps={"plum"} />
       <DownArrow floor={2} hrefProps={"bamboo"} />
       <LeftArrow floor={2} hrefProps={"pine"} />
 
-      <NothingBase currentRoom="corridor"/>
+      <NothingBase currentRoom="corridor" />
       <Floor2Map />
       <Belongings />
     </div>

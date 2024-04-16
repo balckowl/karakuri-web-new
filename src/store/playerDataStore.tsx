@@ -63,6 +63,8 @@ type PlayerData = {
 
   // floor2
   corridor: {
+    isTryMove: boolean;
+    movableBamboo: boolean;
     eventIndex: number;
     event0Finished: boolean;
   };
@@ -88,7 +90,8 @@ type PlayerDataStoreType = {
 
 const defaultPlayerData: PlayerData = {
   currentRoom: "entrance",
-  movableRoomList: ["entrance", "bathroom", "elevator", "corridor", "pine", "bamboo"],
+  movableRoomList: ["entrance", "bathroom"],
+  // "elevator", "corridor", "pine", "bamboo"],
   belonging: "",
   belongingList: [],
   progress: 0,
@@ -144,6 +147,8 @@ const defaultPlayerData: PlayerData = {
   },
   // floor2
   corridor: {
+    isTryMove: false,
+    movableBamboo: false,
     eventIndex: 0,
     event0Finished: true,
   },

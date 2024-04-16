@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import Belongings from "~/app/_components/elements/belongings/belongings"
 import Floor2Map from "~/app/_components/elements/floormap/floor2/floor2Map"
-import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow"
+import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow"
 import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import { usePlayerDataStore } from "~/store/playerDataStore"
 
@@ -15,7 +15,7 @@ const Corridor = () => {
 
   return (
     <div>
-      <LeftArrow floor={2} hrefProps={"corridor"} />
+      <UpArrow floor={2} hrefProps={"corridor"} />
 
       <ProbBase currentRoom={"bamboo"}/>
       <Floor2Map />

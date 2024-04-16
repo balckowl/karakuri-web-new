@@ -14,6 +14,7 @@ const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
     // fix
     if(playerData.belonging == "woodenBoard"){
       setPlayerData({
+        progress: 4,
         belonging: "",
         belongingList: playerData.belongingList.filter(item => item !== "woodenBoard"),
         corridor: {

@@ -21,8 +21,8 @@ const Floor2Map = () => {
         ${ 
           currentRoom === "corridor" ?  "top-[83px] left-[121px]"
         : currentRoom === "pine" ? "top-[83px] left-[32px]"
-        : currentRoom === "bamboo" ? "top-[83px] left-[210px]" 
-        : currentRoom === "plum" && "top-[144px] left-[121px]" 
+        : currentRoom === "bamboo" ? "top-[144px] left-[121px]" 
+        : currentRoom === "plum" && "top-[83px] left-[210px]" 
         }`}
       ></motion.div>
       { playerData.progress === 3 ?

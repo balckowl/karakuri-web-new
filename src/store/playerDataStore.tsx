@@ -90,7 +90,8 @@ type PlayerDataStoreType = {
 
 const defaultPlayerData: PlayerData = {
   currentRoom: "entrance",
-  movableRoomList: ["entrance", "bathroom", "elevator", "corridor", "pine", "bamboo"],
+  movableRoomList: ["entrance", "bathroom"],
+  // "elevator", "corridor", "pine", "bamboo"],
   belonging: "",
   belongingList: [],
   progress: 0,

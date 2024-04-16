@@ -58,7 +58,7 @@ const Elevator = () => {
         </div>
       </motion.div>
       <div className="absolute left-0 top-0 z-[800] size-full bg-black opacity-50"></div>
-      <Image src="/images/floor1/rooms/entrance.webp" alt="entrance" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover" />
+      <Image src="/images/floor1/room/entrance.webp" alt="entrance" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover" />
     </div>
   )
 }

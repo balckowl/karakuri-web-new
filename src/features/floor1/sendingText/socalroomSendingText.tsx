@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 import PartSendingText from "~/app/_components/elements/sendingText/partSendingText";
 
-const SocialroomSendingText = () => {
+const SocialroomendingText = () => {
   // テキスト
   const socialroomTextList = useMemo(() => {
     return {
@@ -112,4 +112,4 @@ const SocialroomSendingText = () => {
   );
 };
 
-export default SocialroomSendingText;
+export default SocialroomendingText;

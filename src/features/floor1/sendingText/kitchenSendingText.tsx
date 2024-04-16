@@ -50,7 +50,8 @@ const KitchenSendingText = () => {
             kitchen:
             {
               ...playerData.kitchen,
-              eventIndex: -1,
+              isClickRock: false,
+              eventIndex: 0,
               event0Finished: true
             }
           }

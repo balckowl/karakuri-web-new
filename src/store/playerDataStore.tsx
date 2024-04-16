@@ -12,6 +12,7 @@ type PlayerData = {
   // アイテムの取得判定
   isGetItems: {
     scrollBar: boolean;
+    woodenBoard: boolean;
   };
   // floor0
   elevator: {
@@ -87,12 +88,13 @@ type PlayerDataStoreType = {
 
 const defaultPlayerData: PlayerData = {
   currentRoom: "entrance",
-  movableRoomList: ["entrance", "bathroom"],
+  movableRoomList: ["entrance", "bathroom", "elevator", "corridor", "pine", "bamboo"],
   belonging: "",
   belongingList: [],
   progress: 0,
   isGetItems: {
     scrollBar: false,
+    woodenBoard: false,
   },
   // floor0
   elevator: {

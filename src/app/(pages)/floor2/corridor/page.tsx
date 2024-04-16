@@ -19,8 +19,8 @@ const Corridor = () => {
   return (
     <div>
       <UpArrow floor={0} hrefProps={"elevator"} />
-      <RightArrow floor={2} hrefProps={"bamboo"} />
-      <DownArrow floor={2} hrefProps={"plum"} />
+      <RightArrow floor={2} hrefProps={"plum"} />
+      <DownArrow floor={2} hrefProps={"bamboo"} />
       <LeftArrow floor={2} hrefProps={"pine"} />
 
       <NothingBase currentRoom="corridor"/>

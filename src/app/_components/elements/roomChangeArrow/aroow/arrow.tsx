@@ -16,6 +16,7 @@ const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
       transition={playerData[currentRoom].event0Finished ? { duration: 0.5, delay: 0.3 } : { duration: 0 }}
       className={`${movableRoomList.includes(hrefProps) == false && "cursor-not-allowed"} relative z-[500]`}
     >
+      {/* {hrefProps == "bamboo" ? playerData.corridor.} */}
       <Link
         href={`/floor${floor}/${hrefProps}`}
         className={`${movableRoomList.includes(hrefProps) == false && "pointer-events-none"}`}

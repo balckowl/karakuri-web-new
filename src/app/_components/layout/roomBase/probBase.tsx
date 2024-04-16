@@ -27,7 +27,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
               </motion.div>
             </div>
           }
-          <Image src="/images/floor1/rooms/entrance.webp" alt="entrance" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
+          <Image src="/images/floor1/room/entrance.webp" alt="entrance" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
         : currentRoom === "kitchen" ?
         <div>
@@ -44,7 +44,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
               </motion.div>
             </div>
           }
-          <Image src="/images/floor1/rooms/kitchen.webp" alt="kitchen" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
+          <Image src="/images/floor1/room/kitchen.webp" alt="kitchen" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
         : currentRoom === "socialroom" ?
         <div>
@@ -61,7 +61,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
               </motion.div>
             </div>
           }
-          <Image src="/images/floor1/rooms/kitchen.webp" alt="socailroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
+          <Image src="/images/floor1/room/kitchen.webp" alt="socailroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
         : currentRoom === "bamboo" ?
         <div>
@@ -78,7 +78,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
               </motion.div>
             </div>
           }
-          <Image src="/images/floor1/rooms/kitchen.webp" alt="socailroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
+          <Image src="/images/floor1/room/kitchen.webp" alt="socailroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
         : currentRoom === "plum" ?
         <div>
@@ -95,7 +95,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
               </motion.div>
             </div>
           }
-          <Image src="/images/floor1/rooms/kitchen.webp" alt="socailroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
+          <Image src="/images/floor1/room/kitchen.webp" alt="socailroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
         :
         <div></div>

@@ -54,6 +54,9 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
               <div className="h-full p-6">
                 <Item2_1 />
               </div>
+              <div className="absolute top-3/4 left-1/2 -translate-x-1/2">
+                <Image src="/images/floor2/gimmick/prob2_1_hint.png" alt="hint" width="300" height="300"/>
+              </div>
             </motion.div>
           </div>
 

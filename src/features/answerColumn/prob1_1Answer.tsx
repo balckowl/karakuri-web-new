@@ -2,27 +2,19 @@
 import { type FormEvent, useState } from "react";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
-const Prob1_3Answer = () => {
+const Prob1_1Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const [answer, setAnswer] = useState<string>(playerData.socialroom.answer)
+  const [answer, setAnswer] = useState<string>("");
 
-  const sendAnswer = (e:FormEvent) => {
+  const sendAnswer = (e: FormEvent) => {
     e.preventDefault();
-    setPlayerData(
-      {
-        socialroom: {
-          ...playerData.socialroom,
-          answer: answer,
-        }
-      }
-    )
-    if (playerData.socialroom.isFirstClear == false && answer == "LAND") {
+    if (playerData.entrance.isFirstClear == false && answer == "HELLO") {
       setPlayerData(
         {
-          progress: 3,
-          movableRoomList: [...playerData.movableRoomList, "elevator", "corridor", "plum", "bamboo"],
-          socialroom: {
-            ...playerData.socialroom,
+          progress: 1,
+          movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
+          entrance: {
+            ...playerData.entrance,
             isFirstClear: true,
             isClear: true,
           }
@@ -33,12 +25,12 @@ const Prob1_3Answer = () => {
 
   return (
     <div>
-      {playerData.socialroom.isClear ? (
+      {playerData.entrance.isClear ? (
         <div
           className="flex gap-2 border-b-2 border-[#ff5160] text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-[#ff7d88]"
         >
           <div className="text-[#ff5160] dark:text-[#ff7d88]">A.</div>
-          <div className="w-[200px] text-[#ff5160] dark:text-[#ff7d88]">LAND</div>
+          <div className="w-[200px] text-[#ff5160] dark:text-[#ff7d88]">HELLO</div>
         </div>
       ) : (
         <div>
@@ -58,8 +50,7 @@ const Prob1_3Answer = () => {
         </div>
       )}
     </div>
-
   )
 }
 
-export default Prob1_3Answer
+export default Prob1_1Answer

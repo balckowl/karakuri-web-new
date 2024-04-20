@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import Prob1_2Answer from "~/app/_components/elements/answerColumn/prob1_2Answer";
+import Prob1_2Answer from "~/features/answerColumn/prob1_2Answer";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Prob1_2 = () => {

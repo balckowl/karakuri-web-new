@@ -26,7 +26,6 @@ type PlayerData = {
     isFitScrollbar: boolean;
     eventIndex: number;
     event0Finished: boolean;
-    answer: string;
     isFirstClear: boolean;
     isClear: boolean;
   };
@@ -43,7 +42,6 @@ type PlayerData = {
     isClickRock: boolean;
     eventIndex: number;
     event0Finished: boolean;
-    answer: string;
     isFirstClear: boolean;
     isClear: boolean;
   };
@@ -52,7 +50,6 @@ type PlayerData = {
     isLighting: boolean;
     eventIndex: number;
     event0Finished: boolean;
-    answer: string;
     isFirstClear: boolean;
     isClear: boolean;
   };
@@ -68,17 +65,22 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
-  pine: {
+  plum: {
     eventIndex: number;
     event0Finished: boolean;
   };
   bamboo: {
     eventIndex: number;
     event0Finished: boolean;
+    isFirstClear: boolean;
+    isClear: boolean;
   };
-  plum: {
+  pine: {
     eventIndex: number;
     event0Finished: boolean;
+    target: number;
+    isFirstClear: boolean;
+    isClear: boolean;
   };
   [key: string]: any
 };
@@ -111,7 +113,6 @@ const defaultPlayerData: PlayerData = {
     isFitScrollbar: false,
     eventIndex: 0,
     event0Finished: false,
-    answer: "",
     isFirstClear: false,
     isClear: false,
   },
@@ -128,7 +129,6 @@ const defaultPlayerData: PlayerData = {
     isClickRock: false,
     eventIndex: 0,
     event0Finished: true,
-    answer: "",
     isFirstClear: false,
     isClear: false,
   },
@@ -137,7 +137,6 @@ const defaultPlayerData: PlayerData = {
     isLighting: false,
     eventIndex: 0,
     event0Finished: false,
-    answer: "",
     isFirstClear: false,
     isClear: false,
   },
@@ -145,6 +144,7 @@ const defaultPlayerData: PlayerData = {
     eventIndex: 0,
     event0Finished: true,
   },
+
   // floor2
   corridor: {
     isTryMove: false,
@@ -152,17 +152,22 @@ const defaultPlayerData: PlayerData = {
     eventIndex: 0,
     event0Finished: true,
   },
-  pine: {
+  plum: {
     eventIndex: 0,
     event0Finished: true,
   },
   bamboo: {
     eventIndex: 0,
     event0Finished: true,
+    isFirstClear: false,
+    isClear: false,
   },
-  plum: {
+  pine: {
     eventIndex: 0,
     event0Finished: true,
+    target : 0,
+    isFirstClear: false,
+    isClear: false,
   },
 };
 

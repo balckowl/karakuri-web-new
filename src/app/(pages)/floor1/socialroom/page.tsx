@@ -29,15 +29,15 @@ const Socialroom = () => {
     <div>
       <SocialSendingText />
       
-      <DownArrow floor={1} hrefProps={"entrance"} />
       {playerData.socialroom.isLighting === false &&
-        <div className="absolute left-0 top-0 -z-10 size-full bg-black"></div>
+        <div className="absolute left-0 top-0 z-[-100] size-full bg-black"></div>
       }
-
+      
       <Floor1Map />
       {/* ライトが点灯したら見えるもの*/}
       <div className={`${playerData.socialroom.isLighting === false && "opacity-0"}`}>
         <UpArrow floor={0} hrefProps={"elevator"} />
+        <DownArrow floor={1} hrefProps={"entrance"} />
         <LeftArrow floor={1} hrefProps={"storeroom"} />
 
         <ProbBase currentRoom={"socialroom"} />

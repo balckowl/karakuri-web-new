@@ -4,18 +4,10 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Prob1_2Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const [answer, setAnswer] = useState<string>(playerData.kitchen.answer)
+  const [answer, setAnswer] = useState<string>("");
 
   const sendAnswer = (e:FormEvent) => {
     e.preventDefault();
-    setPlayerData(
-      {
-        kitchen: {
-          ...playerData.kitchen,
-          answer: answer,
-        }
-      }
-    )
     if (playerData.kitchen.isFirstClear == false && answer == "RICE") {
       setPlayerData(
         {
@@ -46,10 +38,10 @@ const Prob1_2Answer = () => {
             onSubmit={(e) => sendAnswer(e)}
             className="flex gap-2 border-b-2 border-black text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-white"
           >
-            <label htmlFor="ans-prob1_1" className="focus-within:text-purple-600">
+            <label htmlFor="ans-prob1_2" className="focus-within:text-purple-600">
               A.
             </label>
-            <input id="ans-prob1_1" type="text"
+            <input id="ans-prob1_2" type="text"
               onChange={(e) => setAnswer(e.target.value)}
               value={answer}
               className="w-[200px] bg-transparent outline-none focus:border-purple-700"

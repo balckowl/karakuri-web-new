@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react"
 import EnterTooltip from "~/features/login/components/enterTooltip/enterTooltip"
 import CalltoEnter from "~/features/login/components/calltoEnter/calltoEnter"
-import IntroAnimation from "~/features/introduction/components/introAnimation/introAnimation"
+import IntroAnimation from "~/features/introduction/introAnimation"
 import Image from "next/image"
 
 const Login = () => {

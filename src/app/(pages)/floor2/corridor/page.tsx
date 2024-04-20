@@ -25,9 +25,9 @@ const Corridor = () => {
         </div>
       }
       <UpArrow floor={0} hrefProps={"elevator"} />
-      <RightArrow floor={2} hrefProps={"plum"} />
+      <RightArrow floor={2} hrefProps={"pine"} />
       <DownArrow floor={2} hrefProps={"bamboo"} />
-      <LeftArrow floor={2} hrefProps={"pine"} />
+      <LeftArrow floor={2} hrefProps={"plum"} />
 
       <NothingBase currentRoom="corridor" />
       <Floor2Map />

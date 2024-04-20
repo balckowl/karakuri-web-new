@@ -43,7 +43,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
 
           <Image src="/images/floor1/room/bathroom.webp" alt="bathroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
-        : currentRoom === "pine" ?
+        : currentRoom === "plum" ?
         <div>
           <div>
             <motion.div
@@ -57,7 +57,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
             </motion.div>
           </div>
 
-          <Image src="/images/floor1/room/bathroom.webp" alt="bathroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
+          <Image src="/images/floor2/room/plum.webp" alt="pine" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
         :
         <div></div>

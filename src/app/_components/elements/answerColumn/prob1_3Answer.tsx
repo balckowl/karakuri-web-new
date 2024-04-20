@@ -20,7 +20,7 @@ const Prob1_3Answer = () => {
       setPlayerData(
         {
           progress: 3,
-          movableRoomList: [...playerData.movableRoomList, "elevator", "corridor", "pine", "bamboo"],
+          movableRoomList: [...playerData.movableRoomList, "elevator", "corridor", "plum", "bamboo"],
           socialroom: {
             ...playerData.socialroom,
             isFirstClear: true,

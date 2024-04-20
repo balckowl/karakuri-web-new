@@ -2,27 +2,19 @@
 import { type FormEvent, useState } from "react";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
-const Prob1_1Answer = () => {
+const Prob2_1Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
-  const [answer, setAnswer] = useState<string>(playerData.entrance.answer)
+  const [answer, setAnswer] = useState<string>("");
 
   const sendAnswer = (e: FormEvent) => {
     e.preventDefault();
-    setPlayerData(
-      {
-        entrance: {
-          ...playerData.entrance,
-          answer: answer
-        }
-      }
-    )
-    if (playerData.entrance.isFirstClear == false && answer == "HELLO") {
+    if (playerData.bamboo.isFirstClear == false && answer == "FLOWER") {
       setPlayerData(
         {
-          progress: 1,
-          movableRoomList: [...playerData.movableRoomList, "cafeteria", "kitchen"],
-          entrance: {
-            ...playerData.entrance,
+          progress: 5,
+          movableRoomList: [...playerData.movableRoomList, "pine"],
+          bamboo: {
+            ...playerData.bamboo,
             isFirstClear: true,
             isClear: true,
           }
@@ -33,12 +25,12 @@ const Prob1_1Answer = () => {
 
   return (
     <div>
-      {playerData.entrance.isClear ? (
+      {playerData.bamboo.isClear ? (
         <div
           className="flex gap-2 border-b-2 border-[#ff5160] text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-[#ff7d88]"
         >
           <div className="text-[#ff5160] dark:text-[#ff7d88]">A.</div>
-          <div className="w-[200px] text-[#ff5160] dark:text-[#ff7d88]">HELLO</div>
+          <div className="w-[200px] text-[#ff5160] dark:text-[#ff7d88]">FLOWER</div>
         </div>
       ) : (
         <div>
@@ -46,13 +38,14 @@ const Prob1_1Answer = () => {
             onSubmit={(e) => sendAnswer(e)}
             className="flex gap-2 border-b-2 border-black text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-white"
           >
-            <label htmlFor="ans-prob1_1" className="focus-within:text-purple-600">
+            <label htmlFor="ans-prob2_1" className="focus-within:text-purple-600">
               A.
             </label>
-            <input id="ans-prob1_1" type="text"
+            <input id="ans-prob2_1" type="text"
               onChange={(e) => setAnswer(e.target.value)}
               value={answer}
               className="w-[200px] bg-transparent outline-none focus:border-purple-700"
+              placeholder="F .... R"
             />
           </form>
         </div>
@@ -61,4 +54,4 @@ const Prob1_1Answer = () => {
   )
 }
 
-export default Prob1_1Answer
+export default Prob2_1Answer

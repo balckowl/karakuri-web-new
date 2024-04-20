@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { usePlayerDataStore } from "~/store/playerDataStore";
-import Prob1_1Answer from "~/app/_components/elements/answerColumn/prob1_1Answer";
+import Prob1_1Answer from "~/features/answerColumn/prob1_1Answer";
 
 const Prob1_1 = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();

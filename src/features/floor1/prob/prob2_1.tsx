@@ -1,4 +1,3 @@
-import { usePlayerDataStore } from "~/store/playerDataStore";
 import Image from "next/image";
 import Prob2_1Answer from "~/features/answerColumn/prob2_1Answer";
 
@@ -9,13 +8,13 @@ const Prob2_1 = () => {
 
       <div className="diff aspect-[16/9]">
         <div className="diff-item-1">
-          <div className="text-primary-content text-9xl font-black grid place-content-center">
-            <Image src="/images/floor2/gimmick/prob2_1_img2.png" alt="img2" width="1600" height="900" className="absolute left-0 top-0 -z-10 object-fit"/>
+          <div className="grid place-content-center text-9xl font-black text-primary-content">
+            <Image src="/images/floor2/gimmick/prob2_1_img2.png" alt="img2" width="1600" height="900" className="absolute left-0 top-0 -z-10"/>
           </div>
         </div>
         <div className="diff-item-2">
-          <div className="text-primary-content text-9xl font-black grid place-content-center">
-            <Image src="/images/floor2/gimmick/prob2_1_img1.png" alt="img1" width="1600" height="900" className="absolute left-0 top-0 -z-10 object-fit"/>
+          <div className="grid place-content-center text-9xl font-black text-primary-content">
+            <Image src="/images/floor2/gimmick/prob2_1_img1.png" alt="img1" width="1600" height="900" className="absolute left-0 top-0 -z-10"/>
           </div>
         </div>
         <div className="diff-resizer"></div>

@@ -34,7 +34,7 @@ const Item1_1 = () => {
         <GetItemPopup>
           <p className="mb-2 text-center">アイテムを入手しました</p>
           <div className="flex h-[200px] w-[300px] flex-col items-center justify-center">
-            <Image src={"/images/floor1/item/scroll.png"} width={200} height={100} alt="scroll" className="mb-2 h-[30px]"></Image>
+            <Image src={"/images/floor1/item/scroll.jpg"} width={200} height={100} alt="scroll" className="mb-2 h-[30px]"></Image>
             <p>スクロールバー</p>
           </div>
         </GetItemPopup>
@@ -42,7 +42,7 @@ const Item1_1 = () => {
 
       <div onClick={getScrollBar} className="cursor-pointer">
         {playerData.isGetItems.scrollBar == false &&
-          <Image src={"/images/floor1/item/scroll.png"} width={200} height={100} alt="scroll" className="mb-2 h-[30px]"></Image>
+          <Image src={"/images/floor1/item/scroll.jpg"} width={200} height={100} alt="scroll" className="mb-2 h-[30px]"></Image>
         }
       </div>
     </div>

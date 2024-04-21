@@ -12,19 +12,19 @@ const Floor1Map = () => {
     <motion.div
       animate={playerData[currentRoom]?.event0Finished ? { opacity: [0, 1] } : { opacity: 0 }}
       transition={playerData[currentRoom]?.event0Finished ? { duration: 0.5, delay: 0.7 } : { duration: 0 }}
-      className="absolute top-10 right-10 z-[150] w-[250px] h-[250px]"
+      className="absolute right-10 top-10 z-[150] size-[250px]"
     >
       <motion.div 
         animate={{scale:[1, 1.3, 1]}}
         transition={{ duration: 2, repeat: Infinity}}
-        className={`w-2 h-2 rounded-full bg-blue-500 absolute 
+        className={`absolute size-2 rounded-full bg-blue-500 
         ${ 
-          currentRoom === "entrance" ? "top-[144px] left-[121px]" 
-        : currentRoom === "bathroom" ? "top-[144px] left-[32px]" 
-        : currentRoom === "cafeteria" ? "top-[144px] left-[210px]" 
-        : currentRoom === "kitchen" ? "top-[83px] left-[210px]" 
-        : currentRoom === "socialroom" ? "top-[83px] left-[121px]" 
-        : currentRoom === "storeroom" && "top-[83px] left-[32px]" 
+          currentRoom === "entrance" ? "left-[121px] top-[144px]" 
+        : currentRoom === "bathroom" ? "left-[32px] top-[144px]" 
+        : currentRoom === "cafeteria" ? "left-[210px] top-[144px]" 
+        : currentRoom === "kitchen" ? "left-[210px] top-[83px]" 
+        : currentRoom === "socialroom" ? "left-[121px] top-[83px]" 
+        : currentRoom === "storeroom" && "left-[32px] top-[83px]" 
         }`}
       ></motion.div>
       { playerData.progress === 0 ?

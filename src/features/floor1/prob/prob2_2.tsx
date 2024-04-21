@@ -1,8 +1,8 @@
 "use client"
-import { FormEvent, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import Prob2_2Answer from '~/features/answerColumn/prob2_2Answer';
-import { usePlayerDataStore } from '~/store/playerDataStore';
+import { type FormEvent, useEffect, useState } from "react";
+import Image from "next/image";
+import Prob2_2Answer from "~/features/answerColumn/prob2_2Answer";
+import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Prob2_2 = () => {
   const maxQuestionCount = 12;
@@ -25,7 +25,7 @@ const Prob2_2 = () => {
     });
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     desideTarget()
   }, [])
 
@@ -46,32 +46,32 @@ const Prob2_2 = () => {
 
   return (
     <div className="flex h-full items-center justify-center">
-      <div className="outline outline-2 w-[60%] h-[60%] rounded-md flex justify-center flex-col items-center gap-4">
+      <div className="flex size-3/5 flex-col items-center justify-center gap-4 rounded-md outline outline-2">
         <p>残り{maxQuestionCount - questionCount}回</p>
-        <div className="outline outline-2 w-[60%] h-[60%] overflow-y-scroll">
+        <div className="size-3/5 overflow-y-scroll outline outline-2">
           {logList.slice().reverse().map((log, index) => (
-            <div key={index} className="flex w-full justify-between p-4 border-b-[1px] border-black bg-orange-200">
+            <div key={index} className="flex w-full justify-between border-b-DEFAULT border-black bg-orange-200 p-4">
               <div className="text-xl">
                 <p>{log[0]}</p>
               </div>
               {log[1] ?
-                <Image src="/images/floor2/gimmick/prob2_2_O.png" alt="img2" width="30" height="30" className="object-fit" />
+                <Image src="/images/floor2/gimmick/prob2_2_O.png" alt="img2" width="30" height="30" />
                 :
-                <Image src="/images/floor2/gimmick/prob2_2_X.png" alt="img2" width="30" height="30" className="object-fit" />
+                <Image src="/images/floor2/gimmick/prob2_2_X.png" alt="img2" width="30" height="30" />
               }
             </div>
           ))}
         </div>
         <form
           onSubmit={(e) => askQuestion(e)}
-          className="flex items-center h-max gap-10 w-[70%] justify-between"
+          className="flex h-max w-[70%] items-center justify-between gap-10"
         >
           <div className="flex gap-4">
             <input type="number"
               min={1} max={upper}
               placeholder="1"
               onChange={(e) => setLower(Number(e.target.value))}
-              className="input input-bordered input-info w-[80px] h-[50px] max-w-xs"
+              className="input input-bordered input-info h-[50px] w-[80px] max-w-xs"
               disabled={questionCount >= maxQuestionCount || playerData.pine.isClear}
             />
             <p className="text-4xl">~</p>
@@ -79,7 +79,7 @@ const Prob2_2 = () => {
               min={lower} max={maxValue}
               placeholder={`${maxValue}`}
               onChange={(e) => setUpper(Number(e.target.value))}
-              className="input input-bordered input-secondary w-[80px] h-[50px] max-w-xs"
+              className="input input-bordered input-secondary h-[50px] w-[80px] max-w-xs"
               disabled={questionCount >= maxQuestionCount || playerData.pine.isClear}
             />
           </div>
@@ -88,9 +88,27 @@ const Prob2_2 = () => {
           </button>
         </form>
       </div>
+
+      {/* 問題の説明 */}
+      <div className="absolute bottom-10 left-10">
+        <button className="btn" onClick={() => {
+          const modal = document.getElementById('my_modal_1') as HTMLDialogElement;
+          if (modal) {
+            modal.showModal();
+          }
+        }}>?</button>
+        <dialog id="my_modal_1" className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">答えは1~500の整数のどれか</h3>
+          </div>
+          <form method="dialog" className="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+      </div>
       {/* 回答欄 */}
       <div className="absolute bottom-10 right-10">
-        <Prob2_2Answer setTarget={setTarget} setLogList={setLogList} setQuestionCount={setQuestionCount}/>
+        <Prob2_2Answer setTarget={setTarget} setLogList={setLogList} setQuestionCount={setQuestionCount} />
       </div>
     </div>
   );

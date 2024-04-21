@@ -99,7 +99,7 @@ const Prob2_2 = () => {
         }}>?</button>
         <dialog id="my_modal_1" className="modal">
           <div className="modal-box">
-            <h3 className="font-bold text-lg">答えは1~500の整数のどれか</h3>
+            <h3 className="font-bold text-lg">答えは1以上500以下の整数</h3>
           </div>
           <form method="dialog" className="modal-backdrop">
             <button>close</button>

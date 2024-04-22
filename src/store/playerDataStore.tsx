@@ -4,6 +4,7 @@ import { immer } from "zustand/middleware/immer";
 
 type PlayerData = {
   currentRoom: string;
+  currentFloor: number;
   movableRoomList: string[];
   belonging: string;
   belongingList: string[];
@@ -82,6 +83,29 @@ type PlayerData = {
     isFirstClear: boolean;
     isClear: boolean;
   };
+
+  // floor3
+  restroom: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  dragon1: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  dragon2: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  openairbath: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+  office: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+
   [key: string]: any
 };
 
@@ -92,11 +116,13 @@ type PlayerDataStoreType = {
 
 const defaultPlayerData: PlayerData = {
   currentRoom: "entrance",
-  movableRoomList: ["entrance", "bathroom"],
+  currentFloor: 3,
+  movableRoomList: ["entrance", "bathroom",
   // "elevator", "corridor", "pine", "bamboo"],
+  "restroom", "openairbath", "dragon1", "dragon2", "office"],
   belonging: "",
   belongingList: [],
-  progress: 0,
+  progress: 6,
   isGetItems: {
     scrollBar: false,
     woodenBoard: false,
@@ -168,6 +194,28 @@ const defaultPlayerData: PlayerData = {
     target : 0,
     isFirstClear: false,
     isClear: false,
+  },
+
+  // floor3
+  restroom: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  dragon1: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  dragon2: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  openairbath: {
+    eventIndex: 0,
+    event0Finished: true,
+  },
+  office: {
+    eventIndex: 0,
+    event0Finished: true,
   },
 };
 

@@ -2,7 +2,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePlayerDataStore } from "~/store/playerDataStore";
-import PartSendingText from "../../../app/_components/elements/sendingText/partSendingText";
+import PartSendingText from "../../app/_components/elements/sendingText/partSendingText";
 
 const CorridorSendingText = () => {
   // テキスト

@@ -3,7 +3,6 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 import { motion } from "framer-motion"
 import Image from "next/image";
 
-
 const Floor1Map = () => {
   // dbに書き換える 
   const { playerData } = usePlayerDataStore();

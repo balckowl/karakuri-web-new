@@ -7,7 +7,7 @@ import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/down
 import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow";
 import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow";
 import ProbBase from "~/app/_components/layout/roomBase/probBase";
-import SocialSendingText from "~/features/floor1/sendingText/socalroomSendingText";
+import SocialSendingText from "~/features/sendingText/socalroomSendingText";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const SocialroomComponent = () => {

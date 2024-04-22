@@ -3,7 +3,7 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 import { motion } from "framer-motion"
 import Image from "next/image";
 
-const Floor2Map = () => {
+const Floor3Map = () => {
   // dbに書き換える 
   const { playerData } = usePlayerDataStore();
   const currentRoom = playerData.currentRoom;
@@ -18,23 +18,20 @@ const Floor2Map = () => {
         transition={{ duration: 2, repeat: Infinity}}
         className={`absolute size-2 rounded-full bg-blue-500 
         ${ 
-          currentRoom === "corridor" ?  "left-[121px] top-[83px]"
-        : currentRoom === "pine" ? "left-[32px] top-[83px]"
-        : currentRoom === "bamboo" ? "left-[121px] top-[144px]" 
-        : currentRoom === "plum" && "left-[210px] top-[83px]" 
+          currentRoom === "restroom" ?  "left-[121px] top-[83px]"
+        : currentRoom === "openairbath" ? "left-[32px] top-[83px]"
+        : currentRoom === "dragon1" ? "left-[210px] top-[83px]" 
+        : currentRoom === "dragon2" ? "left-[210px] top-[22px]" 
+        : currentRoom === "office" && "left-[121px] top-[144px]" 
         }`}
       ></motion.div>
-      { playerData.progress === 3 ?
+      { playerData.progress === 6 ?
         <Image
-          src={"/images/floor2/map/floor2_progress3.png"} width={1408} height={962} alt="progress0"
+          src={"/images/floor3/map/floor3_progress6.png"} width={1408} height={962} alt="progress0"
         ></Image>
-        : playerData.progress === 4 ?
+        : playerData.progress >= 7 &&
         <Image
-          src={"/images/floor2/map/floor2_progress4.png"} width={1408} height={962} alt="progress0"
-        ></Image>
-        : playerData.progress >= 5 &&
-        <Image
-          src={"/images/floor2/map/floor2_progress5.png"} width={1408} height={962} alt="progress0"
+          src={"/images/floor3/map/floor3_progress7.png"} width={1408} height={962} alt="progress0"
         ></Image>
       }
 
@@ -42,4 +39,4 @@ const Floor2Map = () => {
   )
 }
 
-export default Floor2Map
+export default Floor3Map

@@ -2,8 +2,10 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const EnterTooltip = () => {
+  const { setPlayerData } = usePlayerDataStore()
   const [isHover, setIsHover] = useState<boolean>(false);
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -13,6 +15,9 @@ const EnterTooltip = () => {
     setIsHover(false);
   };
   
+  const enterHall = () => {
+    setPlayerData({ currentFloor: 1 })
+  }
   return (
     <div className="relative">
       {/* tooltip */}
@@ -34,7 +39,10 @@ const EnterTooltip = () => {
 
       {/* hover-judgement */}
       {/* 屋敷に入るリンク */}
-      <Link href="floor1/entrance" className="absolute bottom-[10vh] left-1/2 -translate-x-1/2 lg:bottom-[14vh]">
+      <Link 
+        href="floor1/entrance"
+        onClick={() => enterHall}
+        className="absolute bottom-[10vh] left-1/2 -translate-x-1/2 lg:bottom-[14vh]">
         <div
           className="ml-[30px] h-[200px] w-[220px] cursor-pointer lg:h-[400px] lg:w-[440px]"
           onMouseEnter={handleMouseEnter}

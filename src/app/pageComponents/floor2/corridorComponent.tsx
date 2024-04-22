@@ -7,7 +7,7 @@ import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/
 import RightArrow from "~/app/_components/elements/roomChangeArrow/rightArrow/rightArrow"
 import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow"
 import NothingBase from "~/app/_components/layout/roomBase/nothingBase"
-import CorridorSendingText from "~/features/floor1/sendingText/corridorSendingText"
+import CorridorSendingText from "~/features/sendingText/corridorSendingText"
 import { usePlayerDataStore } from "~/store/playerDataStore"
 
 const CorridorComponent = () => {

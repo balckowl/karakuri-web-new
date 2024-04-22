@@ -5,7 +5,7 @@ import ProbClearAlert from "~/app/_components/elements/probClearAlert/probClearA
 import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/downArrow";
 import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import { usePlayerDataStore } from "~/store/playerDataStore";
-import KitchenSendingText from "~/features/floor1/sendingText/kitchenSendingText";
+import KitchenSendingText from "~/features/sendingText/kitchenSendingText";
 import Floor1Map from "~/app/_components/elements/floormap/floor1/floor1Map";
 
 const KitchenComponent = () => {

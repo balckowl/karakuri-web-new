@@ -19,7 +19,6 @@ const NothingBase = ({ currentRoom }: { currentRoom: string }) => {
         <div>
           <Image src="/images/floor3/room/dragon1.webp" alt="dragon1" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div> 
-
       }
     </div>
 

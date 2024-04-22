@@ -4,11 +4,22 @@ import { motion } from "framer-motion";
 import Item1_1 from "~/features/item/item1_1";
 import Item1_3 from "~/features/item/item1_3";
 import Item2_1 from "~/features/item/item2_1";
+import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
   // dbに書き換える 
-  // const { playerData } = usePlayerDataStore(); 
+  const { playerData, setPlayerData } = usePlayerDataStore(); 
 
+  const clickList = () => {
+    setPlayerData(
+      {
+        notFound: {
+          ...playerData.notFound,
+          isClickList: true,
+        }
+      }
+    )
+  }
   return (
     <div>
       {currentRoom === "bathroom" ?
@@ -62,7 +73,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
 
           <Image src="/images/floor2/room/plum.webp" alt="pine" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
-        : currentRoom === "openairbath" &&
+        : currentRoom === "openairbath" ?
         <div>
           <div>
             <motion.div
@@ -70,8 +81,46 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
             >
-              <div className="h-full p-6">
+              <div className="absolute left-1/2 top-3/4 -translate-x-1/2">
+                <p>0100 0000 0100</p>
+              </div>
+            </motion.div>
+          </div>
 
+          <Image src="/images/floor3/room/openairbath.webp" alt="openairbath" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
+        </div>
+        : currentRoom === "404" &&
+        <div>
+          <div>
+            <motion.div
+              animate={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
+            >
+              <div
+                onClick={clickList}
+                className="h-full p-6 cursor-pointer"
+              >
+                <ul>
+                  <li>???</li>
+                  <li>/floor0/elevator</li>
+                  <li>/floor1/entrance</li>
+                  <li>/floor1/bathroom</li>
+                  <li>/floor1/cafeteria</li>
+                  <li>/floor1/kitchen</li>
+                  <li>/floor1/socialroom</li>
+                  <li>/floor1/storeroom</li>
+                  <li>/floor2/corridor</li>
+                  <li>/floor2/plum</li>
+                  <li>/floor2/bamboo</li>
+                  <li>/floor2/pine</li>
+                  <li>/floor3/restroom</li>
+                  <li>/floor3/openairbath</li>
+                  <li>/floor3/dragon1</li>
+                  <li>/floor3/dragon2</li>
+                  <li>/floor3/office</li>
+                  <li>/floor3/縺溘∪縺</li>
+                </ul>
               </div>
               <div className="absolute left-1/2 top-3/4 -translate-x-1/2">
                 
@@ -79,7 +128,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
             </motion.div>
           </div>
 
-          <Image src="/images/floor3/room/openairbath.webp" alt="openairbath" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
+          <Image src="/images/other/404.webp" alt="openairbath" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
 
       }

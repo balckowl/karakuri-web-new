@@ -105,6 +105,13 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
+  
+  // NotFound
+  notFound: {
+    isClickList: boolean;
+    eventIndex: number;
+    event0Finished: boolean;
+  }
 
   [key: string]: any
 };
@@ -217,6 +224,13 @@ const defaultPlayerData: PlayerData = {
     eventIndex: 0,
     event0Finished: true,
   },
+
+  // NotFound
+  notFound: {
+    isClickList: false,
+    eventIndex: 0,
+    event0Finished: true,
+  }
 };
 
 export const usePlayerDataStore = create<PlayerDataStoreType>()(

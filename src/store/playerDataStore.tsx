@@ -123,7 +123,7 @@ type PlayerDataStoreType = {
 
 const defaultPlayerData: PlayerData = {
   currentRoom: "entrance",
-  currentFloor: 3,
+  currentFloor: -1,
   movableRoomList: ["entrance", "bathroom",
   // "elevator", "corridor", "pine", "bamboo"],
   "restroom", "openairbath", "dragon1", "dragon2", "office"],

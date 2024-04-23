@@ -18,10 +18,10 @@ const IntroAnimation = ({ isPullString, setIsPullString }: { isPullString: boole
         return () => clearInterval(interval);
       }, 300); // 100ms待つ
     }
-  
+
     return () => clearTimeout(timeout);
   }, [isPullString]);
-  
+
 
   return (
     <div className="absolute left-0 top-0 size-full overflow-hidden bg-black">
@@ -50,11 +50,18 @@ const IntroAnimation = ({ isPullString, setIsPullString }: { isPullString: boole
       </div>
       {/* ひも */}
       <motion.div
-        animate={isPullString ? { y: [-100, -80, -200] } : { y: [-200, -100] }}
+        animate={isPullString ? { y: [-60, -30, -200] } : { y: [-200, -60] }}
         transition={isPullString ? { duration: 0.4, times: [0, 0.3, 1] } : { duration: 1, delay: 1, type: 'spring' }}
         onClick={() => setIsPullString(true)}
-        className="absolute right-12 top-0 h-[200px] w-[20px] translate-y-[-100px] cursor-pointer bg-gray-600"
+        className="absolute right-12 top-0 h-[200px] w-[40px] translate-y-[-100px] cursor-pointer z-[1000]"
       >
+        <Image
+          src="/images/other/string.png"
+          alt="string"
+          width="2000"
+          height="2000"
+          className="absolute top-0 left-0 h-[200px] w-[40px] z-[10000]"
+        />
       </motion.div>
 
     </div>

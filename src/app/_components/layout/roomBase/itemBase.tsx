@@ -5,6 +5,7 @@ import Item1_1 from "~/features/item/item1_1";
 import Item1_3 from "~/features/item/item1_3";
 import Item2_1 from "~/features/item/item2_1";
 import { usePlayerDataStore } from "~/store/playerDataStore";
+import { Item3_1_1 } from "~/features/item/item3_1_1";
 
 const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
   // dbに書き換える 
@@ -81,8 +82,8 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
             >
-              <div className="absolute left-1/2 top-3/4 -translate-x-1/2">
-                <p>0100 0000 0100</p>
+              <div className="h-full p-6">
+                <Item3_1_1 />
               </div>
             </motion.div>
           </div>

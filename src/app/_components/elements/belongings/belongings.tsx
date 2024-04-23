@@ -9,7 +9,7 @@ const Belongings = () => {
   const currentRoom = playerData.currentRoom;
   const belongingList = playerData.belongingList;
   const belonging = playerData.belonging;
-  const emptys: string[] = ["", "", "", "", ""];
+  const emptys: string[] = ["", "", ""]
 
   const changeBelonging = (item: string) => {
     setPlayerData({ belonging: item })

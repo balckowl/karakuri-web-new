@@ -52,14 +52,14 @@ const SocialroomendingText = () => {
             {
               ...playerData.socialroom,
               eventIndex: -1,
-              event0Finished: true
+              event0Finished: true,
             }
           }
         );
         setTextIndex(0);
       }
     }
-  }, []);
+  }, [textIndex, socialroomTextList, eventIndex, setPlayerData]);
 
   return (
     <div>

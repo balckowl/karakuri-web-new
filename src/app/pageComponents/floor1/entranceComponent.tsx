@@ -35,11 +35,10 @@ const EntranceComponent = () => {
       <RightArrow floor={1} hrefProps={"cafeteria"} />
       <LeftArrow floor={1} hrefProps={"bathroom"} />
 
-      <ProbBase currentRoom={"entrance"} />
-
       <Floor1Map />
       <Belongings />
-      
+      <ProbBase currentRoom={"entrance"} />
+
       {playerData.entrance.isFirstClear &&
         <ProbClearAlert />
       }

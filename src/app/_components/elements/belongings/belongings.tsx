@@ -26,17 +26,17 @@ const Belongings = () => {
           {index <= belongingList.length - 1 ?
             <div
               onClick={() => changeBelonging(belongingList[index]!)}
-              className={`size-[50px] cursor-pointer border-4 border-gray-500 ${belongingList[index] == belonging ? "bg-green-400" : "bg-white"}`}
+              className={`size-[50px] cursor-pointer border-4 border-gray-500 ${belongingList[index] == belonging ? "bg-green-400" : "bg-gray-200"}`}
             >
               { belongingList[index] == "scrollBar" ?
                 <div className="flex size-full items-center justify-center">
-                  <Image src={"/images/floor1/item/scroll.jpg"} width={100} height={100} alt="scroll" className="size-[20px] object-cover"></Image>
+                  <Image src={"/images/floor1/item/scroll.jpg"} width={100} height={100} alt="scroll" className="w-[20px] h-[6px] object-cover"></Image>
                 </div>
               : belongingList[index] == "woodenBoard" ?
                 <div className="flex size-full items-center justify-center">
                   <Image src={"/images/floor2/item/wooden_board.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>
                 </div>
-              : 
+              :
                 <div></div>
               }
 
@@ -44,7 +44,7 @@ const Belongings = () => {
             :
             <div
               onClick={() => changeBelonging("")}
-              className="size-[50px] border-4 border-gray-500 bg-white"
+              className="size-[50px] border-4 border-gray-500 bg-gray-200"
             ></div>
           }
         </div>

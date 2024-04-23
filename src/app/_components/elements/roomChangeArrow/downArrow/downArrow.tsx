@@ -1,4 +1,4 @@
-import Arrow from "../aroow/arrow"
+import Arrow from "../arrow/arrow"
 
 const DownArrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
   return (

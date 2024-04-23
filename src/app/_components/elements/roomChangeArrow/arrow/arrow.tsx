@@ -67,8 +67,8 @@ const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
             transition={{ duration: 1, repeat: Infinity }}
             className="flex w-max py-8"
           >
-            <div className={`h-[8px] w-[60px] rotate-[-30deg] ${movableRoomList.includes(hrefProps) ? "bg-white" : "bg-gray-400"}`}></div>
-            <div className={`h-[8px] w-[60px] translate-x-[-12px] rotate-[30deg] ${movableRoomList.includes(hrefProps) ? "bg-white" : "bg-gray-400"}`}></div>
+            <div className={`h-[8px] w-[60px] rotate-[-30deg] ${movableRoomList.includes(hrefProps) ? "bg-green-300" : "bg-gray-400"}`}></div>
+            <div className={`h-[8px] w-[60px] translate-x-[-12px] rotate-[30deg] ${movableRoomList.includes(hrefProps) ? "bg-green-300" : "bg-gray-400"}`}></div>
           </motion.div>
         </Link>
       }

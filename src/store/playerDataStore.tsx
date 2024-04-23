@@ -105,7 +105,7 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
-  
+
   // NotFound
   notFound: {
     isClickList: boolean;
@@ -124,12 +124,12 @@ type PlayerDataStoreType = {
 const defaultPlayerData: PlayerData = {
   currentRoom: "entrance",
   currentFloor: -1,
-  movableRoomList: ["entrance", "bathroom",
+  movableRoomList: ["entrance", "bathroom"],
   // "elevator", "corridor", "pine", "bamboo"],
-  "restroom", "openairbath", "dragon1", "dragon2", "office"],
+  // "restroom", "openairbath", "dragon1", "dragon2", "office"],
   belonging: "",
   belongingList: [],
-  progress: 6,
+  progress: 0,
   isGetItems: {
     scrollBar: false,
     woodenBoard: false,

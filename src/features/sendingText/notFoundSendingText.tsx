@@ -59,7 +59,7 @@ const NotFoundSendingText = () => {
         setTextIndex(0);
       }
     }
-  }, [textIndex, notFoundTextList, eventIndex, setPlayerData]);
+  }, [playerData.notFound, textIndex, notFoundTextList, eventIndex, setPlayerData]);
 
   return (
     <div>

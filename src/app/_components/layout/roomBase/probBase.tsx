@@ -8,6 +8,7 @@ import Prob1_3 from "~/features/prob/prob1_3";
 import Prob2_1 from "~/features/prob/prob2_1";
 import Prob2_2 from "~/features/prob/prob2_2";
 import Prob3_1 from "~/features/prob/prob3_1";
+import Prob3_2 from "~/features/prob/prob3_2";
 
 const ProbBase = ({currentRoom}: {currentRoom: string}) => {
   // dbに書き換える 
@@ -127,7 +128,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="h-full p-6">
-
+                  <Prob3_2 />
                 </div>
               </motion.div>
             </div>

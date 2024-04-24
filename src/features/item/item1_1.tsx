@@ -14,7 +14,7 @@ const Item1_1 = () => {
     setPlayerData(
       {
         isGetItems: {
-          ...playerData.getItems,
+          ...playerData.isGetItems,
           scrollBar: true,
         },
         belongingList: [...preBelongings, "scrollBar"],
@@ -31,9 +31,9 @@ const Item1_1 = () => {
     <div className="flex size-full items-center justify-center">
       {isGetItem &&
         <GetItemPopup>
-          <p className="mb-2 text-center">アイテムを入手しました</p>
+          <p className="mb-2 text-center font-bold">アイテムを入手しました</p>
           <div className="flex h-[200px] w-[300px] flex-col items-center justify-center">
-            <Image src={"/images/floor1/item/scroll.jpg"} width={150} height={200} alt="scroll" className="mb-2 w-[200px] h-[30px]"></Image>
+            <Image src={"/images/floor1/item/scroll.jpg"} width={150} height={200} alt="scroll" className="mb-2 h-[30px] w-[200px]"></Image>
             <p>スクロールバー</p>
           </div>
         </GetItemPopup>
@@ -41,7 +41,7 @@ const Item1_1 = () => {
 
       <div onClick={getScrollBar} className="cursor-pointer">
         {playerData.isGetItems.scrollBar == false &&
-          <Image src={"/images/floor1/item/scroll.jpg"} width={150} height={200} alt="scroll" className="mb-2 w-[200px] h-[30px]"></Image>
+          <Image src={"/images/floor1/item/scroll.jpg"} width={150} height={200} alt="scroll" className="mb-2 h-[30px] w-[200px]"></Image>
         }
       </div>
     </div>

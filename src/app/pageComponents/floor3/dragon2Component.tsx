@@ -7,7 +7,7 @@ import ProbBase from "~/app/_components/layout/roomBase/probBase";
 import { usePlayerDataStore } from "~/store/playerDataStore"
 
 const Dragon2Component = () => {
-  const { playerData, setPlayerData } = usePlayerDataStore();
+  const { setPlayerData } = usePlayerDataStore();
   // 現在位置の更新
   useEffect(() => {
     setPlayerData({ currentRoom: "dragon2" })

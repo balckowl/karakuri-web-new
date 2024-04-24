@@ -21,7 +21,7 @@ const Belongings = () => {
       transition={playerData[currentRoom]?.event0Finished ? { duration: 0.5, delay: 0.7 } : { duration: 0 }}
       className="absolute bottom-[50px] left-[30px] flex h-[50px] w-[250px] flex-col"
     >
-      <div className="text-black font-bold text-lg">持ち物</div>
+      <div className="text-lg font-bold text-black">持ち物</div>
       <div className="flex flex-row">
         {emptys.map((_, index: number) => (
           <div key={index}>
@@ -32,14 +32,20 @@ const Belongings = () => {
               >
                 { belongingList[index] == "scrollBar" ?
                   <div className="flex size-full items-center justify-center">
-                    <Image src={"/images/floor1/item/scroll_item.jpg"} width={100} height={100} alt="scroll" className="w-[30px] h-[10px] object-cover"></Image>
+                    <Image src={"/images/floor1/item/scroll_item.jpg"} width={100} height={100} alt="scroll" className="h-[10px] w-[30px] object-cover"></Image>
                   </div>
                 : belongingList[index] == "woodenBoard" ?
                   <div className="flex size-full items-center justify-center">
                     <Image src={"/images/floor2/item/wooden_board.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>
                   </div>
-                :
-                  <div></div>
+                : belongingList[index] == "stone" ?
+                  <div className="flex size-full items-center justify-center">
+                    <Image src={"/images/floor3/item/stone.png"} width={100} height={100} alt="scroll" className="size-[50px] object-cover"></Image>
+                  </div>
+                : belongingList[index] == "branchAndRope" &&
+                <div>
+                    <Image src={"/images/floor3/item/branch_and_rope.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>                    
+                  </div>
                 }
               </div>
               :

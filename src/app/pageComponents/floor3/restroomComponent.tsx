@@ -3,14 +3,14 @@ import { useEffect } from "react"
 import Belongings from "~/app/_components/elements/belongings/belongings";
 import Floor3Map from "~/app/_components/elements/floormap/floor3/floor3Map";
 import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/downArrow";
-import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow";
+import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow/leftArrow";
 import RightArrow from "~/app/_components/elements/roomChangeArrow/rightArrow/rightArrow";
-import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow";
+import UpArrow from "~/app/_components/elements/roomChangeArrow/upArrow/upArrow";
 import NothingBase from "~/app/_components/layout/roomBase/nothingBase";
 import { usePlayerDataStore } from "~/store/playerDataStore"
 
 const RestroomComponent = () => {
-  const { playerData, setPlayerData } = usePlayerDataStore();
+  const { setPlayerData } = usePlayerDataStore();
   // 現在位置の更新
   useEffect(() => {
     setPlayerData({ currentRoom: "restroom" })

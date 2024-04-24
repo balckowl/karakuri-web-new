@@ -1,6 +1,6 @@
 "use client"
-import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow"
-import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow"
+import UpArrow from "~/app/_components/elements/roomChangeArrow/upArrow/upArrow"
+import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow/leftArrow"
 import RightArrow from "~/app/_components/elements/roomChangeArrow/rightArrow/rightArrow"
 import ProbBase from "~/app/_components/layout/roomBase/probBase"
 import Belongings from "~/app/_components/elements/belongings/belongings"
@@ -25,7 +25,7 @@ const EntranceComponent = () => {
         }
       }
     )
-  }, [setPlayerData])
+  }, [playerData.entrance, setPlayerData])
 
   return (
     <div>

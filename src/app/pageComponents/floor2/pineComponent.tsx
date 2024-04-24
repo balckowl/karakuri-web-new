@@ -11,7 +11,15 @@ const PineComponent = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
   // 現在位置の更新
   useEffect(() => {
-    setPlayerData({ currentRoom: "plum" })
+    setPlayerData(
+      {
+        currentRoom: "pine",
+        pine: {
+          ...playerData.pine,
+          isFirstClear: false,
+        }
+      }
+    )
   }, [setPlayerData])
 
   return (

@@ -9,8 +9,9 @@ const Prob3_1 = () => {
   }
 
   const isvalid = (i: number, j: number) => {
+    
     if (0 <= i && i < gridSize && 0 <= j && j < gridSize) {
-      if (grid[i][j] != "#") {
+      if (grid[i]?.[j] != "#") {
         return true
       }
     }
@@ -55,11 +56,11 @@ const Prob3_1 = () => {
     }
   }
 
-  useEffect(() => {
-    const newGrid = deepCopy2DArray(grid)
-    newGrid[0][0] = "R"
-    setGrid(newGrid)
-  }, []);
+useEffect(() => {
+  const newGrid = deepCopy2DArray(grid)
+  newGrid[0][0] = "R"
+  setGrid(newGrid)
+}, []);
 
   const gridSize = 5
   const [playerX, setPlayerX] = useState<number>(0);
@@ -101,20 +102,20 @@ const Prob3_1 = () => {
         <div className="flex justify-center w-full">
           <kbd
             onClick={()=>handleMove("U")}
-            className="kbd cursor-pointer select-none">▲</kbd>
+            className="kbd cursor-pointer select-none hover:opacity-80 transition-all">▲</kbd>
         </div>
         <div className="flex justify-center gap-12 w-full">
           <kbd
             onClick={()=>handleMove("L")}
-            className="kbd cursor-pointer select-none">◀︎</kbd>
+            className="kbd cursor-pointer select-none hover:opacity-80 transition-all">◀︎</kbd>
           <kbd
             onClick={()=>handleMove("R")}
-            className="kbd cursor-pointer select-none">▶︎</kbd>
+            className="kbd cursor-pointer select-none hover:opacity-80 transition-all">▶︎</kbd>
         </div>
         <div className="flex justify-center w-full">
           <kbd
             onClick={()=>handleMove("D")}
-            className="kbd cursor-pointer select-none">▼</kbd>
+            className="kbd cursor-pointer select-none hover:opacity-80 transition-all">▼</kbd>
         </div>
       </div>
     </div>

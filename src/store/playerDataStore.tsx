@@ -4,7 +4,6 @@ import { immer } from "zustand/middleware/immer";
 
 type PlayerData = {
   currentRoom: string;
-  currentFloor: number;
   movableRoomList: string[];
   belonging: string;
   belongingList: string[];
@@ -15,6 +14,12 @@ type PlayerData = {
     scrollBar: boolean;
     woodenBoard: boolean;
   };
+  // outside
+  login: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
+
   // floor0
   elevator: {
     eventIndex: number;
@@ -122,11 +127,10 @@ type PlayerDataStoreType = {
 };
 
 const defaultPlayerData: PlayerData = {
-  currentRoom: "entrance",
-  currentFloor: -1,
-  movableRoomList: ["entrance", "bathroom"],
+  currentRoom: "login",
+  movableRoomList: ["entrance", "bathroom",
   // "elevator", "corridor", "pine", "bamboo"],
-  // "restroom", "openairbath", "dragon1", "dragon2", "office"],
+  "restroom", "openairbath", "dragon1", "dragon2", "office"],
   belonging: "",
   belongingList: [],
   progress: 0,
@@ -134,6 +138,12 @@ const defaultPlayerData: PlayerData = {
     scrollBar: false,
     woodenBoard: false,
   },
+  // outside
+  login: {
+    eventIndex: 0,
+    event0Finished: false,
+  },
+
   // floor0
   elevator: {
     eventIndex: 0,

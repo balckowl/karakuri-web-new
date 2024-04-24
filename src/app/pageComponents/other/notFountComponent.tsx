@@ -7,10 +7,10 @@ import NotFoundSendingText from "~/features/sendingText/notFoundSendingText"
 
 const NotFoundComponent = () => {
   const { playerData } = usePlayerDataStore()
-  const currentFloor = playerData.currentFloor
+  const currentRoom = playerData.currentRoom
   return (
     <div>
-      {currentFloor == -1 ?
+      {currentRoom !== "login" ?
         <div className="flex w-full h-[100vh] items-center justify-center">Thank you for playing</div>
         :
         <div>

@@ -47,7 +47,7 @@ const Prob2_2 = () => {
   return (
     <div className="flex h-full items-center justify-center">
       <div className="flex size-3/5 flex-col items-center justify-center gap-4 rounded-md outline outline-2">
-        <p>残り{maxQuestionCount - questionCount}回</p>
+        <p>残り{maxQuestionCount - questionCount}回 {target}</p>
         <div className="size-3/5 overflow-y-scroll outline outline-2">
           {logList.slice().reverse().map((log, index) => (
             <div key={index} className="flex w-full justify-between border-b-DEFAULT border-black bg-orange-200 p-4">
@@ -83,7 +83,10 @@ const Prob2_2 = () => {
               disabled={questionCount >= maxQuestionCount || playerData.pine.isClear}
             />
           </div>
-          <button className="btn btn-outline">
+          <button
+            disabled={playerData.pine.isClear}
+            className="btn btn-outline"
+          >
             {questionCount >= maxQuestionCount ? "リセット" : "決定"}
           </button>
         </form>

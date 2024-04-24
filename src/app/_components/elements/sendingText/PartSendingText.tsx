@@ -46,7 +46,7 @@ const PartSendingText = ({ textList, textIndex }: { textList: string[] | undefin
             style={{ flexShrink: 0 }}
           >
             {textList[0] === "k-15" &&
-              <Image src="/images/login/karakuri-web_login_1.png" alt="main" className="size-[168px] object-fill" width="2000" height="2000" />
+              <Image src="/images/other/k-15.webp" alt="main" className="size-[168px] object-fill" width="2000" height="2000" />
             }
           </motion.div>
         </div>

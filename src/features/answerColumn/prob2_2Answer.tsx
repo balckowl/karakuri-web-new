@@ -54,7 +54,7 @@ const Prob2_2Answer = ({
           className="flex gap-2 border-b-2 border-[#ff5160] text-4xl focus-within:border-b-[3px] focus-within:border-purple-600 dark:border-[#ff7d88]"
         >
           <div className="text-[#ff5160] dark:text-[#ff7d88]">A.</div>
-          <div className="w-[200px] text-[#ff5160] dark:text-[#ff7d88]">{answer}</div>
+          <div className="w-[200px] text-[#ff5160] dark:text-[#ff7d88]">{playerData.pine.target}</div>
         </div>
       ) : (
         <div>

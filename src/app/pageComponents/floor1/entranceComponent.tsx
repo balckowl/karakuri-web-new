@@ -25,7 +25,7 @@ const EntranceComponent = () => {
         }
       }
     )
-  }, [playerData.entrance, setPlayerData])
+  }, [setPlayerData])
 
   return (
     <div>

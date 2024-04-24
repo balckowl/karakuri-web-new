@@ -59,7 +59,7 @@ const KitchenSendingText = () => {
         setTextIndex(0);
       }
     }
-  }, [playerData.kitchen, textIndex, kitchenTextList, eventIndex, setPlayerData]);
+  }, [textIndex, kitchenTextList, eventIndex, setPlayerData]);
 
   return (
     <div>

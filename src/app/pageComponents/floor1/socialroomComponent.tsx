@@ -4,8 +4,8 @@ import Belongings from "~/app/_components/elements/belongings/belongings";
 import Floor1Map from "~/app/_components/elements/floormap/floor1/floor1Map";
 import ProbClearAlert from "~/app/_components/elements/probClearAlert/probClearAlert";
 import DownArrow from "~/app/_components/elements/roomChangeArrow/downArrow/downArrow";
-import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow";
-import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow";
+import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow/leftArrow";
+import UpArrow from "~/app/_components/elements/roomChangeArrow/upArrow/upArrow";
 import ProbBase from "~/app/_components/layout/roomBase/probBase";
 import SocialSendingText from "~/features/sendingText/socalroomSendingText";
 import { usePlayerDataStore } from "~/store/playerDataStore";
@@ -23,7 +23,7 @@ const SocialroomComponent = () => {
         }
       }
     )
-  }, [setPlayerData])
+  }, [playerData.socialroom, setPlayerData])
 
   return (
     <div>

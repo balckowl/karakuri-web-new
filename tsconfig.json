@@ -37,6 +37,6 @@
     "**/*.cjs",
     "**/*.js",
     ".next/types/**/*.ts"
-  ],
+, "src/app/_components/elements/roomChangeArrow/upArrow", "src/app/_components/elements/roomChangeArrow/leftArrow"  ],
   "exclude": ["node_modules"]
 }

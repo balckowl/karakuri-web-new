@@ -13,6 +13,8 @@ type PlayerData = {
   isGetItems: {
     scrollBar: boolean;
     woodenBoard: boolean;
+    stone: boolean;
+    branchAndRope: boolean;
   };
   // outside
   login: {
@@ -137,6 +139,8 @@ const defaultPlayerData: PlayerData = {
   isGetItems: {
     scrollBar: false,
     woodenBoard: false,
+    stone: false,
+    branchAndRope: false,
   },
   // outside
   login: {

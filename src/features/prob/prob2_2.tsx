@@ -1,5 +1,5 @@
 "use client"
-import { type FormEvent, useEffect, useState } from "react";
+import { type FormEvent, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import Prob2_2Answer from "~/features/answerColumn/prob2_2Answer";
 import { usePlayerDataStore } from "~/store/playerDataStore";
@@ -14,7 +14,7 @@ const Prob2_2 = () => {
   const [target, setTarget] = useState<number>(-1);
   const [questionCount, setQuestionCount] = useState<number>(0);
 
-  const desideTarget = () => {
+  const desideTarget = useCallback(() => {
     const tmp = Math.floor(Math.random() * maxValue) + 1
     setTarget(tmp);
     setPlayerData({
@@ -23,11 +23,11 @@ const Prob2_2 = () => {
         target: tmp
       }
     });
-  }
+  }, [maxValue, setTarget, setPlayerData, playerData.pine]);
 
   useEffect(() => {
     desideTarget()
-  }, [])
+  }, [desideTarget])
 
   const askQuestion = (e: FormEvent) => {
     e.preventDefault();
@@ -102,7 +102,7 @@ const Prob2_2 = () => {
         }}>?</button>
         <dialog id="my_modal_1" className="modal">
           <div className="modal-box">
-            <h3 className="font-bold text-lg">答えは1以上500以下の整数</h3>
+            <h3 className="text-lg font-bold">答えは1以上500以下の整数</h3>
           </div>
           <form method="dialog" className="modal-backdrop">
             <button>close</button>

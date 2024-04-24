@@ -1,8 +1,8 @@
 "use client"
 import { useEffect } from "react";
 import { usePlayerDataStore } from "~/store/playerDataStore";
-import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow.tsx/leftArrow";
-import UpArrow from "~/app/_components/elements/roomChangeArrow/uparrow.tsx/upArrow";
+import LeftArrow from "~/app/_components/elements/roomChangeArrow/leftArrow/leftArrow";
+import UpArrow from "~/app/_components/elements/roomChangeArrow/upArrow/upArrow";
 import NothingBase from "~/app/_components/layout/roomBase/nothingBase";
 import Belongings from "~/app/_components/elements/belongings/belongings";
 import Floor1Map from "~/app/_components/elements/floormap/floor1/floor1Map";

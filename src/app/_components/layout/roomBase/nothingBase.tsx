@@ -11,14 +11,10 @@ const NothingBase = ({ currentRoom }: { currentRoom: string }) => {
         <div>
           <Image src="/images/floor2/room/corridor.webp" alt="corridor" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
         </div>
-        : currentRoom === "restroom" ?
+        : currentRoom === "restroom" &&
         <div>
           <Image src="/images/floor3/room/restroom.webp" alt="restroom" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
-        </div> 
-        : currentRoom === "dragon1" &&
-        <div>
-          <Image src="/images/floor3/room/dragon1.webp" alt="dragon1" width="2000" height="2000" className="absolute left-0 top-0 -z-10 h-screen w-full object-cover"/>
-        </div> 
+        </div>
       }
     </div>
 

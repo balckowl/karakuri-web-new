@@ -25,7 +25,7 @@ export const CanvasRevealEffect = ({
 }) => {
   return (
     <div className={cn("h-full relative bg-white w-full", containerClassName)}>
-      <div className="h-full w-full">
+      <div className="size-full">
         <DotMatrix
           colors={colors ?? [[0, 255, 255]]}
           dotSize={dotSize ?? 3}
@@ -96,7 +96,7 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
 
     return {
       u_colors: {
-        value: colorsArray.map((color) => [
+        value: colorsArray.map(() => [
           0 / 255,
           0 / 255,
           0 / 255,
@@ -175,12 +175,10 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
   );
 };
 
-type Uniforms = {
-  [key: string]: {
+type Uniforms = Record<string, {
     value: number[] | number[][] | number;
     type: string;
-  };
-};
+  }>;
 const ShaderMaterial = ({
   source,
   uniforms,
@@ -247,8 +245,8 @@ const ShaderMaterial = ({
       }
     }
 
-    preparedUniforms["u_time"] = { value: 0, type: "1f" };
-    preparedUniforms["u_resolution"] = {
+    preparedUniforms.u_time = { value: 0, type: "1f" };
+    preparedUniforms.u_resolution = {
       value: new THREE.Vector2(size.width * 2, size.height * 2),
     }; // Initialize u_resolution
     return preparedUniforms;
@@ -279,7 +277,7 @@ const ShaderMaterial = ({
     });
 
     return materialObject;
-  }, [size.width, size.height, source]);
+  }, [size.width, size.height, source, getUniforms]);
 
   return (
     <mesh ref={ref as any}>
@@ -291,18 +289,16 @@ const ShaderMaterial = ({
 
 const Shader: React.FC<ShaderProps> = ({ source, uniforms, maxFps = 60 }) => {
   return (
-    <Canvas className="absolute inset-0  h-full w-full">
+    <Canvas className="absolute inset-0  size-full">
       <ShaderMaterial source={source} uniforms={uniforms} maxFps={maxFps} />
     </Canvas>
   );
 };
 interface ShaderProps {
   source: string;
-  uniforms: {
-    [key: string]: {
+  uniforms: Record<string, {
       value: number[] | number[][] | number;
       type: string;
-    };
-  };
+    }>;
   maxFps?: number;
 }

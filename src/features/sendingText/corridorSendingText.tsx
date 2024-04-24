@@ -62,7 +62,7 @@ const CorridorSendingText = () => {
         setTextIndex(0);
       }
     }
-  }, [textIndex, corriderTextList, eventIndex, setPlayerData]);
+  }, [playerData.corridor, textIndex, corriderTextList, eventIndex, setPlayerData]);
 
   return (
     <div>

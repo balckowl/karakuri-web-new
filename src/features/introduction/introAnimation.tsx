@@ -53,14 +53,14 @@ const IntroAnimation = ({ isPullString, setIsPullString }: { isPullString: boole
         animate={isPullString ? { y: [-60, -30, -200] } : { y: [-200, -60] }}
         transition={isPullString ? { duration: 0.4, times: [0, 0.3, 1] } : { duration: 1, delay: 1, type: 'spring' }}
         onClick={() => setIsPullString(true)}
-        className="absolute right-12 top-0 h-[200px] w-[40px] translate-y-[-100px] cursor-pointer z-[1000]"
+        className="absolute right-12 top-0 z-[1000] h-[200px] w-[40px] translate-y-[-100px] cursor-pointer"
       >
         <Image
           src="/images/other/string.png"
           alt="string"
           width="2000"
           height="2000"
-          className="absolute top-0 left-0 h-[200px] w-[40px] z-[10000]"
+          className="absolute left-0 top-0 z-[10000] h-[200px] w-[40px]"
         />
       </motion.div>
 

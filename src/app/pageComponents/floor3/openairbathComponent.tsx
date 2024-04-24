@@ -7,7 +7,7 @@ import ItemBase from "~/app/_components/layout/roomBase/itemBase";
 import { usePlayerDataStore } from "~/store/playerDataStore"
 
 const OpenAirBathComponent = () => {
-  const { playerData, setPlayerData } = usePlayerDataStore();
+  const { setPlayerData } = usePlayerDataStore();
   // 現在位置の更新
   useEffect(() => {
     setPlayerData({ currentRoom: "openairbath" })

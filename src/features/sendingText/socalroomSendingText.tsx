@@ -59,7 +59,7 @@ const SocialroomendingText = () => {
         setTextIndex(0);
       }
     }
-  }, [textIndex, socialroomTextList, eventIndex, setPlayerData]);
+  }, [textIndex, socialroomTextList, eventIndex, setPlayerData, playerData.socialroom]);
 
   return (
     <div>

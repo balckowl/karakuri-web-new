@@ -129,13 +129,18 @@ type PlayerDataStoreType = {
 };
 
 const defaultPlayerData: PlayerData = {
-  currentRoom: "login",
-  movableRoomList: ["entrance", "bathroom",
+  // 今いる部屋
+  currentRoom: "login", 
+  // いける部屋
+  movableRoomList: ["entrance", "bathroom"],
   // "elevator", "corridor", "pine", "bamboo"],
-  "restroom", "openairbath", "dragon1", "dragon2", "office"],
+  // "restroom", "openairbath", "dragon1", "dragon2", "office"],
+  // 今手に持っているもの
   belonging: "",
+  // 持ち物リスト
   belongingList: [],
   progress: 0,
+  // すでにそのアイテムを取ったか
   isGetItems: {
     scrollBar: false,
     woodenBoard: false,
@@ -148,6 +153,10 @@ const defaultPlayerData: PlayerData = {
     event0Finished: false,
   },
 
+  // 全部屋共通
+  // eventIndex: イベント管理
+  // event0Finished: イベント0が終わったかどうか
+  
   // floor0
   elevator: {
     eventIndex: 0,
@@ -160,7 +169,9 @@ const defaultPlayerData: PlayerData = {
     isFitScrollbar: false,
     eventIndex: 0,
     event0Finished: false,
+    // 初クリア判定(クリアアラートを出すフラグ)
     isFirstClear: false,
+    // クリア判定
     isClear: false,
   },
   bathroom: {

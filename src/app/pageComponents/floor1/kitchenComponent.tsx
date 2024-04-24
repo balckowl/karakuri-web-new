@@ -21,7 +21,7 @@ const KitchenComponent = () => {
         }
       }
     )
-  }, [playerData.kitchen, setPlayerData])
+  }, [setPlayerData])
 
   return (
     <div>

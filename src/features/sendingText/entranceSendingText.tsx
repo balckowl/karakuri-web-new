@@ -63,7 +63,7 @@ const EntranceSendingText = () => {
         setTextIndex(0);
       }
     }
-  }, [playerData.entrance, textIndex, entranceTextList, eventIndex, setPlayerData]);
+  }, [textIndex, entranceTextList, eventIndex, setPlayerData]);
 
   return (
     <div>

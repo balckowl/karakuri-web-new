@@ -23,7 +23,7 @@ const SocialroomComponent = () => {
         }
       }
     )
-  }, [playerData.socialroom, setPlayerData])
+  }, [setPlayerData])
 
   return (
     <div>

@@ -11,7 +11,7 @@ const Prob2_2 = () => {
   const [logList, setLogList] = useState<[string, boolean][]>([]);
   const [lower, setLower] = useState<number>(1);
   const [upper, setUpper] = useState<number>(maxValue);
-  const [target, setTarget] = useState<number>(-1);
+  const [target, setTarget] = useState<number>(Math.floor(Math.random() * maxValue) + 1);
   const [questionCount, setQuestionCount] = useState<number>(0);
 
   const desideTarget = useCallback(() => {
@@ -23,7 +23,7 @@ const Prob2_2 = () => {
         target: tmp
       }
     });
-  }, [maxValue, setTarget, setPlayerData, playerData.pine]);
+  }, [maxValue, setTarget, setPlayerData]);
 
   useEffect(() => {
     desideTarget()

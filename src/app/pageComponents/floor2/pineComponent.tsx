@@ -20,7 +20,7 @@ const PineComponent = () => {
         }
       }
     )
-  }, [playerData.pine, setPlayerData])
+  }, [setPlayerData])
 
   return (
     <div>

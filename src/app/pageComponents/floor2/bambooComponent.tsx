@@ -20,7 +20,7 @@ const BambooComponent = () => {
         }
       }
     )
-  }, [playerData.bamboo, setPlayerData])
+  }, [setPlayerData])
 
   return (
     <div>

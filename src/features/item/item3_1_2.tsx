@@ -7,11 +7,12 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 const Item3_1_2 = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
   const preBelongings: string[] = playerData.belongingList;
-  const [isGetItem, setIsGetItem] = useState<boolean>(false);
+  const [isGetStone, setIsGetStone] = useState<boolean>(false);
+  const [isGetHammer, setIsGetHammer] = useState<boolean>(false);
 
   const getStone = () => {
-    setIsGetItem(true);
-    // アイテムを取った判定 & 持ち物の追加 & エントランスの会話フラグ
+    setIsGetStone(true);
+    // アイテムを取った判定 & 持ち物の追加
     setPlayerData(
       {
         isGetItems: {
@@ -23,14 +24,87 @@ const Item3_1_2 = () => {
     )
   }
 
+  const getHammer = () => {
+    setIsGetHammer(true);
+    // アイテムを取った判定 & 持ち物の追加
+    setPlayerData(
+      {
+        isGetItems: {
+          ...playerData.isGetItems,
+          hammer: true,
+        },
+        belongingList: [...preBelongings, "hammer"],
+      }
+    )
+  }
+
+  // ハンマーを作れるか判定
+  const canCraft = () => {
+    return (playerData.dragon1.upperItem == "stone" && playerData.dragon1.lowerItem == "branchAndRope") || (playerData.dragon1.upperItem == "branchAndRope" && playerData.dragon1.lowerItem == "stone")
+  }
+  const craftHammer = () => {
+    if(canCraft()){
+      setPlayerData(
+        {
+          dragon1: {
+            ...playerData.dragon1,
+            upperItem: "*",
+            lowerItem: "*",
+            craftedItem: "hammer",
+          }
+        }
+      )
+    }
+  }
+
+  // アイテムボックスにアイテムを入れる
+  const fitItem = (id: string) => {
+    const belonging = playerData.belonging
+    if(belonging == "stone" || belonging == "branchAndRope"){
+      if(id == "upper"){
+        setPlayerData(
+          {
+            belonging: "",
+            belongingList: playerData.belongingList.filter(item => item !== belonging),
+            dragon1: {
+              ...playerData.dragon1,
+              upperItem: belonging
+            }
+          }
+        )
+      }else if(id == "lower"){
+        setPlayerData(
+          {
+            belonging: "",
+            belongingList: playerData.belongingList.filter(item => item !== belonging),
+            dragon1: {
+              ...playerData.dragon1,
+              lowerItem: belonging
+            }
+          }
+        )
+      }
+    }
+  }
+
   return (
     <div className="flex size-full items-center justify-center">
-      {isGetItem &&
+      {isGetStone &&
         <GetItemPopup>
           <p className="mb-2 text-center font-bold">アイテムを入手しました</p>
           <div className="flex h-[200px] w-[300px] flex-col items-center justify-center">
             <Image src={"/images/floor3/item/stone.png"} width={150} height={150} alt="stone" className="mb-2"></Image>
             <p>石</p>
+          </div>
+        </GetItemPopup>
+      }
+
+      {isGetHammer &&
+        <GetItemPopup>
+          <p className="mb-2 text-center font-bold">アイテムを入手しました</p>
+          <div className="flex h-[200px] w-[300px] flex-col items-center justify-center">
+            <Image src={"/images/floor3/item/hammer.png"} width={150} height={150} alt="hammer" className="mb-2"></Image>
+            <p>ハンマー</p>
           </div>
         </GetItemPopup>
       }
@@ -52,13 +126,80 @@ const Item3_1_2 = () => {
           <div className="modal-box">
             <h3 className="text-lg font-bold">クラフト</h3>
             <div className="flex items-center justify-center gap-10">
-              <div>
-                <div>□</div>
-                <div>+</div>
-                <div>□</div>
+              <div className="flex flex-col items-center gap-5">
+                {/* upper */}
+                {playerData.dragon1.upperItem == "" ?
+                  <div
+                    onClick={() => fitItem("upper")}
+                    className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                  ></div>
+                : playerData.dragon1.upperItem == "*" ?
+                <div
+                  className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                ></div>
+                : playerData.dragon1.upperItem == "stone" ?
+                  <div className="size-[50px] border-4 border-gray-500 bg-gray-200">
+                    <Image src={"/images/floor3/item/stone.png"} width={100} height={100} alt="scroll" className="size-[50px] object-cover"></Image>                    
+                  </div>
+                : playerData.dragon1.upperItem == "branchAndRope" &&
+                  <div className="size-[50px] border-4 border-gray-500 bg-gray-200">
+                    <Image src={"/images/floor3/item/branch_and_rope.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>                     
+                  </div>
+                }
+
+                <div className="text-2xl">+</div>
+
+                {/* lower */}
+                {playerData.dragon1.lowerItem == "" ?
+                  <div
+                    onClick={() => fitItem("lower")}
+                    className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                  ></div>
+                : playerData.dragon1.lowerItem == "*" ?
+                  <div
+                    className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                  ></div>
+                : playerData.dragon1.lowerItem == "stone" ?
+                  <div className="size-[50px] border-4 border-gray-500 bg-gray-200">
+                    <Image src={"/images/floor3/item/stone.png"} width={100} height={100} alt="scroll" className="size-[50px] object-cover"></Image>                    
+                  </div>
+                : playerData.dragon1.lowerItem == "branchAndRope" &&
+                  <div className="size-[50px] border-4 border-gray-500 bg-gray-200">
+                    <Image src={"/images/floor3/item/branch_and_rope.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>                     
+                  </div>
+                }
               </div>
-              <div>→</div>
-              <div>□</div>
+              <div className="text-2xl">⇒</div>
+              {/* crafted */}
+              {playerData.dragon1.craftedItem == "" ?
+                <div
+                  className="size-[50px] border-4 border-gray-500 bg-gray-200"
+                ></div>
+                : playerData.dragon1.craftedItem == "hammer" &&
+                <div>
+                  {playerData.isGetItems.hammer ?
+                    <div
+                      className="size-[50px] border-4 border-gray-500 bg-gray-200"
+                    ></div>
+                    :
+                    <div 
+                      onClick={getHammer}
+                      className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                    >
+                      <Image src={"/images/floor3/item/hammer.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>                     
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+            {/* btn */}
+            <div className="w-full flex justify-end mt-4">
+              <button
+                onClick={craftHammer}
+                className="btn btn-outline"
+                disabled={!canCraft()}
+              >クラフトする
+              </button>
             </div>
           </div>
           <form method="dialog" className="modal-backdrop">

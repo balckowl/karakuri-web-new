@@ -15,6 +15,7 @@ type PlayerData = {
     woodenBoard: boolean;
     stone: boolean;
     branchAndRope: boolean;
+    hammer: boolean;
   };
   // outside
   login: {
@@ -99,6 +100,9 @@ type PlayerData = {
   dragon1: {
     eventIndex: number;
     event0Finished: boolean;
+    upperItem: string,
+    lowerItem: string,
+    craftedItem: string,
   };
   dragon2: {
     eventIndex: number;
@@ -132,9 +136,9 @@ const defaultPlayerData: PlayerData = {
   // 今いる部屋
   currentRoom: "login", 
   // いける部屋
-  movableRoomList: ["entrance", "bathroom"],
+  movableRoomList: ["entrance", "bathroom",
   // "elevator", "corridor", "pine", "bamboo"],
-  // "restroom", "openairbath", "dragon1", "dragon2", "office"],
+  "restroom", "openairbath", "dragon1", "dragon2", "office"],
   // 今手に持っているもの
   belonging: "",
   // 持ち物リスト
@@ -146,6 +150,7 @@ const defaultPlayerData: PlayerData = {
     woodenBoard: false,
     stone: false,
     branchAndRope: false,
+    hammer: false,
   },
   // outside
   login: {
@@ -236,6 +241,9 @@ const defaultPlayerData: PlayerData = {
   dragon1: {
     eventIndex: 0,
     event0Finished: true,
+    upperItem: "",
+    lowerItem: "",
+    craftedItem: "",
   },
   dragon2: {
     eventIndex: 0,

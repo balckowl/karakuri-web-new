@@ -32,19 +32,23 @@ const Belongings = () => {
               >
                 { belongingList[index] == "scrollBar" ?
                   <div className="flex size-full items-center justify-center">
-                    <Image src={"/images/floor1/item/scroll_item.jpg"} width={100} height={100} alt="scroll" className="h-[10px] w-[30px] object-cover"></Image>
+                    <Image src={"/images/floor1/item/scroll_item.jpg"} width={100} height={100} alt="scrollBar" className="h-[10px] w-[30px] object-cover"></Image>
                   </div>
                 : belongingList[index] == "woodenBoard" ?
                   <div className="flex size-full items-center justify-center">
-                    <Image src={"/images/floor2/item/wooden_board.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>
+                    <Image src={"/images/floor2/item/wooden_board.png"} width={100} height={100} alt="woodenBoard" className="size-[40px] object-cover"></Image>
                   </div>
                 : belongingList[index] == "stone" ?
                   <div className="flex size-full items-center justify-center">
-                    <Image src={"/images/floor3/item/stone.png"} width={100} height={100} alt="scroll" className="size-[50px] object-cover"></Image>
+                    <Image src={"/images/floor3/item/stone.png"} width={100} height={100} alt="stone" className="size-[50px] object-cover"></Image>
                   </div>
-                : belongingList[index] == "branchAndRope" &&
-                <div>
-                    <Image src={"/images/floor3/item/branch_and_rope.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>                    
+                : belongingList[index] == "branchAndRope" ?
+                  <div>
+                    <Image src={"/images/floor3/item/branch_and_rope.png"} width={100} height={100} alt="branchAndRope" className="size-[40px] object-cover"></Image>                    
+                  </div>
+                : belongingList[index] == "hammer" &&
+                  <div>
+                    <Image src={"/images/floor3/item/hammer.png"} width={100} height={100} alt="hammer" className="size-[40px] object-cover"></Image>                    
                   </div>
                 }
               </div>

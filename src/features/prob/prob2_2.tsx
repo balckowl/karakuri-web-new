@@ -11,7 +11,7 @@ const Prob2_2 = () => {
   const [logList, setLogList] = useState<[string, boolean][]>([]);
   const [lower, setLower] = useState<number>(1);
   const [upper, setUpper] = useState<number>(maxValue);
-  const [target, setTarget] = useState<number>(Math.floor(Math.random() * maxValue) + 1);
+  const [target, setTarget] = useState<number>(playerData.pine.target);
   const [questionCount, setQuestionCount] = useState<number>(0);
 
   const desideTarget = useCallback(() => {
@@ -23,11 +23,7 @@ const Prob2_2 = () => {
         target: tmp
       }
     });
-  }, [maxValue, setTarget, setPlayerData]);
-
-  useEffect(() => {
-    desideTarget()
-  }, [desideTarget])
+  }, [setTarget, setPlayerData]);
 
   const askQuestion = (e: FormEvent) => {
     e.preventDefault();
@@ -47,7 +43,7 @@ const Prob2_2 = () => {
   return (
     <div className="flex h-full items-center justify-center">
       <div className="flex size-3/5 flex-col items-center justify-center gap-4 rounded-md outline outline-2">
-        <p>残り{maxQuestionCount - questionCount}回 {target}</p>
+        <p>残り{maxQuestionCount - questionCount}回</p>
         <div className="size-3/5 overflow-y-scroll outline outline-2">
           {logList.slice().reverse().map((log, index) => (
             <div key={index} className="flex w-full justify-between border-b-DEFAULT border-black bg-orange-200 p-4">

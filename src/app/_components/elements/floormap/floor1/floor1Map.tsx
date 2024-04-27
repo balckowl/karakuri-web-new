@@ -13,19 +13,21 @@ const Floor1Map = () => {
       transition={playerData[currentRoom]?.event0Finished ? { duration: 0.5, delay: 0.7 } : { duration: 0 }}
       className="absolute right-10 top-10 z-[150] size-[250px]"
     >
+      {/* プレイヤー位置表示 */}
       <motion.div 
         animate={{scale:[1, 1.3, 1]}}
         transition={{ duration: 2, repeat: Infinity}}
         className={`absolute size-2 rounded-full bg-blue-500 
         ${ 
           currentRoom === "entrance" ? "left-[121px] top-[144px]" 
-        : currentRoom === "bathroom" ? "left-[32px] top-[144px]" 
-        : currentRoom === "cafeteria" ? "left-[210px] top-[144px]" 
-        : currentRoom === "kitchen" ? "left-[210px] top-[83px]" 
-        : currentRoom === "socialroom" ? "left-[121px] top-[83px]" 
-        : currentRoom === "storeroom" && "left-[32px] top-[83px]" 
+          : currentRoom === "bathroom" ? "left-[32px] top-[144px]" 
+          : currentRoom === "cafeteria" ? "left-[210px] top-[144px]" 
+          : currentRoom === "kitchen" ? "left-[210px] top-[83px]" 
+          : currentRoom === "socialroom" ? "left-[121px] top-[83px]" 
+          : currentRoom === "storeroom" && "left-[32px] top-[83px]" 
         }`}
-      ></motion.div>
+        ></motion.div>
+      {/* マップ表示 */}
       { playerData.progress === 0 ?
         <Image 
           src={"/images/floor1/map/floor1_progress0.png"} width={1408} height={962} alt="progress0"
@@ -43,7 +45,6 @@ const Floor1Map = () => {
           src={"/images/floor1/map/floor1_progress3.png"} width={1408} height={962} alt="progress0"
         ></Image>
       }
-
     </motion.div>
   )
 }

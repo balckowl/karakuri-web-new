@@ -223,7 +223,7 @@ const defaultPlayerData: PlayerData = {
   pine: {
     eventIndex: 0,
     event0Finished: true,
-    target : 0,
+    target : 378,
     isFirstClear: false,
     isClear: false,
   },

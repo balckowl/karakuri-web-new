@@ -21,7 +21,6 @@ const Item1_1 = () => {
         entrance: {
           ...playerData.entrance,
           eventIndex: 1,
-          event0Finished: true
         }
       }
     )

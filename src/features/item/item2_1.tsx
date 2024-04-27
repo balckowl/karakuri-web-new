@@ -11,7 +11,7 @@ const Item2_1 = () => {
 
   const getWoodenBoard = () => {
     setIsGetItem(true);
-    // アイテムを取った判定 & 持ち物の追加 & エントランスの会話フラグ
+    // アイテムを取った判定 & 持ち物の追加
     setPlayerData(
       {
         isGetItems: {

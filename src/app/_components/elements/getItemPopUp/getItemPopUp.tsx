@@ -25,7 +25,7 @@ const GetItemPopup = ({ children, popupTime=2 }: { children: ReactNode, popupTim
           animate={{ opacity: [0,1,1,1,1,1,1,1,0], scale: [0,1.1,1,1,1,1,1,1,0.3]}}
           exit={{ opacity: 0 }}
           transition={{ duration: popupTime, ease: "easeOut" }}
-          className="fixed left-1/2 top-1/2 z-[1000] rounded-lg bg-white p-[20px] shadow-lg dark:bg-[#020817]"
+          className="fixed left-1/2 top-1/2 z-[100000] rounded-lg bg-white p-[20px] shadow-lg dark:bg-[#020817]"
         >
           { children }
         </motion.div>

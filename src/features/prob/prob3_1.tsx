@@ -86,17 +86,17 @@ const Prob3_1 = () => {
                 <div key={jndex}>
                   {mass === "#" ?
                     <div
-                      className="size-[90px] border-DEFAULT border-black bg-black"
+                      className="size-[90px] border-[1px] border-black bg-black"
                     ></div>
                   : mass === "@" ?
                     <div
-                      className="size-[90px] border-DEFAULT border-black"
+                      className="size-[90px] border-[1px] border-black"
                     >
                       <Image src="/images/floor3/gimmick/rock_crack.png" alt="img2" width="90" height="90" />
                     </div>
                   :
                     <div
-                      className="size-[90px] border-DEFAULT border-black"
+                      className="size-[90px] border-[1px] border-black"
                     >
                       <p className="flex h-full items-center justify-center text-4xl font-bold">
                         {"URDLG".includes(mass) && mass}

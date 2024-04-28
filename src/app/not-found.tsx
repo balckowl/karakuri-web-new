@@ -1,4 +1,4 @@
-import NotFoundComponent from "./pageComponents/other/notFountComponent"
+import NotFoundComponent from "./pageComponents/notFound/notFountComponent"
 
 const NotFound = () => {
 

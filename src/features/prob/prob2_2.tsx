@@ -1,5 +1,5 @@
 "use client"
-import { type FormEvent, useEffect, useState, useCallback } from "react";
+import { type FormEvent, useState, useCallback } from "react";
 import Image from "next/image";
 import Prob2_2Answer from "~/features/answerColumn/prob2_2Answer";
 import { usePlayerDataStore } from "~/store/playerDataStore";

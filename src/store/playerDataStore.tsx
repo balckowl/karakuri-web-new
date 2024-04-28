@@ -107,6 +107,10 @@ type PlayerData = {
   dragon2: {
     eventIndex: number;
     event0Finished: boolean;
+    isClickRockCrack: boolean;
+    isCrachRock: boolean;
+    isFirstClear: boolean;
+    isClear: boolean;
   };
   openairbath: {
     eventIndex: number;
@@ -248,6 +252,10 @@ const defaultPlayerData: PlayerData = {
   dragon2: {
     eventIndex: 0,
     event0Finished: true,
+    isClickRockCrack: false,
+    isCrachRock: false,
+    isFirstClear: false,
+    isClear: false,
   },
   openairbath: {
     eventIndex: 0,

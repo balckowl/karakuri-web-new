@@ -26,7 +26,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="h-full p-6">
-                  <div className="absolute font-bold text-xl">floor1/entrance</div>
+                  <div className="absolute text-xl font-bold">floor1/entrance</div>
                   <Prob1_1 />
                 </div>
               </motion.div>
@@ -44,7 +44,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="h-full p-6">
-                  <div className="absolute font-bold text-xl">/floor1/kitchen</div>
+                  <div className="absolute text-xl font-bold">/floor1/kitchen</div>
                   <Prob1_2 />
                 </div>
               </motion.div>
@@ -62,7 +62,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="h-full p-6">
-                  <div className="absolute font-bold text-xl">/floor1/socialroom</div>
+                  <div className="absolute text-xl font-bold">/floor1/socialroom</div>
                   <Prob1_3 />
                 </div>
               </motion.div>
@@ -80,7 +80,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 className="absolute left-1/2 top-1/2 size-10/12 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="h-full p-6">
-                  <div className="absolute font-bold text-xl">/floor2/bamboo</div>
+                  <div className="absolute text-xl font-bold">/floor2/bamboo</div>
                   <Prob2_1 />
                 </div>
               </motion.div>
@@ -98,7 +98,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="h-full p-6">
-                  <div className="absolute font-bold text-xl">/floor2/pine</div>
+                  <div className="absolute text-xl font-bold">/floor2/pine</div>
                   <Prob2_2 />
                 </div>
               </motion.div>
@@ -116,7 +116,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="h-full p-6">
-                  <div className="absolute font-bold text-xl">/floor3/dragon2</div>
+                  <div className="absolute text-xl font-bold">/floor3/dragon2</div>
                   <Prob3_1 />
                 </div>
               </motion.div>
@@ -134,7 +134,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
                 className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
               >
                 <div className="h-full p-6">
-                  <div className="absolute font-bold text-xl">/floor3/office</div>
+                  <div className="absolute text-xl font-bold">/floor3/office</div>
                   <Prob3_2 />
                 </div>
               </motion.div>

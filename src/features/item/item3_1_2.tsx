@@ -12,7 +12,7 @@ const Item3_1_2 = () => {
 
   const getStone = () => {
     setIsGetStone(true);
-    // アイテムを取った判定 & 持ち物の追加
+    // [石]アイテムを取った判定 & 持ち物の追加
     setPlayerData(
       {
         isGetItems: {
@@ -26,7 +26,7 @@ const Item3_1_2 = () => {
 
   const getHammer = () => {
     setIsGetHammer(true);
-    // アイテムを取った判定 & 持ち物の追加
+    // [ハンマー]アイテムを取った判定 & 持ち物の追加
     setPlayerData(
       {
         isGetItems: {
@@ -111,7 +111,7 @@ const Item3_1_2 = () => {
 
       <div onClick={getStone} className="cursor-pointer">
         {playerData.isGetItems.stone == false &&
-          <Image src={"/images/floor3/item/stone.png"} width={150} height={150} alt="stone" className="mb-2"></Image>
+          <Image src={"/images/floor3/item/stone.png"} width={150} height={150} alt="stone" className="mb-2 size-[200px] object-cover"></Image>
         }
       </div>
 
@@ -131,11 +131,11 @@ const Item3_1_2 = () => {
                 {playerData.dragon1.upperItem == "" ?
                   <div
                     onClick={() => fitItem("upper")}
-                    className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                    className="size-[50px] cursor-pointer border-4 border-gray-500 bg-gray-200"
                   ></div>
                 : playerData.dragon1.upperItem == "*" ?
                 <div
-                  className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                  className="size-[50px] cursor-pointer border-4 border-gray-500 bg-gray-200"
                 ></div>
                 : playerData.dragon1.upperItem == "stone" ?
                   <div className="size-[50px] border-4 border-gray-500 bg-gray-200">
@@ -153,11 +153,11 @@ const Item3_1_2 = () => {
                 {playerData.dragon1.lowerItem == "" ?
                   <div
                     onClick={() => fitItem("lower")}
-                    className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                    className="size-[50px] cursor-pointer border-4 border-gray-500 bg-gray-200"
                   ></div>
                 : playerData.dragon1.lowerItem == "*" ?
                   <div
-                    className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
+                    className="size-[50px] cursor-pointer border-4 border-gray-500 bg-gray-200"
                   ></div>
                 : playerData.dragon1.lowerItem == "stone" ?
                   <div className="size-[50px] border-4 border-gray-500 bg-gray-200">
@@ -177,23 +177,29 @@ const Item3_1_2 = () => {
                 ></div>
                 : playerData.dragon1.craftedItem == "hammer" &&
                 <div>
-                  {playerData.isGetItems.hammer ?
-                    <div
-                      className="size-[50px] border-4 border-gray-500 bg-gray-200"
-                    ></div>
+                  {playerData.isGetItems.hammer == true ?
+                    <form method="dialog">
+                      <button
+                        onClick={getHammer}
+                        className="size-[50px] border-4 border-gray-500 bg-gray-200"
+                      >                 
+                      </button>
+                    </form>
                     :
-                    <div 
-                      onClick={getHammer}
-                      className="size-[50px] border-4 border-gray-500 bg-gray-200 cursor-pointer"
-                    >
-                      <Image src={"/images/floor3/item/hammer.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>                     
-                    </div>
+                    <form method="dialog">
+                      <button
+                        onClick={getHammer}
+                        className="size-[50px] border-4 border-gray-500 bg-gray-200"
+                      >
+                        <Image src={"/images/floor3/item/hammer.png"} width={100} height={100} alt="scroll" className="size-[40px] object-cover"></Image>                     
+                      </button>
+                    </form>
                   }
                 </div>
               }
             </div>
             {/* btn */}
-            <div className="w-full flex justify-end mt-4">
+            <div className="mt-4 flex w-full justify-end">
               <button
                 onClick={craftHammer}
                 className="btn btn-outline"

@@ -34,7 +34,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
               className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
             >
               <div className="h-full p-6">
-                <div className="absolute font-bold text-xl">/floor1/bathroom</div>
+                <div className="absolute text-xl font-bold">/floor1/bathroom</div>
                 <Item1_1 />
               </div>
             </motion.div>
@@ -51,7 +51,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
               className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
             >
               <div className="h-full p-6">
-                <div className="absolute font-bold text-xl">/floor1/storeroom</div>
+                <div className="absolute text-xl font-bold">/floor1/storeroom</div>
                 <Item1_3 />
               </div>
             </motion.div>
@@ -68,7 +68,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
               className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
             >
               <div className="h-full p-6">
-                <div className="absolute font-bold text-xl">/floor2/plum</div>
+                <div className="absolute text-xl font-bold">/floor2/plum</div>
                 <Item2_1 />
               </div>
               <div className="absolute left-1/2 top-3/4 -translate-x-1/2">
@@ -88,7 +88,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
               className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
             >
               <div className="h-full p-6">
-                <div className="absolute font-bold text-xl">/floor3/openairbath</div>
+                <div className="absolute text-xl font-bold">/floor3/openairbath</div>
                 <Item3_1_1 />
               </div>
             </motion.div>
@@ -105,7 +105,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
               className="absolute left-1/2 top-1/2 size-4/5 max-w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-[30px] bg-white shadow-lg"
             >
               <div className="h-full p-6">
-                <div className="absolute font-bold text-xl">/floor3/dragon1</div>
+                <div className="absolute text-xl font-bold">/floor3/dragon1</div>
                 <Item3_1_2 />
               </div>
             </motion.div>
@@ -125,8 +125,8 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
                 onClick={clickList}
                 className="absolute h-full cursor-pointer p-6"
               >
+                <div className="text-xl font-bold">???</div>
                 <ul>
-                  <li>???</li>
                   <li>/floor0/elevator</li>
                   <li>/floor1/entrance</li>
                   <li>/floor1/bathroom</li>
@@ -143,7 +143,7 @@ const ItemBase = ({ currentRoom }: { currentRoom: string }) => {
                   <li>/floor3/dragon1</li>
                   <li>/floor3/dragon2</li>
                   <li>/floor3/office</li>
-                  <li>/floor3/縺溘∪縺</li>
+                  <li>/floor3/繧ｨ繧ｳ</li>
                 </ul>
               </div>
               

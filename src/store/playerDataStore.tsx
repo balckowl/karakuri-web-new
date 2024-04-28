@@ -120,6 +120,10 @@ type PlayerData = {
     eventIndex: number;
     event0Finished: boolean;
   };
+  eco: {
+    eventIndex: number;
+    event0Finished: boolean;
+  };
 
   // NotFound
   notFound: {
@@ -169,7 +173,7 @@ const defaultPlayerData: PlayerData = {
   // floor0
   elevator: {
     eventIndex: 0,
-    event0Finished: false,
+    event0Finished: true,
   },
 
   // floor1
@@ -264,6 +268,11 @@ const defaultPlayerData: PlayerData = {
   office: {
     eventIndex: 0,
     event0Finished: true,
+  },
+  // eco
+  eco: {
+    eventIndex: 0,
+    event0Finished: false,
   },
 
   // NotFound

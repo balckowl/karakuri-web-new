@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import EnterTooltip from "~/features/login/components/enterTooltip/enterTooltip"
-import CalltoEnter from "~/features/login/components/calltoEnter/calltoEnter"
+import EnterTooltip from "~/features/login/enterTooltip"
+import CalltoEnter from "~/features/login/calltoEnter"
 import IntroAnimation from "~/features/introduction/introAnimation"
 import Image from "next/image"
 

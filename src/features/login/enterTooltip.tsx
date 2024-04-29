@@ -5,6 +5,11 @@ import { useState } from "react";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const EnterTooltip = () => {
+  const playSound = () => {
+    const audio = new Audio("/mp3/enter_hall.mp3");
+    audio.play();
+  };
+
   const { setPlayerData } = usePlayerDataStore()
   const [isHover, setIsHover] = useState<boolean>(false);
   const handleMouseEnter = () => {
@@ -41,7 +46,7 @@ const EnterTooltip = () => {
       {/* 屋敷に入るリンク */}
       <Link 
         href="floor1/entrance"
-        onClick={() => enterHall}
+        onClick={() => {enterHall(); playSound()}}
         className="absolute bottom-[10vh] left-1/2 -translate-x-1/2 lg:bottom-[14vh]">
         <div
           className="ml-[30px] h-[200px] w-[220px] cursor-pointer lg:h-[400px] lg:w-[440px]"

@@ -3,9 +3,15 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 import Prob1_1Answer from "~/features/answerColumn/prob1_1Answer";
 
 const Prob1_1 = () => {
+  const playSound = () => {
+    const audio = new Audio("/mp3/fit_scroll_bar.mp3");
+    audio.play();
+  };
+
   const { playerData, setPlayerData } = usePlayerDataStore();
 
   const fitScrollBar = () => {
+    playSound()
     setPlayerData(
       {
         belonging: "",

@@ -4,11 +4,16 @@ import Image from "next/image";
 import { type Dispatch, type SetStateAction, useEffect, useState } from "react"
 
 const IntroAnimation = ({ isPullString, setIsPullString }: { isPullString: boolean, setIsPullString: Dispatch<SetStateAction<boolean>> }) => {
+  const playSound = () => {
+    const audio = new Audio("/mp3/pull_string.mp3");
+    audio.play();
+  };
 
   const [clipPathRadius, setClipPathRadius] = useState(0); // clipPathの半径を状態として管理
 
   // isPullStringがtrueになったとき、clipPathRadiusを徐々に大きくする
   useEffect(() => {
+    playSound()
     let timeout: NodeJS.Timeout | undefined;
     if (isPullString) {
       timeout = setTimeout(() => {

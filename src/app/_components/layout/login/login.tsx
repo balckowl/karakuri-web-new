@@ -7,6 +7,7 @@ import IntroAnimation from "~/features/introduction/introAnimation"
 import Image from "next/image"
 
 const Login = () => {
+
   const [isPullString, setIsPullString] = useState<boolean>(false);
   const [isDisplay, setIsDisplay] = useState<boolean>(false);
   useEffect(() => {

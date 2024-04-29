@@ -3,10 +3,15 @@ import { useState } from "react";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Item1_3 = () => {
+  const playSound = () => {
+    const audio = new Audio("/mp3/click_light.mp3");
+    audio.play();
+  };
   const { playerData, setPlayerData } = usePlayerDataStore();
   const [isLighting, setIsLighting] = useState(playerData.socialroom.isLighting);
 
   const toggleIsLight = () => {
+    playSound();
     setPlayerData(
       {
         socialroom: {

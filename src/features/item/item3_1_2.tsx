@@ -5,12 +5,28 @@ import GetItemPopup from "~/app/_components/elements/getItemPopUp/getItemPopUp";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Item3_1_2 = () => {
+  const playSound1 = () => {
+    const audio = new Audio("/mp3/fit_item.mp3");
+    audio.play();
+  };
+
+  const playSound2 = () => {
+    const audio = new Audio("/mp3/hammer.mp3");
+    audio.play();
+  };
+
+  const playSound3 = () => {
+    const audio = new Audio("/mp3/item_get.mp3");
+    audio.play();
+  };
+
   const { playerData, setPlayerData } = usePlayerDataStore();
   const preBelongings: string[] = playerData.belongingList;
   const [isGetStone, setIsGetStone] = useState<boolean>(false);
   const [isGetHammer, setIsGetHammer] = useState<boolean>(false);
 
   const getStone = () => {
+    playSound3()
     setIsGetStone(true);
     // [石]アイテムを取った判定 & 持ち物の追加
     setPlayerData(
@@ -25,6 +41,7 @@ const Item3_1_2 = () => {
   }
 
   const getHammer = () => {
+    playSound3();
     setIsGetHammer(true);
     // [ハンマー]アイテムを取った判定 & 持ち物の追加
     setPlayerData(
@@ -44,6 +61,7 @@ const Item3_1_2 = () => {
   }
   const craftHammer = () => {
     if(canCraft()){
+      playSound2()
       setPlayerData(
         {
           dragon1: {
@@ -61,6 +79,7 @@ const Item3_1_2 = () => {
   const fitItem = (id: string) => {
     const belonging = playerData.belonging
     if(belonging == "stone" || belonging == "branchAndRope"){
+      playSound1()
       if(id == "upper"){
         setPlayerData(
           {

@@ -11,6 +11,11 @@ const Prob2_2Answer = ({
   setLogList: Dispatch<SetStateAction<[string, boolean][]>>;
   setQuestionCount: Dispatch<SetStateAction<number>>;
 }) => {
+  const playSound = () => {
+    const audio = new Audio("/mp3/open_door.mp3");
+    audio.play();
+  };
+
   const { playerData, setPlayerData } = usePlayerDataStore();
   const [answer, setAnswer] = useState<string>("");
   const maxValue = 500
@@ -30,6 +35,7 @@ const Prob2_2Answer = ({
   const sendAnswer = (e: FormEvent) => {
     e.preventDefault();
     if (playerData.pine.isFirstClear == false && Number(answer) == playerData.pine.target) {
+      playSound()
       setPlayerData(
         {
           progress: 6,

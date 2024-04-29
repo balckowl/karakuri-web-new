@@ -24,7 +24,6 @@ const Prob2_2Answer = ({
     const tmp = Math.floor(Math.random() * maxValue) + 1
     setTarget(tmp);
     setPlayerData({
-      movableRoomList: [...playerData.movableRoomList, "restroom", "openairbath", "dragon1", "dragon2"],
       pine: {
         ...playerData.pine,
         target: tmp
@@ -38,6 +37,7 @@ const Prob2_2Answer = ({
       playSound()
       setPlayerData(
         {
+          movableRoomList: [...playerData.movableRoomList, "restroom", "openairbath", "dragon1", "dragon2"],
           progress: 6,
           pine: {
             ...playerData.pine,

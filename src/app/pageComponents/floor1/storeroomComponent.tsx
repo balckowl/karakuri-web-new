@@ -6,6 +6,7 @@ import RightArrow from "~/app/_components/elements/roomChangeArrow/rightArrow/ri
 import ItemBase from "~/app/_components/layout/roomBase/itemBase"
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
+
 const StoreroomComponent  = () => {
   const { setPlayerData } = usePlayerDataStore();
   // 現在位置の更新

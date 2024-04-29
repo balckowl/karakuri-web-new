@@ -17,7 +17,7 @@ const Item1_3 = () => {
         socialroom: {
           ...playerData.socialroom,
           isLighting: isLighting === false,
-          eventIndex: isLighting === false ? 1 : -1,
+          eventIndex: (isLighting === false && playerData.socialroom.isClear==false) ? 1 : -1,
         }
       }
     )

@@ -54,19 +54,34 @@ const CorridorSendingText = () => {
     if (0 <= eventIndex) {
       setRenderTrigger(prev => prev + 1);
       if (textIndex == corriderTextList[eventIndex as keyof typeof corriderTextList].length) {
-        playSound()
-        setPlayerData(
-          {
-            corridor:
+        if(eventIndex == 0){
+          setPlayerData(
             {
-              ...playerData.corridor,
-              isTryMove: false,
-              eventIndex: 0,
-              event0Finished: true,
-              movableBamboo: true,
+              corridor:
+              {
+                ...playerData.corridor,
+                isTryMove: false,
+                eventIndex: 0,
+                event0Finished: true,
+              }
             }
-          }
-        );
+          );
+        }else{
+          playSound()
+          setPlayerData(
+            {
+              corridor:
+              {
+                ...playerData.corridor,
+                isTryMove: false,
+                eventIndex: 0,
+                event0Finished: true,
+                movableBamboo: true,
+              }
+            }
+          );
+
+        }
         setTextIndex(0);
       }
     }

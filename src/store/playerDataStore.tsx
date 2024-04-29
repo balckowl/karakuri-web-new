@@ -144,9 +144,9 @@ const defaultPlayerData: PlayerData = {
   // 今いる部屋
   currentRoom: "login", 
   // いける部屋
-  movableRoomList: ["entrance", "bathroom",
-  "elevator", "corridor", "plum", "bamboo",
-  "restroom", "openairbath", "dragon1", "dragon2", "office"],
+  movableRoomList: ["entrance", "bathroom"],
+  // "elevator", "corridor", "plum", "bamboo",
+  // "restroom", "openairbath", "dragon1", "dragon2", "office"],
   // 今手に持っているもの
   belonging: "",
   // 持ち物リスト

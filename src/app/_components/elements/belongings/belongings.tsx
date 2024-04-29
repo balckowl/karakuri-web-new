@@ -19,9 +19,9 @@ const Belongings = () => {
     <motion.div
       animate={playerData[currentRoom]?.event0Finished ? { opacity: [0, 1] } : { opacity: 0 }}
       transition={playerData[currentRoom]?.event0Finished ? { duration: 0.5, delay: 0.7 } : { duration: 0 }}
-      className="absolute bottom-[50px] left-[30px] flex h-[50px] w-[150px] flex-col"
+      className="absolute bottom-[60px] left-[30px] flex h-[50px] w-[150px] flex-col"
     >
-      <div className="text-lg font-bold text-black">持ち物</div>
+      <div className="text-lg font-bold text-black bg-gray-100 border-2 border-black text-center mb-2 w-max px-2">持ち物</div>
       <div className="flex flex-row">
         {emptys.map((_, index: number) => (
           <div key={index}>

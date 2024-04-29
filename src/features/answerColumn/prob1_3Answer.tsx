@@ -11,7 +11,7 @@ const Prob1_3Answer = () => {
   const { playerData, setPlayerData } = usePlayerDataStore();
   const [answer, setAnswer] = useState<string>("");
 
-  const sendAnswer = (e:FormEvent) => {
+  const sendAnswer = (e: FormEvent) => {
     e.preventDefault();
     if (playerData.socialroom.isFirstClear == false && answer == "LAMP") {
       playSound()

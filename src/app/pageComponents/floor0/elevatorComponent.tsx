@@ -4,15 +4,24 @@ import { useEffect } from "react";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 import { motion } from "framer-motion"
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ElevatorComponent = () => {
   const playSound = () => {
-    console.log("a")
     const audio = new Audio("/mp3/elevator_door.mp3");
     audio.play();
   };
 
+  const router = useRouter()
   const { playerData, setPlayerData } = usePlayerDataStore();
+  // ページブロック
+  useEffect(() => {
+    if (playerData.movableRoomList.includes("bathroom") == true) {
+      router.push("/floor1/bathroom")
+    } else {
+      router.push("/floor1/rocked")
+    }
+  }, [playerData])
   // 現在位置の更新
   useEffect(() => {
     setPlayerData({ currentRoom: "elevator" })

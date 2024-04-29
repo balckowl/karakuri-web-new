@@ -6,9 +6,22 @@ import UpArrow from "~/app/_components/elements/roomChangeArrow/upArrow/upArrow"
 import NothingBase from "~/app/_components/layout/roomBase/nothingBase";
 import Belongings from "~/app/_components/elements/belongings/belongings";
 import Floor1Map from "~/app/_components/elements/floormap/floor1/floor1Map";
+import { useRouter } from "next/navigation";
+
 
 const CafeteriaComponent = () => {
-  const { setPlayerData } = usePlayerDataStore();
+  const router = useRouter()
+  const { playerData, setPlayerData } = usePlayerDataStore();
+
+  // ページブロック
+  useEffect(() => {
+    if (playerData.movableRoomList.includes("cafeteria") == true) {
+      router.push("/floor1/cafeteria")
+    } else {
+      router.push("/floor1/rocked")
+    }
+  }, [playerData])
+
   // 現在位置の更新
   useEffect(() => {
     setPlayerData({ currentRoom: "cafeteria" })
@@ -16,13 +29,17 @@ const CafeteriaComponent = () => {
 
   return (
     <div>
-      <UpArrow floor={1} hrefProps={"kitchen"} />
-      <LeftArrow floor={1} hrefProps={"entrance"} />
+      {playerData.movableRoomList.includes("cafeteria") &&
+        <div>
+          <UpArrow floor={1} hrefProps={"kitchen"} />
+          <LeftArrow floor={1} hrefProps={"entrance"} />
 
-      <NothingBase currentRoom={"cafeteria"} />
+          <NothingBase currentRoom={"cafeteria"} />
 
-      <Floor1Map />
-      <Belongings />
+          <Floor1Map />
+          <Belongings />
+        </div>
+      }
     </div>
   )
 }

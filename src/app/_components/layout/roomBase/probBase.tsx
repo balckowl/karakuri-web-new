@@ -72,7 +72,7 @@ const ProbBase = ({currentRoom}: {currentRoom: string}) => {
         </div>
         : currentRoom === "bamboo" ?
         <div>
-          {playerData.socialroom.event0Finished &&
+          {playerData.bamboo.event0Finished &&
             <div>
               <motion.div
                 animate={{ opacity: [0, 1] }}

@@ -5,6 +5,11 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 import PartSendingText from "../../app/_components/elements/sendingText/partSendingText";
 
 const CorridorSendingText = () => {
+  const playSound = () => {
+    const audio = new Audio("/mp3/wooden_board.mp3");
+    audio.play();
+  };
+
   // テキスト
   const corriderTextList = useMemo(() => {
     return {
@@ -49,6 +54,7 @@ const CorridorSendingText = () => {
     if (0 <= eventIndex) {
       setRenderTrigger(prev => prev + 1);
       if (textIndex == corriderTextList[eventIndex as keyof typeof corriderTextList].length) {
+        playSound()
         setPlayerData(
           {
             corridor:
@@ -56,7 +62,8 @@ const CorridorSendingText = () => {
               ...playerData.corridor,
               isTryMove: false,
               eventIndex: 0,
-              event0Finished: true
+              event0Finished: true,
+              movableBamboo: true,
             }
           }
         );

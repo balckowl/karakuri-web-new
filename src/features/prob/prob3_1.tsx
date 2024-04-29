@@ -4,6 +4,16 @@ import { usePlayerDataStore } from "~/store/playerDataStore";
 import { motion } from 'framer-motion';
 
 const Prob3_1 = () => {
+  const playSound1 = () => {
+    const audio = new Audio("/mp3/wooden_board.mp3");
+    audio.play();
+  };
+
+  const playSound2 = () => {
+    const audio = new Audio("/mp3/open_door.mp3");
+    audio.play();
+  };
+
   const { playerData, setPlayerData } = usePlayerDataStore();
 
   const [isGoal, setisGoal] = useState<boolean>(false);
@@ -15,7 +25,6 @@ const Prob3_1 = () => {
   }
 
   const isvalid = (i: number, j: number) => {
-
     if (0 <= i && i < gridSize && 0 <= j && j < gridSize) {
       if (grid[i]?.[j] != "#" && grid[i]?.[j] != "@") {
         return true
@@ -63,7 +72,8 @@ const Prob3_1 = () => {
     setDirection(dir)
     // クリア
     if (x == 2 && y == 2) {
-      setisGoal(true)
+      playSound2();
+      setisGoal(true);
       setPlayerData(
         {
           progress: 7,
@@ -84,7 +94,7 @@ const Prob3_1 = () => {
   const [direction, setDirection] = useState<string>("R");
   const [grid, setGrid] = useState<string[][]>(
     [
-      ["R", ".", ".", ".", "."],
+      [playerData.dragon2.isClear ? "." : "R", ".", ".", ".", "."],
       [".", "#", "#", "#", "."],
       [".", "#", "G", "#", "."],
       [".", "#", "@", "#", "."],
@@ -102,6 +112,7 @@ const Prob3_1 = () => {
   
   const clickRockCarck = () => {
     if(playerData.belonging == "hammer"){
+      playSound1()
       const newGrid = deepCopy2DArray(grid)
       newGrid[3][2] = "."
       setGrid(newGrid)

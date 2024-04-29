@@ -3,12 +3,18 @@ import { type FormEvent, useState } from "react";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Prob1_2Answer = () => {
+  const playSound = () => {
+    const audio = new Audio("/mp3/open_door.mp3");
+    audio.play();
+  };
+
   const { playerData, setPlayerData } = usePlayerDataStore();
   const [answer, setAnswer] = useState<string>("");
 
   const sendAnswer = (e:FormEvent) => {
     e.preventDefault();
     if (playerData.kitchen.isFirstClear == false && answer == "RICE") {
+      playSound()
       setPlayerData(
         {
           progress: 2,

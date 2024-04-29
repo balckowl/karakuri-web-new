@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
+
   // dbに書き換える 
   const { playerData, setPlayerData } = usePlayerDataStore();
 
@@ -13,6 +14,7 @@ const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
   const tryMove = () => {
     // fix
     if(playerData.belonging == "woodenBoard"){
+
       setPlayerData({
         progress: 4,
         belonging: "",
@@ -21,7 +23,6 @@ const Arrow = ({ floor, hrefProps }: { floor: number, hrefProps: string }) => {
           ...playerData.corridor,
           eventIndex: 1,
           isTryMove: true,
-          movableBamboo: true,
         }
       })
     // try

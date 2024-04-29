@@ -5,11 +5,17 @@ import GetItemPopup from "~/app/_components/elements/getItemPopUp/getItemPopUp";
 import { usePlayerDataStore } from "~/store/playerDataStore";
 
 const Item2_1 = () => {
+  const playSound = () => {
+    const audio = new Audio("/mp3/item_get.mp3");
+    audio.play();
+  };
+
   const { playerData, setPlayerData } = usePlayerDataStore();
   const preBelongings: string[] = playerData.belongingList;
   const [isGetItem, setIsGetItem] = useState<boolean>(false);
 
   const getWoodenBoard = () => {
+    playSound();
     setIsGetItem(true);
     // アイテムを取った判定 & 持ち物の追加
     setPlayerData(

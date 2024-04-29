@@ -6,6 +6,12 @@ import { motion } from "framer-motion"
 import Link from "next/link";
 
 const ElevatorComponent = () => {
+  const playSound = () => {
+    console.log("a")
+    const audio = new Audio("/mp3/elevator_door.mp3");
+    audio.play();
+  };
+
   const { playerData, setPlayerData } = usePlayerDataStore();
   // 現在位置の更新
   useEffect(() => {
@@ -23,6 +29,7 @@ const ElevatorComponent = () => {
         <div className="flex size-full flex-col items-center justify-center gap-[60px]">
           <Link
             href={"/floor3/restroom"}
+            onClick={playSound}
             className={`relative flex h-[120px] w-[200px] cursor-not-allowed items-center justify-center rounded-lg border-[6px] border-gray-200  bg-gray-800 shadow-xl transition-all
             ${playerData.progress < 6 ? "cursor-not-allowed" : "cursor-pointer hover:opacity-80"}`}>
             <p className="text-3xl text-gray-200">3</p>
@@ -34,6 +41,7 @@ const ElevatorComponent = () => {
           </Link>
           <Link
             href={"/floor2/corridor"}
+            onClick={playSound}
             className={`relative flex h-[120px] w-[200px] cursor-not-allowed items-center justify-center rounded-lg border-[6px] border-gray-200  bg-gray-800 shadow-xl transition-all
             ${playerData.progress < 3 ? "cursor-not-allowed" : "cursor-pointer hover:opacity-80"}`}>
             <p className="text-3xl text-gray-200">2</p>
@@ -45,6 +53,7 @@ const ElevatorComponent = () => {
           </Link>
           <Link
             href={"/floor1/socialroom"}
+            onClick={playSound}
             className={`relative flex h-[120px] w-[200px] cursor-not-allowed items-center justify-center rounded-lg border-[6px] border-gray-200  bg-gray-800 shadow-xl transition-all
             ${playerData.progress < 0 ? "cursor-not-allowed" : "cursor-pointer hover:opacity-80"}`}>
             <p className="text-3xl text-gray-200">1</p>

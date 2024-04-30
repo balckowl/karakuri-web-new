@@ -23,11 +23,9 @@ const Dragon2SendingText = () => {
   const [textIndex, setTextIndex] = useState<number>(0);
   const [renderTrigger, setRenderTrigger] = useState<number>(0); // レンダリングのトリガー
 
-  // Enter キーが押された時のイベントハンドラ
+  // キーが押された時のイベントハンドラ
   const handleKeyPress = (event: KeyboardEvent) => {
-    if (event.key === "Enter") {
-      setTextIndex((prev) => prev + 1);
-    }
+    setTextIndex((prev) => prev + 1);
   };
 
   // キーボードイベントのリスナーを設定

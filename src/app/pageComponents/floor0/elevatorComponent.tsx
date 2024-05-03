@@ -17,7 +17,7 @@ const ElevatorComponent = () => {
   // ページブロック
   useEffect(() => {
     if (playerData.movableRoomList.includes("bathroom") == true) {
-      router.push("/floor1/bathroom")
+      router.push("/floor0/elevator")
     } else {
       router.push("/floor1/rocked")
     }
